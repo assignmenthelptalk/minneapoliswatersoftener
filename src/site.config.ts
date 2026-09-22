@@ -282,7 +282,7 @@ export const siteConfig: SiteConfig = {
   affiliateRO: "https://springwellwater.com/follow/ro/",
 
   // Business identity — edit directly, no CMS
-  businessName: "Water Softener of Minneapolis",
+  businessName: "Minneapolis Water Softener",
   phoneNumber: "PHONE_NUMBER",
   businessEmail: "BUSINESS_EMAIL",
   address: "",

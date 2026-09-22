@@ -184,7 +184,7 @@ const footerNavLinks = [
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <span class="footer-brand">{site.city} Water Softeners</span>
+        <span class="footer-brand">{site.businessName}</span>
         {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" && (
           <a class="footer-phone" href={`tel:${site.phoneNumber}`}>{site.phoneNumber}</a>
         )}
@@ -197,7 +197,7 @@ const footerNavLinks = [
 
         <div class="footer-bottom">
           <div>
-            <p class="footer-copyright">&copy; {new Date().getFullYear()} {site.city} Water Softeners. All rights reserved.</p>
+            <p class="footer-copyright">&copy; {new Date().getFullYear()} {site.businessName}. All rights reserved.</p>
             <p class="footer-disclaimer">This website connects {site.city} homeowners with licensed local water softener installers serving {site.county}.</p>
           </div>
           <p class="footer-copyright">{site.city}, {site.stateAbbr}</p>

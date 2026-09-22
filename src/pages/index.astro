@@ -36,7 +36,10 @@ const faqs = [
 ];
 ---
 
-<Layout title={`${site.city} Water Softeners — ${site.stateAbbr}`}>
+<Layout
+  title={`${site.businessName} — ${site.stateAbbr}`}
+  fullTitle={`${site.businessName} — ${site.stateAbbr} | Free Water Test & Quote`}
+>
   <LocalSchema />
 
   <!-- 1. Hero — full-bleed background photo + navy overlay -->
@@ -57,7 +60,7 @@ const faqs = [
         <span class="hero-badge">✓ No Obligation</span>
       </div>
 
-      <h1>{site.city} Water Softeners — {site.stateAbbr}</h1>
+      <h1>{site.businessName} — {site.stateAbbr}</h1>
 
       <p class="hero-p">
         {site.city}, {site.stateAbbr} water tests at {site.gpgLow}-{site.gpgHigh} GPG, classified as {site.gpgLabel}.
