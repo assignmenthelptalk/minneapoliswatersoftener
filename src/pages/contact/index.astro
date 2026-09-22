@@ -1,0 +1,67 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import QuoteForm from "../../components/QuoteForm.astro";
+import { site } from "../../lib/site";
+---
+
+<Layout
+  title={`Contact ${site.city} Water Softeners`}
+  description={`Get a free water test and no-obligation quote for ${site.city}, ${site.stateAbbr} homes.`}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Contact" }]} />
+      <p class="eyebrow">Free Water Test &amp; Quote</p>
+      <h1>Contact {site.city} Water Softeners</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="brand-backlink">
+        <a href="/" class="brand-link">{site.city} Water Softeners</a>
+        {" "}provides free water testing and no-obligation quotes across {site.city} and {site.county}.
+      </p>
+
+      <div class="grid grid-2 contact-grid">
+        <div class="contact-details">
+          <h2>Get in Touch</h2>
+          <p>Call for a free consultation, or fill out the form and we'll get back to you with a no-obligation quote.</p>
+
+          {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" && (
+            <p class="contact-detail-row">
+              <strong>Phone:</strong>{" "}
+              <a href={`tel:${site.phoneNumber}`}>{site.phoneNumber}</a>
+            </p>
+          )}
+
+          {site.address && (
+            <p class="contact-detail-row">
+              <strong>Address:</strong> {site.address}
+            </p>
+          )}
+
+          <p class="contact-detail-row">
+            <strong>Service Area:</strong> {site.city} and {site.county}
+          </p>
+        </div>
+
+        <div class="contact-form-wrap">
+          <QuoteForm heading="Free Water Test & Quote" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .contact-grid { align-items: start; gap: 40px; }
+    .contact-details h2 { margin-bottom: 12px; }
+    .contact-detail-row { margin: 12px 0; font-family: var(--font-body); }
+    .contact-detail-row a { color: var(--color-primary); font-weight: 600; text-decoration: none; }
+    .contact-detail-row a:hover { color: var(--color-accent); }
+    @media (max-width: 860px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</Layout>

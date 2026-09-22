@@ -1,0 +1,101 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { site } from "../../lib/site";
+---
+
+<Layout
+  title={`About ${site.city} Water Softeners`}
+  description={`Water softener installation, repair, and product guidance for ${site.city}, ${site.stateAbbr} homeowners.`}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "About" }]} />
+      <p class="eyebrow">Local Water Treatment Guidance</p>
+      <h1>About {site.city} Water Softeners</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="brand-backlink">
+        <a href="/" class="brand-link">{site.city} Water Softeners</a>
+        {" "}provides water softener installation and service guidance across {site.city} and {site.county}.
+      </p>
+
+      <div class="section-header">
+        <p>
+          We connect {site.city} homeowners with the right water softener solution for their home, from free
+          water hardness testing to product recommendations and local installer referrals. Every recommendation
+          is sized for {site.city}'s actual {site.gpgLow}-{site.gpgHigh} GPG water, not a generic estimate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header center">
+        <h2>Areas We Serve</h2>
+        <p>We serve homeowners throughout {site.city} and {site.county}, including:</p>
+      </div>
+      <div class="grid grid-3">
+        {site.neighbourhoods.map((n) => (
+          <div class="card">
+            <h3>{n}</h3>
+            <p>Water softener guidance and free hardness testing for {n} homes.</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why {site.city} Water Needs Treatment</h2>
+        <p>
+          {site.city} draws its water from {site.waterSource}, managed by {site.waterAuthority}. At {site.gpgLow}-{site.gpgHigh}
+          {" "}GPG, classified as {site.gpgLabel}, this water leaves calcium and magnesium deposits on fixtures, inside
+          appliances, and inside plumbing over time. A properly sized water softener removes these minerals before
+          they cause damage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header center">
+        <h2>Our Commitment</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Free Water Test</h3>
+          <p>Every consultation includes a free in-home water hardness test, so you know your exact GPG reading before deciding on anything.</p>
+        </div>
+        <div class="card">
+          <h3>Honest Recommendation</h3>
+          <p>We recommend repair, replacement, or a new installation based on your actual system and water, not a one-size-fits-all upsell.</p>
+        </div>
+        <div class="card">
+          <h3>No Obligation</h3>
+          <p>No sales pressure, no obligation to proceed. Pricing is confirmed before any work begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container final-cta">
+      <h2>Ready for Soft Water in {site.city}?</h2>
+      <p>Get a free, no-obligation quote based on your home's water hardness and household size.</p>
+      <a class="btn btn-primary" href="/contact/">Get in Touch →</a>
+    </div>
+  </section>
+
+  <style>
+    .final-cta { text-align: center; }
+    .final-cta p { max-width: 48ch; margin: 0 auto 24px; }
+  </style>
+</Layout>

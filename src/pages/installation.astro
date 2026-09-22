@@ -1,0 +1,78 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { site } from "../lib/site";
+---
+
+<Layout
+  title={`Water Softener Installation & Cost — ${site.city}`}
+  description={`What water softener installation costs in ${site.city}, ${site.stateAbbr} and why local, professional installation matters.`}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Installation" }]} />
+      <p class="eyebrow">{site.city}, {site.stateAbbr}</p>
+      <h1>Water Softener Installation in {site.city}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="brand-backlink">
+        <a href="/" class="brand-link">{site.city} Water Softeners</a>
+        {" "}provides water softener installation and sizing across {site.city} and {site.county}.
+      </p>
+
+      <div class="section-header">
+        <p>{site.city}'s {site.gpgLow}-{site.gpgHigh} GPG water, sourced from {site.waterSource}, determines the system size a home needs. Most {site.city} homeowners pay between <strong>$800 and $3,500</strong> for a fully installed water softener, depending on system size, water hardness, and existing plumbing.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>$800 – $1,500</h3>
+          <p>Entry-level single-tank softeners, sized for smaller households and moderate hardness.</p>
+        </div>
+        <div class="card">
+          <h3>$1,500 – $2,500</h3>
+          <p>Mid-range systems for {site.gpgLabel.toLowerCase()} water and average household sizes — the most common installation in {site.city}.</p>
+        </div>
+        <div class="card">
+          <h3>$2,500 – $3,500</h3>
+          <p>Whole-home softener/filtration combo systems for large households or additional filtration needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Local Installation Matters</h2>
+        <p>Correct grain capacity at {site.city}'s {site.gpgLow}–{site.gpgHigh} GPG matters most: an undersized system leaves hardness minerals in the water, while an oversized one wastes salt and water. Local installers who know {site.county}'s plumbing codes and water conditions, per {site.waterAuthority}'s own guidance, get sizing and permitting right the first time — see how systems compare on our <a href="/comparison/">comparison page</a>.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Correct Sizing</h3>
+          <p>We calculate grain capacity from your household size and {site.city}'s actual hardness reading — not a generic national average.</p>
+        </div>
+        <div class="card">
+          <h3>Code-Compliant Plumbing</h3>
+          <p>Proper bypass valves, drain lines, and electrical work keep a system compliant and preserve your home warranty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container final-cta">
+      <h2>Get an Exact Installation Quote</h2>
+      <p>As of today's {site.gpgLow}-{site.gpgHigh} GPG reading, every {site.city} home is different. Get a free quote based on your actual water hardness and household size.</p>
+      <a class="btn btn-primary" href="/quote/">Get a Free Water Softener Quote in {site.city}</a>
+    </div>
+  </section>
+
+  <style>
+    .final-cta { text-align: center; }
+    .final-cta p { max-width: 48ch; margin: 0 auto 24px; }
+  </style>
+</Layout>

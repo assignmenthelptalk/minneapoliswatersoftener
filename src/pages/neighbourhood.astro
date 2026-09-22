@@ -1,0 +1,80 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { site } from "../lib/site";
+
+/** Genuine per-neighbourhood distinguishing detail, not a city-wide restatement
+ * with the name swapped (Local-SEO-Toolkit's quality gate Rule 37 requires 3+
+ * neighbourhood-specific sub-attributes). Keyed by exact site.config.ts name;
+ * falls back to a generic housing-stock line if a neighbourhood has no entry. */
+const NEIGHBOURHOOD_NOTES: Record<string, string> = {
+  "Linden Hills": "Linden Hills sits on a hill overlooking Lake Harriet, with mostly small-to-medium single-family homes built well before modern plumbing standards.",
+  "Longfellow": "Longfellow runs along the Mississippi riverfront, mixing early-1900s houses with newer infill — older supply lines here scale up faster at local hardness levels.",
+  "Powderhorn Park": "Powderhorn Park's housing stock dates mainly from 1905 to 1920 — single-family homes, duplexes, and three-story brick apartment buildings with galvanized or early-copper plumbing prone to scale narrowing.",
+  "North Loop": "North Loop is dense with converted freight-warehouse lofts and newer condo construction, where shared building plumbing makes point-of-entry softening more complex than a typical single-family install.",
+};
+function neighbourhoodNote(name: string) {
+  return NEIGHBOURHOOD_NOTES[name] || `${name} shares ${site.city}'s housing stock age and plumbing patterns typical of the surrounding ${site.county} area.`;
+}
+---
+
+<Layout
+  title={`Water Softener Neighbourhoods We Serve in ${site.city}, ${site.stateAbbr}`}
+  description={`Water softener installation and service across ${site.city}, ${site.stateAbbr} neighbourhoods, including ${site.neighbourhoods.join(", ")}.`}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Neighbourhoods" }]} />
+      <p class="eyebrow">{site.county} Service Area</p>
+      <h1>{site.city} Neighbourhoods We Serve</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="brand-backlink">
+        <a href="/" class="brand-link">{site.city} Water Softeners</a>
+        {" "}provides water softener installation and service across {site.city} and {site.county}.
+      </p>
+
+      <div class="section-header">
+        <p>We install and service water softeners throughout {site.city}, {site.stateAbbr}, and every neighbourhood shares the same {site.gpgLow}–{site.gpgHigh} GPG ({site.gpgLabel}) water from {site.waterSource}.</p>
+      </div>
+    </div>
+  </section>
+
+  {site.neighbourhoods.map((neighbourhood) => (
+    <section class="section neighbourhood-section" id={neighbourhood.toLowerCase().replace(/\s+/g, "-")}>
+      <div class="container">
+        <h2>{neighbourhood}</h2>
+        <p>
+          Homeowners in {neighbourhood} deal with the same {site.gpgLabel.toLowerCase()} water as the rest of {site.city}, per
+          {" "}{site.waterAuthority}'s {site.gpgLow}–{site.gpgHigh} GPG reading sourced from {site.waterSource}. {neighbourhoodNote(neighbourhood)}
+          {" "}We provide free water testing and same-week installation for {neighbourhood} residents — get a free quote to see exact pricing.
+        </p>
+        <a class="btn btn-secondary btn-sm neighbourhood-cta" href="/quote/">Get a Free Water Softener Quote in {site.city}</a>
+      </div>
+    </section>
+  ))}
+
+  <section class="section section-dark">
+    <div class="container final-cta">
+      <h2>See Your Neighbourhood Above?</h2>
+      <p>As of today, we serve all of {site.city} and surrounding {site.county}. Reach out for a free quote wherever you are.</p>
+      <a class="btn btn-primary" href="/quote/">Get a Free Water Softener Quote in {site.city}</a>
+    </div>
+  </section>
+
+  <style>
+    .neighbourhood-section:nth-of-type(odd) { background: var(--color-surface); }
+    .neighbourhood-section h2 { margin-bottom: 8px; }
+    /* Offsets the anchor-scroll target below the sticky site header (plus
+       utility bar) so a deep link from the Locations nav dropdown doesn't
+       land with the heading hidden underneath. */
+    .neighbourhood-section { scroll-margin-top: 120px; }
+    .neighbourhood-cta { margin-top: 16px; }
+    .neighbourhood-cta:not(:hover) { color: var(--color-primary); border-color: var(--color-primary); }
+    .final-cta { text-align: center; }
+    .final-cta p { max-width: 48ch; margin: 0 auto 24px; }
+  </style>
+</Layout>

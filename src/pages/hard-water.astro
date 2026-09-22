@@ -1,0 +1,77 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { site } from "../lib/site";
+---
+
+<Layout
+  title={`Hard Water Damage Explained — ${site.city}`}
+  description={`What ${site.gpgLabel} water (${site.gpgLow}-${site.gpgHigh} GPG) does to pipes, appliances, and skin in ${site.city}, ${site.stateAbbr}.`}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Hard Water Explained" }]} />
+      <p class="eyebrow">{site.gpgLow}–{site.gpgHigh} GPG in {site.city}</p>
+      <h1>Hard Water Effects in {site.city}</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="brand-backlink">
+        <a href="/" class="brand-link">{site.city} Water Softeners</a>
+        {" "}provides hard water treatment and scale prevention across {site.city} and {site.county}.
+      </p>
+
+      <div class="section-header">
+        <p>At {site.gpgLabel} levels, {site.city} tap water carries enough dissolved calcium and magnesium to leave visible and invisible damage throughout your home over time.</p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Appliance Damage</h3>
+          <p>Scale buildup inside water heaters, dishwashers, and washing machines reduces efficiency and can cut appliance lifespan by years, according to manufacturer maintenance data for {site.gpgLabel.toLowerCase()} water areas like {site.city}.</p>
+        </div>
+        <div class="card">
+          <h3>Pipe Scale</h3>
+          <p>Mineral deposits narrow pipe diameter over time, reducing water pressure and increasing the risk of clogs in older {site.city} homes.</p>
+        </div>
+        <div class="card">
+          <h3>Skin & Hair Effects</h3>
+          <p>Hard water can leave skin feeling dry and hair looking dull, since mineral residue interferes with soap and shampoo rinsing cleanly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Visible Signs of Hard Water in {site.city}</h2>
+        <p>{site.city} homeowners typically notice five signs first, according to {site.waterAuthority}'s hardness data:</p>
+      </div>
+      <ul class="signs-list">
+        <li>White, chalky spots on dishes, faucets, and shower glass</li>
+        <li>Soap and shampoo with reduced lather</li>
+        <li>Stiff, scratchy laundry even after washing</li>
+        <li>Reduced water pressure from scale-narrowed pipes</li>
+        <li>Rising water heater energy bills</li>
+      </ul>
+      <p>Get a free water test to confirm which of these signs trace back to hardness in your home.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container final-cta">
+      <h2>Stop the Damage Before It Adds Up</h2>
+      <p>A properly sized softener eliminates hardness minerals before they reach your plumbing and appliances. As of {site.city}'s current {site.gpgLow}-{site.gpgHigh} GPG reading, see how a system compares on our <a href="/comparison/">system comparison page</a>.</p>
+      <a class="btn btn-primary" href="/quote/">Get a Free Water Softener Quote in {site.city}</a>
+    </div>
+  </section>
+
+  <style>
+    .signs-list { display: grid; gap: 12px; max-width: 640px; padding-left: 20px; }
+    .final-cta { text-align: center; }
+    .final-cta p { max-width: 48ch; margin: 0 auto 24px; }
+  </style>
+</Layout>

@@ -1,0 +1,89 @@
+---
+import Layout from "../components/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import { site } from "../lib/site";
+---
+
+<Layout
+  title={`Salt vs Salt-Free vs SpringWell — ${site.city} Comparison`}
+  description={`Compare salt-based softeners, salt-free conditioners, and SpringWell systems for ${site.city}, ${site.stateAbbr}'s ${site.gpgLabel} water.`}
+>
+  <section class="page-header">
+    <div class="container">
+      <Breadcrumbs items={[{ label: "Compare Systems" }]} />
+      <p class="eyebrow">Choosing the Right System</p>
+      <h1>Water Softener Systems for {site.city} Homes</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="brand-backlink">
+        <a href="/" class="brand-link">{site.city} Water Softeners</a>
+        {" "}provides water softener system comparison and guidance across {site.city} and {site.county}.
+      </p>
+
+      <div class="section-header">
+        <p>Salt-based softeners and salt-free conditioners are the two water softener types {site.city} homeowners compare most, according to {site.waterAuthority}'s {site.gpgLow}–{site.gpgHigh} GPG reading. Salt-based systems remove hardness minerals outright; salt-free units only crystallize them, so weigh true softening against lower-maintenance conditioning using the table below.</p>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr><th></th><th>Salt-Based Softener</th><th>Salt-Free Conditioner</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Removes hardness minerals</td><td>Yes</td><td>No — crystallizes minerals instead</td></tr>
+            <tr><td>Best for {site.gpgLabel} water</td><td>Yes</td><td>Better suited to slightly/moderately hard water</td></tr>
+            <tr><td>Ongoing maintenance</td><td>Requires salt refills</td><td>No salt required</td></tr>
+            <tr><td>Water waste (regeneration)</td><td>Some, modern systems are efficient</td><td>None</td></tr>
+            <tr><td>Skin/hair softness benefit</td><td>Yes</td><td>Limited</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-surface);">
+    <div class="container">
+      <div class="section-header center">
+        <p class="eyebrow">See Our Recommendation</p>
+        <h2>SpringWell Systems for {site.city} Homes</h2>
+        <p>Three SpringWell systems cover {site.city}'s {site.gpgLow}–{site.gpgHigh} GPG range: a dedicated softener, a softener/filter combo, and reverse osmosis.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>SpringWell Softener</h3>
+          <p>A dedicated salt-based softener sized for {site.gpgLabel.toLowerCase()} water — the most effective option for {site.city}'s {site.gpgLow}–{site.gpgHigh} GPG hardness.</p>
+          <a class="btn btn-primary btn-sm" href={site.affiliateSoftener} target="_blank" rel="noopener noreferrer sponsored">View Softener</a>
+        </div>
+        <div class="card">
+          <h3>SpringWell Softener + Filter Combo</h3>
+          <p>Combines hardness removal with whole-home filtration for chlorine and sediment carried through {site.waterAuthority}'s supply.</p>
+          <a class="btn btn-primary btn-sm" href={site.affiliateCombo} target="_blank" rel="noopener noreferrer sponsored">View Combo</a>
+        </div>
+        <div class="card">
+          <h3>SpringWell Reverse Osmosis</h3>
+          <p>Add under-sink RO filtration for the best-tasting, cleanest drinking and cooking water.</p>
+          <a class="btn btn-primary btn-sm" href={site.affiliateRO} target="_blank" rel="noopener noreferrer sponsored">View RO System</a>
+        </div>
+      </div>
+      <p class="disclosure">Some links above are affiliate links. We may earn a commission at no extra cost to you if you purchase through them.</p>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container final-cta">
+      <h2>Not Sure Which System Fits Your Home?</h2>
+      <p>Get a free recommendation based on your household size and {site.city}'s actual {site.gpgLow}-{site.gpgHigh} GPG water hardness.</p>
+      <a class="btn btn-primary" href="/quote/">Get a Free Water Softener Quote in {site.city}</a>
+    </div>
+  </section>
+
+  <style>
+    .table-scroll { overflow-x: auto; }
+    .disclosure { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 24px; }
+    .final-cta { text-align: center; }
+    .final-cta p { max-width: 48ch; margin: 0 auto 24px; }
+  </style>
+</Layout>
