@@ -39,9 +39,17 @@ const faqs = [
 <Layout title={`${site.city} Water Softeners — ${site.stateAbbr}`}>
   <LocalSchema />
 
-  <!-- 1. Hero — gradient background, no image, no form -->
+  <!-- 1. Hero — full-bleed background photo + navy overlay -->
   <section class="hero-section">
-    <div class="container hero-inner">
+
+    <!-- Background image layer — references public/ directly, no astro:assets -->
+    <div class="hero-bg-image" aria-hidden="true"></div>
+
+    <!-- Dark navy overlay -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Hero content — centred over the overlay -->
+    <div class="container hero-content-wrapper">
       <div class="hero-badges">
         <span class="hero-badge">✓ Licensed &amp; Insured</span>
         <span class="hero-badge">✓ Free Water Test</span>
@@ -58,17 +66,21 @@ const faqs = [
         water softener removes these minerals completely. Free in-home water test available.
       </p>
 
+      {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" && (
+        <p class="hero-phone-display">📞 {site.phoneNumber}</p>
+      )}
+
       <div class="hero-actions">
         {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" ? (
-          <a href={`tel:${site.phoneNumber}`} class="hero-phone-btn">
-            📞 {site.phoneNumber}
+          <a href={`tel:${site.phoneNumber}`} class="hero-call-now-btn">
+            📞 Call Now
           </a>
         ) : (
-          <a href="/contact/" class="hero-phone-btn">
+          <a href="/contact/" class="hero-call-now-btn">
             📞 Call for a Free Consultation
           </a>
         )}
-        <a href="/contact/" class="hero-secondary-btn">Get a Free Quote →</a>
+        <a href="/quote/" class="hero-estimate-btn">Request a Free Estimate</a>
       </div>
     </div>
   </section>
@@ -231,14 +243,40 @@ const faqs = [
   </section>
 
   <style>
-    /* ---------- 1. Hero ---------- */
+    /* ---------- 1. Hero — full-bleed photo + navy overlay ---------- */
     .hero-section {
-      background: linear-gradient(135deg, #1A3A5C 0%, #0F2340 100%);
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       padding: clamp(56px, 9vw, 100px) 24px;
       color: #ffffff;
       text-align: center;
     }
-    .hero-inner { max-width: 760px; margin: 0 auto; }
+    /* Image layer — public/Gemini_Generated_Image_g0ritfg0ritfg0ri.jpg, referenced
+       directly (not astro:assets) per this file's provisioning instructions. */
+    .hero-bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image: url('/Gemini_Generated_Image_g0ritfg0ritfg0ri.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    /* Navy overlay — layered gradient (not a flat tint) so the image still
+       reads through on desktop; darkens further on mobile for legibility. */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(135deg, rgba(26, 58, 92, 0.90) 0%, rgba(15, 35, 64, 0.94) 100%);
+    }
+    .hero-content-wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+    }
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
@@ -271,13 +309,20 @@ const faqs = [
       max-width: 62ch;
       margin: 0 auto 32px;
     }
+    .hero-phone-display {
+      font-family: var(--font-body);
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 20px;
+    }
     .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .hero-phone-btn {
+    .hero-call-now-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 14px 28px;
-      background: var(--color-accent);
+      background: var(--color-secondary);
       color: #ffffff;
       border-radius: var(--radius-brand);
       font-family: var(--font-body);
@@ -285,12 +330,12 @@ const faqs = [
       font-weight: 700;
       text-decoration: none;
       box-shadow: var(--shadow-card);
-      transition: transform 150ms ease, box-shadow 150ms ease;
+      transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
     }
-    .hero-phone-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-floating); }
-    .hero-phone-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
-    .hero-phone-btn:active { transform: scale(0.98); }
-    .hero-secondary-btn {
+    .hero-call-now-btn:hover { background: var(--color-secondary-hover); transform: translateY(-2px); box-shadow: var(--shadow-floating); }
+    .hero-call-now-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+    .hero-call-now-btn:active { transform: scale(0.98); }
+    .hero-estimate-btn {
       display: inline-flex;
       align-items: center;
       padding: 14px 24px;
@@ -303,8 +348,16 @@ const faqs = [
       text-decoration: none;
       transition: background-color 150ms ease, border-color 150ms ease;
     }
-    .hero-secondary-btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.8); }
-    .hero-secondary-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+    .hero-estimate-btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.8); }
+    .hero-estimate-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
+    @media (max-width: 640px) {
+      /* Fully overlaid on mobile — image still present underneath but the
+         overlay reads as solid navy so text stays legible on small screens. */
+      .hero-overlay {
+        background:
+          linear-gradient(135deg, rgba(26, 58, 92, 0.97) 0%, rgba(15, 35, 64, 0.98) 100%);
+      }
+    }
 
     /* ---------- 2. Services grid ---------- */
     .grid-services { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 32px; }
