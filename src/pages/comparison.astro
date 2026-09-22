@@ -16,6 +16,12 @@ import { site } from "../lib/site";
     </div>
   </section>
 
+  <section class="page-header-image-section">
+    <div class="container">
+      <img src="/comparison-header.jpg" alt={`Comparing water softener system types for ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <p class="brand-backlink">
@@ -81,13 +87,6 @@ import { site } from "../lib/site";
   </section>
 
   <style>
-    .page-header {
-      background-image:
-        linear-gradient(135deg, rgba(0, 42, 85, 0.82) 0%, rgba(15, 35, 64, 0.88) 100%),
-        url('/comparison-header.jpg');
-      background-size: cover;
-      background-position: center;
-    }
     .table-scroll { overflow-x: auto; }
     .disclosure { font-size: 0.75rem; color: var(--color-text-muted); margin-top: 24px; }
     .final-cta { text-align: center; }

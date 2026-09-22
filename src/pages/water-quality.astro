@@ -16,6 +16,12 @@ import { site } from "../lib/site";
     </div>
   </section>
 
+  <section class="page-header-image-section">
+    <div class="container">
+      <img src="/water-quality-header.jpg" alt={`Testing tap water hardness in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <p class="brand-backlink">
@@ -94,13 +100,6 @@ import { site } from "../lib/site";
   </section>
 
   <style>
-    .page-header {
-      background-image:
-        linear-gradient(135deg, rgba(0, 42, 85, 0.82) 0%, rgba(15, 35, 64, 0.88) 100%),
-        url('/water-quality-header.jpg');
-      background-size: cover;
-      background-position: center;
-    }
     .highlight td { background: var(--color-primary-light); color: var(--color-primary-dark); font-weight: 700; }
     .final-cta { text-align: center; }
     .final-cta p { max-width: 48ch; margin: 0 auto 24px; }

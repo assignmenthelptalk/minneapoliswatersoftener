@@ -30,6 +30,12 @@ function neighbourhoodNote(name: string) {
     </div>
   </section>
 
+  <section class="page-header-image-section">
+    <div class="container">
+      <img src="/neighbourhood-header.jpg" alt={`Residential neighbourhood streets in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
+    </div>
+  </section>
+
   <section class="section">
     <div class="container">
       <p class="brand-backlink">
@@ -66,13 +72,6 @@ function neighbourhoodNote(name: string) {
   </section>
 
   <style>
-    .page-header {
-      background-image:
-        linear-gradient(135deg, rgba(0, 42, 85, 0.82) 0%, rgba(15, 35, 64, 0.88) 100%),
-        url('/neighbourhood-header.jpg');
-      background-size: cover;
-      background-position: center;
-    }
     .neighbourhood-section:nth-of-type(odd) { background: var(--color-surface); }
     .neighbourhood-section h2 { margin-bottom: 8px; }
     /* Offsets the anchor-scroll target below the sticky site header (plus
