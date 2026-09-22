@@ -1,30 +1,42 @@
 /* =============================================================================
    Water Softener Boilerplate — Design System
    =============================================================================
-   Deep teal (#0F6E78) as primary, warm orange (#E65100) reserved for CTAs
+   Deep navy (#1A3A5C) as primary, bright blue (#2196F3) reserved for CTAs
    and key highlights, DM Serif Display for headings, Inter for body/labels/
    navigation. This file is NOT city-specific — every city site cloned from
    this boilerplate inherits it unchanged; only src/site.config.ts differs
    per city. Legacy --brand-* / --font-display names are kept as aliases so
    any selector not explicitly migrated still renders on-brand instead of
    silently falling back to an unstyled default.
+
+   Palette updated 2026-09-22: navy/blue direction (style reference, not a
+   literal clone of any specific site) replaces the original teal/orange
+   scheme. --color-secondary / --color-secondary-hover (green) are defined
+   but not yet wired to any component — reserved for a follow-up task.
    ============================================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   /* Brand colors — exact hex values from the site's design tokens */
-  --color-primary:       #0F6E78;
-  --color-primary-dark:  #0A4F57; /* hero gradient endpoint */
-  --color-primary-light: #E1F5EE;
-  --color-accent:        #E65100;
-  --color-accent-dark:   #C2410C; /* accent hover/active state */
-  --color-accent-light:  #FDE4D0; /* light accent tint for badges */
+  --color-primary:       #1A3A5C;
+  --color-primary-mid:   #1E4976; /* hover states on navy elements */
+  --color-primary-dark:  #0F2340; /* hero gradient endpoint */
+  --color-primary-light: #EEF4FA;
+  --color-accent:        #2196F3;
+  --color-accent-dark:   #1976D2; /* accent hover/active state */
+  --color-accent-hover:  var(--color-accent-dark); /* alias */
+  --color-accent-light:  #BBDEFB; /* light accent tint for badges */
+
+  /* Secondary CTA green — reserved for a follow-up task, not yet applied */
+  --color-secondary:       #4CAF50;
+  --color-secondary-hover: #388E3C;
 
   /* Depth system: base -> elevated -> floating, never one flat z-plane */
-  --surface-base:     #ffffff;
-  --surface-elevated: #F8FFFE;
-  --surface-footer:   #0A2E33; /* darkened primary, footer only */
+  --surface-base:     #FFFFFF;
+  --surface-elevated: #F5F9FF;
+  --surface-footer:   #1A3A5C; /* darkened primary, footer only */
+  --color-dark:       var(--surface-footer); /* alias */
 
   /* Never the same font for headings and body */
   --font-heading: 'DM Serif Display', Georgia, serif;
@@ -38,10 +50,16 @@
   --brand-accent-light: var(--color-accent-light);
   --font-display:       var(--font-heading);
 
-  --color-text:       #0f172a;
-  --color-text-muted: #475569;
+  --color-text:       #444444;
+  --color-text-muted: #666666;
+  --color-heading:    #1A1A2E;
   --color-surface:    var(--surface-elevated);
-  --color-border:     #e2e8f0;
+  --color-border:     #E0E8F0;
+
+  /* Background aliases */
+  --color-bg:     var(--surface-base);
+  --color-bg-alt: var(--surface-elevated);
+  --color-white:  #FFFFFF;
 
   --radius-sm:    4px;
   --radius-md:    8px;
@@ -50,15 +68,17 @@
   --radius-full:  9999px;
   --radius-brand: 8px;
 
-  /* Layered, color-tinted shadows — never a flat shadow-md */
-  --shadow-card:         0 1px 2px rgba(15, 110, 120, 0.06), 0 4px 16px rgba(15, 110, 120, 0.10);
-  --shadow-card-hover:   0 2px 4px rgba(15, 110, 120, 0.08), 0 12px 28px rgba(15, 110, 120, 0.14);
-  --shadow-button-hover: 0 2px 8px rgba(230, 81, 0, 0.25);
-  --shadow-nav:          0 1px 0 rgba(15, 110, 120, 0.08), 0 4px 16px rgba(15, 110, 120, 0.05);
-  --shadow-floating:     0 8px 24px rgba(15, 110, 120, 0.16);
+  /* Layered, color-tinted shadows — navy tint, never a flat shadow-md */
+  --shadow-card:         0 1px 2px rgba(26, 58, 92, 0.06), 0 4px 16px rgba(26, 58, 92, 0.10);
+  --shadow-card-hover:   0 2px 4px rgba(26, 58, 92, 0.08), 0 12px 28px rgba(26, 58, 92, 0.14);
+  --shadow-button-hover: 0 2px 8px rgba(33, 150, 243, 0.28);
+  --shadow-nav:          0 1px 0 rgba(26, 58, 92, 0.08), 0 4px 16px rgba(26, 58, 92, 0.05);
+  --shadow-floating:     0 8px 24px rgba(26, 58, 92, 0.16);
   --shadow-sm: var(--shadow-card);
   --shadow-md: var(--shadow-card);
   --shadow-lg: var(--shadow-floating);
+  --shadow-btn:       var(--shadow-button-hover);
+  --shadow-btn-hover: 0 4px 16px rgba(33, 150, 243, 0.38);
 
   /* Spring feel on buttons; transform/opacity only, per CLAUDE.md */
   --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -66,7 +86,7 @@
   --duration-large: 300ms;
 
   --gradient-accent:  linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
-  --gradient-primary: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -84,7 +104,7 @@ body {
 /* H1-H4 always the display heading font, tight tracking on H1/H2 per spec */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  color: var(--color-primary);
+  color: var(--color-heading);
   line-height: 1.2;
   margin: 0 0 0.5em;
 }
@@ -115,7 +135,7 @@ img { max-width: 100%; display: block; }
 
 .section-dark {
   background: var(--gradient-primary);
-  color: #e0f2fe;
+  color: var(--color-accent-light);
 }
 .section-dark h1, .section-dark h2, .section-dark h3 {
   color: #ffffff;
