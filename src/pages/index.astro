@@ -262,14 +262,13 @@ const faqs = [
       background-size: cover;
       background-position: center;
     }
-    /* Navy overlay — layered gradient (not a flat tint) so the image still
+    /* Navy overlay — solid #002a55 tone at 82% opacity so the image still
        reads through on desktop; darkens further on mobile for legibility. */
     .hero-overlay {
       position: absolute;
       inset: 0;
       z-index: 1;
-      background:
-        linear-gradient(135deg, rgba(26, 58, 92, 0.90) 0%, rgba(15, 35, 64, 0.94) 100%);
+      background: rgba(0, 42, 85, 0.82);
     }
     .hero-content-wrapper {
       position: relative;
@@ -354,8 +353,7 @@ const faqs = [
       /* Fully overlaid on mobile — image still present underneath but the
          overlay reads as solid navy so text stays legible on small screens. */
       .hero-overlay {
-        background:
-          linear-gradient(135deg, rgba(26, 58, 92, 0.97) 0%, rgba(15, 35, 64, 0.98) 100%);
+        background: rgba(0, 42, 85, 0.88);
       }
     }
 

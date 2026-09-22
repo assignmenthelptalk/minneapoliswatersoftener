@@ -19,8 +19,8 @@
 
 :root {
   /* Brand colors — exact hex values from the site's design tokens */
-  --color-primary:       #1A3A5C;
-  --color-primary-mid:   #1E4976; /* hover states on navy elements */
+  --color-primary:       #002a55;
+  --color-primary-mid:   #003d7a; /* hover states on navy elements */
   --color-primary-dark:  #0F2340; /* hero gradient endpoint */
   --color-primary-light: #EEF4FA;
   --color-accent:        #2196F3;
@@ -35,7 +35,7 @@
   /* Depth system: base -> elevated -> floating, never one flat z-plane */
   --surface-base:     #FFFFFF;
   --surface-elevated: #F5F9FF;
-  --surface-footer:   #1A3A5C; /* darkened primary, footer only */
+  --surface-footer:   #002a55; /* darkened primary, footer only — drives --color-dark below */
   --color-dark:       var(--surface-footer); /* alias */
 
   /* Never the same font for headings and body */
