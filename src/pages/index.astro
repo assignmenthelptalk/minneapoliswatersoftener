@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
 import LocalSchema from "../components/LocalSchema.astro";
+import MinneapolisMap from "../components/MinneapolisMap.astro";
 import { site } from "../lib/site";
 
 const services = [
@@ -153,13 +154,8 @@ const faqs = [
     </div>
   </section>
 
-  <!-- 6. CityMap placeholder — see PROVISION.md Step 5b -->
-  <!-- CityMap component — see PROVISION.md Step 5b -->
-  {import.meta.env.DEV && (
-    <div class="map-placeholder">
-      City neighbourhood map goes here. Build {site.city}Map.astro per PROVISION.md Step 5b
-    </div>
-  )}
+  <!-- 6. Neighbourhood hardness map — see PROVISION.md Step 5b -->
+  <MinneapolisMap />
 
   <!-- 7. Service areas — conditional, only renders with QDP-verified entries -->
   {site.serviceAreas.filter((a) => a.qdp.verified && a.qdp.verdict === "PASS").length > 0 && (
@@ -413,26 +409,6 @@ const faqs = [
       .service-section-grid-reverse .service-section-media {
         order: initial;
       }
-    }
-
-    /* ---------- 6. CityMap dev-only placeholder ---------- */
-    .map-placeholder {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 48px 24px;
-      background: repeating-linear-gradient(
-        45deg,
-        var(--color-primary-light),
-        var(--color-primary-light) 10px,
-        var(--surface-elevated) 10px,
-        var(--surface-elevated) 20px
-      );
-      border: 2px dashed var(--color-primary);
-      border-radius: var(--radius-lg);
-      text-align: center;
-      font-family: var(--font-body);
-      font-weight: 600;
-      color: var(--surface-footer);
     }
 
     /* ---------- 7. Service areas (only rendered when serviceAreas is non-empty) ---------- */

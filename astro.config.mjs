@@ -20,5 +20,9 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    // MinneapolisMap.astro dynamically imports leaflet client-side (see
+    // PROVISION.md Step 5b) — noExternal keeps its SSR bundling from
+    // breaking the static build.
+    ssr: { noExternal: ["leaflet"] },
   },
 });

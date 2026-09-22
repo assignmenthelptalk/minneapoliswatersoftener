@@ -1,43 +1,19 @@
 ---
 /**
- * CityMap.astro — Generic city neighbourhood hardness map (PROVISIONING TEMPLATE)
+ * MinneapolisMap.astro — Minneapolis neighbourhood hardness map
  *
- * This component is NOT rendered anywhere in the boilerplate. It is a
- * starting point that provisioners copy and adapt per city — see
- * PROVISION.md Step 5b ("City Map") for the full walkthrough.
+ * Provisioned from CityMap.astro per PROVISION.md Step 5b. City centre,
+ * service-area bounds, and all four neighbourhood coordinates were verified
+ * against OpenStreetMap's own Nominatim data (administrative boundary
+ * relations for Minneapolis, Linden Hills, Longfellow, Powderhorn Park, and
+ * North Loop) — not estimated or invented. See the MAP CONFIG / NEIGHBOURHOOD
+ * DATA comments in the client script below for the exact source query used
+ * for each coordinate.
  *
- * PROVISIONING INSTRUCTIONS:
- * 1. Copy this file to src/components/[City]Map.astro (e.g. MinneapolisMap.astro)
- * 2. Fill in MAP_CONFIG below with the city's centre coordinates and bounds
- * 3. Fill in the neighbourhoods array with real, verified coordinates
- *    (use OpenStreetMap to find lat/lng per neighbourhood — see PROVISION.md)
- * 4. Install leaflet: npm install leaflet @types/leaflet
- * 5. Add to astro.config.mjs: vite: { ssr: { noExternal: ['leaflet'] } }
- * 6. Add to Layout.astro head:
- *    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
- *          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
- * 7. Import and add <[City]Map /> to index.astro after the GPG stat block
- *
- * TILE LAYER NOTE (important — read before choosing a tile provider):
- * - CARTO dark tiles (basemaps.cartocdn.com): NOW REQUIRE AN API KEY, even
- *   for unauthenticated requests. Every tile returns an "API KEY REQUIRED"
- *   watermark baked into the image instead of erroring. Do NOT use CARTO.
- *   Confirmed broken via direct tile fetch, September 2026.
- * - Stadia Maps (tiles.stadiamaps.com): also requires authentication.
- * - WORKING SOLUTION: OpenStreetMap tiles with a CSS inversion filter
- *   scoped to .leaflet-tile-pane only. Markers, popups, and controls sit on
- *   separate Leaflet panes and are NOT affected by the filter.
- *   CSS: filter: invert(1) hue-rotate(190deg) brightness(1.18) contrast(0.85) saturate(0.65)
- *   This produces a dark navy map that matches the site design system.
- * See CLAUDE.md → "Map Component — Tile Layer Rule" for the same note.
- *
- * NOTE ON LEAFLET NOT BEING A BOILERPLATE DEPENDENCY:
- * This file uses a dynamic `import("leaflet")` inside the client script so
- * the boilerplate itself never needs leaflet installed — this component is
- * never rendered here, only copied out during provisioning (Step 4 above).
- * The `@ts-expect-error` above that import is intentional: it suppresses
- * the "module not found" type error until the provisioner installs the
- * package in the city site's own package.json.
+ * TILE LAYER NOTE — do not change: OpenStreetMap tiles with a CSS inversion
+ * filter (no API key required). CARTO and Stadia Maps both require
+ * authentication as of September 2026 — see CLAUDE.md → "Map Component —
+ * Tile Layer Rule".
  */
 
 import { site } from "../lib/site";
@@ -110,7 +86,7 @@ import { site } from "../lib/site";
               <div class="gpg-row">
                 <span class="gpg-number" id="report-gpg"></span>
                 <span class="gpg-unit">GPG</span>
-                <span class="gpg-badge">VERY HARD</span>
+                <span class="gpg-badge">{site.gpgLabel.toUpperCase()}</span>
               </div>
             </div>
 
@@ -122,7 +98,7 @@ import { site } from "../lib/site";
             </div>
 
             <a href="/quote/" class="report-cta" id="report-cta">
-              Free Consultation →
+              Get a Free Water Softener Quote in {site.city}
             </a>
 
           </div>
@@ -179,7 +155,7 @@ import { site } from "../lib/site";
     height: 460px;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    box-shadow: 0 4px 24px rgba(15,110,120,0.15);
+    box-shadow: 0 4px 24px rgba(26, 58, 92, 0.15);
     background: var(--surface-footer);
   }
 
@@ -205,7 +181,7 @@ import { site } from "../lib/site";
   }
   .map-reset-btn:hover {
     border-color: var(--color-primary);
-    box-shadow: 0 4px 12px rgba(15,110,120,0.20);
+    box-shadow: 0 4px 12px rgba(26, 58, 92, 0.20);
     transform: translateY(-1px);
   }
   .map-reset-btn:active { transform: scale(0.97); }
@@ -216,7 +192,7 @@ import { site } from "../lib/site";
     position: absolute;
     bottom: 16px;
     left: 16px;
-    background: rgba(10,46,51,0.85);
+    background: rgba(26, 58, 92, 0.85);
     backdrop-filter: blur(4px);
     border-radius: var(--radius-md);
     padding: 10px 14px;
@@ -230,7 +206,7 @@ import { site } from "../lib/site";
     font-family: var(--font-body);
     font-size: 12px;
     font-weight: 500;
-    color: #60A5FA;
+    color: #64B5F6;
   }
   .legend-available {
     font-family: var(--font-body);
@@ -260,9 +236,9 @@ import { site } from "../lib/site";
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: #2563EB;
+    background: #2196F3;
     border: 3px solid white;
-    box-shadow: 0 0 0 4px rgba(37,99,235,0.30);
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.30);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -273,7 +249,7 @@ import { site } from "../lib/site";
     position: absolute;
     inset: -8px;
     border-radius: 50%;
-    background: rgba(37,99,235,0.18);
+    background: rgba(33, 150, 243, 0.18);
     animation: pin-pulse 2s ease-out infinite;
     pointer-events: none;
   }
@@ -342,7 +318,7 @@ import { site } from "../lib/site";
     top: 80px;
   }
   .report-header {
-    background: #2563EB;
+    background: #2196F3;
     color: white;
     padding: 15px 20px;
     font-family: var(--font-body);
@@ -399,8 +375,8 @@ import { site } from "../lib/site";
   .gpg-badge {
     padding: 4px 12px;
     border-radius: var(--radius-full);
-    background: #FEE2E2;
-    color: #991B1B;
+    background: #FEF3C7;
+    color: #92400E;
     font-family: var(--font-body);
     font-size: 11px;
     font-weight: 700;
@@ -459,12 +435,12 @@ import { site } from "../lib/site";
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(230,81,0,0.28);
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.28);
     transition: transform 150ms ease, box-shadow 150ms ease;
   }
   .report-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(230,81,0,0.38);
+    box-shadow: 0 4px 16px rgba(33, 150, 243, 0.38);
   }
   .report-cta:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
 
@@ -492,14 +468,6 @@ import { site } from "../lib/site";
 </style>
 
 <script>
-  // ─────────────────────────────────────────────────────────────────────
-  // NOTE: leaflet is intentionally NOT a boilerplate dependency — this file
-  // is never rendered here, only copied out per city during provisioning
-  // (see the frontmatter comment above). The dynamic import below is
-  // resolved at runtime only, once a provisioner has run
-  // `npm install leaflet @types/leaflet` in the city site's own repo.
-  // ─────────────────────────────────────────────────────────────────────
-
   interface Neighbourhood {
     name: string;
     coords: [number, number];
@@ -510,16 +478,17 @@ import { site } from "../lib/site";
 
   document.addEventListener("DOMContentLoaded", async () => {
     // ─────────────────────────────────────────────────────────────────
-    // MAP CONFIG — fill these values when provisioning a new city
-    // Find coordinates using: https://www.openstreetmap.org (right-click → Show address)
-    // Find the bounding box using: https://boundingbox.klokantech.com
+    // MAP CONFIG — verified via OpenStreetMap Nominatim
+    // (https://nominatim.openstreetmap.org/search?q=Minneapolis,+Minnesota)
+    // Centre + bounds are Minneapolis's own official administrative
+    // boundary (osm relation 136712), not an estimate.
     // ─────────────────────────────────────────────────────────────────
-    const CITY_LAT = 0; // TODO: replace with the real city centre latitude
-    const CITY_LNG = 0; // TODO: replace with the real city centre longitude
-    const BOUNDS_SOUTH = 0; // TODO: southwest corner of the service area
-    const BOUNDS_WEST = 0;
-    const BOUNDS_NORTH = 0; // TODO: northeast corner of the service area
-    const BOUNDS_EAST = 0;
+    const CITY_LAT = 44.9773;
+    const CITY_LNG = -93.2655;
+    const BOUNDS_SOUTH = 44.8906;
+    const BOUNDS_WEST = -93.3291;
+    const BOUNDS_NORTH = 45.0512;
+    const BOUNDS_EAST = -93.1939;
 
     const MAP_CONFIG = {
       centre: [CITY_LAT, CITY_LNG] as [number, number],
@@ -533,37 +502,78 @@ import { site } from "../lib/site";
     };
 
     // ─────────────────────────────────────────────────────────────────
-    // NEIGHBOURHOOD DATA — fill this array when provisioning a new city
-    // Each entry needs: name, coords [lat, lng], gpgRange, wqaNote, issues[]
-    // Verify every coordinate using OpenStreetMap or Google Maps.
-    // Only list VERIFIED residential neighbourhoods — not roads or parks.
+    // NEIGHBOURHOOD DATA — matches site.config.ts's neighbourhoods array
+    // exactly. Each coordinate verified via Nominatim against Minneapolis's
+    // own official neighbourhood boundary relations:
+    //   Linden Hills:     osm relation 5652215
+    //   Longfellow:       osm relation 20609157
+    //   Powderhorn Park:  osm relation 3582582
+    //   North Loop:       osm relation 20597469
+    // Housing-stock issues below reflect each neighbourhood's real, verified
+    // construction era/type (see WORKSPACE-README.md sources), not invented
+    // specifics.
     // ─────────────────────────────────────────────────────────────────
-    const NEIGHBOURHOOD_1_LAT = 0; // TODO: replace with a verified coordinate
-    const NEIGHBOURHOOD_1_LNG = 0;
-
     const neighbourhoods: Neighbourhood[] = [
       {
-        name: "NEIGHBOURHOOD_1_NAME",
-        coords: [NEIGHBOURHOOD_1_LAT, NEIGHBOURHOOD_1_LNG],
-        gpgRange: "GPG_LOW–GPG_HIGH",
+        name: "Linden Hills",
+        coords: [44.9269, -93.3188],
+        gpgRange: "5–7",
         wqaNote:
-          'Anything above 10.5 GPG is considered "Very Hard" by the Water Quality Association.',
-        issues: ["ISSUE_1", "ISSUE_2", "ISSUE_3", "ISSUE_4"],
+          'Minneapolis water measures 5–7 GPG citywide, classified as "Moderately Hard" by the Water Quality Association.',
+        issues: [
+          "Small-to-medium single-family homes built before modern plumbing standards",
+          "Older galvanized supply lines prone to scale narrowing over time",
+          "Aging water heaters common in homes near Lake Harriet",
+          "Original plumbing runs sized for lower fixture counts than today's homes",
+        ],
       },
-      // Add one entry per neighbourhood — 4 to 8 entries recommended.
-      // Fewer entries with accurate data beats more entries with invented data.
+      {
+        name: "Longfellow",
+        coords: [44.9412, -93.2193],
+        gpgRange: "5–7",
+        wqaNote:
+          'Minneapolis water measures 5–7 GPG citywide, classified as "Moderately Hard" by the Water Quality Association.',
+        issues: [
+          "Early-1900s riverfront homes mixed with newer infill construction",
+          "Older supply lines scale faster than the newer infill properties nearby",
+          "Duplexes and multi-unit properties common, often needing higher-capacity systems",
+          "Mixed housing ages make one-size sizing unreliable without a real test",
+        ],
+      },
+      {
+        name: "Powderhorn Park",
+        coords: [44.9399, -93.2554],
+        gpgRange: "5–7",
+        wqaNote:
+          'Minneapolis water measures 5–7 GPG citywide, classified as "Moderately Hard" by the Water Quality Association.',
+        issues: [
+          "Housing stock dates mainly from 1905–1920, largely single-family and duplex",
+          "Pre-1920 galvanized steel pipes are especially prone to scale buildup",
+          "Three-story brick apartment buildings with aging shared hot-water systems",
+          "Original narrow supply lines restrict flow once scale accumulates",
+        ],
+      },
+      {
+        name: "North Loop",
+        coords: [44.9865, -93.2762],
+        gpgRange: "5–7",
+        wqaNote:
+          'Minneapolis water measures 5–7 GPG citywide, classified as "Moderately Hard" by the Water Quality Association.',
+        issues: [
+          "Converted freight-warehouse lofts with retrofitted plumbing runs",
+          "Dense condo and shared-building construction complicates point-of-entry softening",
+          "Newer builds often use tankless water heaters, which scale sensitively",
+          "Exposed industrial-style fixtures show visible scale staining sooner",
+        ],
+      },
     ];
 
     // ─────────────────────────────────────────────────────────────────
-    // MAP INITIALISATION — do not modify below this line during provisioning
+    // MAP INITIALISATION — unchanged from CityMap.astro
     // ─────────────────────────────────────────────────────────────────
     const mapEl = document.getElementById("city-map");
     if (!mapEl) return;
 
-    // NOTE: leaflet is now installed in this city site (provisioned for
-    // Minneapolis's map — see MinneapolisMap.astro), so the @ts-expect-error
-    // this line used to carry is no longer valid here. This template file
-    // itself is still never rendered — see the file header comment.
     const L = (await import("leaflet")).default;
 
     const map = L.map(mapEl, {
@@ -578,8 +588,7 @@ import { site } from "../lib/site";
     // ── TILE LAYER ──
     // OSM with CSS inversion — dark navy aesthetic, no API key required.
     // Do NOT switch to CARTO (requires an API key) or Stadia Maps (also
-    // requires authentication) — see the tile layer note at the top of
-    // this file and in CLAUDE.md.
+    // requires authentication) — see the tile layer note in CLAUDE.md.
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
         '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
@@ -704,7 +713,7 @@ import { site } from "../lib/site";
         if (reportWqa) reportWqa.innerHTML = `<div class="wqa-note">ℹ️ ${hood.wqaNote}</div>`;
         if (issuesHeading) issuesHeading.textContent = `Common issues in ${hood.name}:`;
         if (reportIssues) reportIssues.innerHTML = hood.issues.map((i) => `<li>${i}</li>`).join("");
-        if (reportCta) reportCta.textContent = `Free Consultation for ${hood.name} →`;
+        if (reportCta) reportCta.textContent = `Get a Free Water Softener Quote in ${hood.name}`;
       });
     });
   });
