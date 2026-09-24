@@ -302,6 +302,18 @@ table.data-table tbody tr:nth-child(even) { background: var(--surface-elevated);
   outline-offset: 2px;
 }
 
+/* Opening paragraph — Glendale Elite pattern: brand name first, one
+   paragraph, confidence signals only. Shared here (not per-page) so
+   every page reads identically. */
+.page-opening {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin: 0 0 32px;
+  max-width: 860px;
+}
+
 /* FAQ accordion: native <details>/<summary> so open/close needs no JS and
    no height animation — only the answer's opacity/transform animates,
    honouring the "transform and opacity only" rule. */

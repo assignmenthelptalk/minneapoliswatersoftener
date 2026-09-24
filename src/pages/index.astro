@@ -5,10 +5,10 @@ import MinneapolisMap from "../components/MinneapolisMap.astro";
 import { site } from "../lib/site";
 
 const services = [
-  { emoji: "💧", name: "Water Quality Testing", href: "/water-quality/", detail: `Free in-home hardness test, for example a same-week ${site.city} appointment.` },
-  { emoji: "🧪", name: "Hard Water Treatment", href: "/hard-water/", detail: `Stop scale buildup on fixtures and appliances such as water heaters and dishwashers.` },
+  { emoji: "💧", name: "Water Quality Testing", href: "/water-quality/", detail: `Free in-home hardness test for ${site.city} homes.` },
+  { emoji: "🧪", name: "Hard Water Treatment", href: "/hard-water/", detail: `Stop scale buildup on fixtures and appliances.` },
   { emoji: "🔧", name: "Installation", href: "/installation/", detail: `Sized correctly for ${site.city}'s ${site.gpgLow}-${site.gpgHigh} GPG water.` },
-  { emoji: "🛠️", name: "Repair", href: "/repair/", detail: `Diagnosis and repair for all major softener brands like Kinetico and Culligan.` },
+  { emoji: "🛠️", name: "Repair", href: "/repair/", detail: `Diagnosis and repair for all major softener brands.` },
   { emoji: "⚖️", name: "System Comparison", href: "/comparison/", detail: `Salt-based vs salt-free, sized for your household.` },
 ];
 
@@ -37,54 +37,71 @@ const faqs = [
 ---
 
 <Layout
-  title={`${site.businessName} — ${site.stateAbbr}`}
-  fullTitle={`${site.businessName} — ${site.stateAbbr} | Free Water Test & Quote`}
+  title={`Water Softener Installation in ${site.city}, ${site.stateAbbr}`}
+  description={`Water softener installation and repair in ${site.city}, ${site.stateAbbr}. ${site.city} water tests at ${site.gpgLow}–${site.gpgHigh} GPG — ${site.gpgLabel}. Free in-home water test available. Same day service across ${site.city} and ${site.county}.`}
 >
   <LocalSchema />
 
-  <!-- 1. Hero — full-bleed background photo + navy overlay -->
+  <!-- 1. Hero — two-column light layout (SPSSassignment.help-style), image slot on the right.
+       A visitor arriving from a "water softener [city]" search should recognize the product
+       immediately, so this slot expects a real photo of an installed system, not an abstract
+       graphic — see watersofteneroftampa.com's hero for the reference implementation. -->
   <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="hero-badges">
+          <span class="hero-badge">✓ Licensed &amp; Insured</span>
+          <span class="hero-badge">✓ Free Water Test</span>
+          <span class="hero-badge">✓ Same Day Service</span>
+          <span class="hero-badge">✓ No Obligation</span>
+        </div>
 
-    <!-- Background image layer — references public/ directly, no astro:assets -->
-    <div class="hero-bg-image" aria-hidden="true"></div>
+        <h1>Water Softeners of {site.city} - Premier Water Softener Installation in {site.city}, {site.stateAbbr}</h1>
 
-    <!-- Dark navy overlay -->
-    <div class="hero-overlay" aria-hidden="true"></div>
+        <p class="hero-p">
+          {site.city}, {site.stateAbbr} water tests at {site.gpgLow}-{site.gpgHigh} GPG, classified as {site.gpgLabel}.
+          {site.waterAuthority} delivers this {site.waterSource} supply to every {site.city} home, leaving calcium
+          and magnesium deposits on fixtures, appliances, and plumbing within weeks. A properly sized salt-based
+          water softener removes these minerals completely. Free in-home water test available.
+        </p>
 
-    <!-- Hero content — centred over the overlay -->
-    <div class="container hero-content-wrapper">
-      <div class="hero-badges">
-        <span class="hero-badge">✓ Licensed &amp; Insured</span>
-        <span class="hero-badge">✓ Free Water Test</span>
-        <span class="hero-badge">✓ Same Day Service</span>
-        <span class="hero-badge">✓ No Obligation</span>
+        <div class="hero-actions">
+          {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" ? (
+            <a href={`tel:${site.phoneNumber}`} class="hero-phone-btn">
+              📞 {site.phoneNumber}
+            </a>
+          ) : (
+            <a href="/contact/" class="hero-phone-btn">
+              📞 Call for a Free Consultation
+            </a>
+          )}
+          <a href="/water-quality/" class="hero-secondary-btn">Check Your Water Hardness →</a>
+        </div>
       </div>
 
-      <h1>{site.businessName} — {site.stateAbbr}</h1>
+      <div class="hero-media">
+        <img
+          src="/Gemini_Generated_Image_g0ritfg0ritfg0ri.webp"
+          alt={`Water softener system installed in a ${site.city}, ${site.stateAbbr} home`}
+          width="700"
+          height="600"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
 
-      <p class="hero-p">
-        {site.city}, {site.stateAbbr} water tests at {site.gpgLow}-{site.gpgHigh} GPG, classified as {site.gpgLabel}.
-        {site.waterAuthority} delivers this {site.waterSource} supply to every {site.city} home, leaving calcium
-        and magnesium deposits on fixtures, appliances, and plumbing within weeks. A properly sized salt-based
-        water softener removes these minerals completely. Free in-home water test available.
+  <!-- 1b. Brand IS opening paragraph — Glendale Elite pattern -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="container">
+      <p class="page-opening">
+        Water Softeners of {site.city} is a professional water softener installation and service company
+        providing salt-based softener installation, repair, resin bed replacement, brine tank cleaning, and
+        water quality testing across {site.city} and {site.county}. {site.waterAuthority} delivers {site.gpgLow}
+        –{site.gpgHigh} GPG water to every {site.city} home, classified as {site.gpgLabel} by the Water Quality
+        Association. Every system we install is sized to your confirmed GPG reading and household water usage,
+        not a statewide estimate. Free in-home water test available. No obligation.
       </p>
-
-      {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" && (
-        <p class="hero-phone-display">📞 {site.phoneNumber}</p>
-      )}
-
-      <div class="hero-actions">
-        {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" ? (
-          <a href={`tel:${site.phoneNumber}`} class="hero-call-now-btn">
-            📞 Call Now
-          </a>
-        ) : (
-          <a href="/contact/" class="hero-call-now-btn">
-            📞 Call for a Free Consultation
-          </a>
-        )}
-        <a href="/quote/" class="hero-estimate-btn">Request a Free Estimate</a>
-      </div>
     </div>
   </section>
 
@@ -93,7 +110,6 @@ const faqs = [
     <div class="container">
       <div class="section-header center">
         <h2>Water Softener Services in {site.city}, {site.stateAbbr}</h2>
-        <p>We handle five core services for {site.city} homes, from a free hardness test through installation and ongoing repair.</p>
       </div>
       <div class="grid grid-services">
         {services.map((s) => (
@@ -116,8 +132,7 @@ const faqs = [
           According to {site.waterAuthority}, {site.city} water holds steady at {site.gpgLow}-{site.gpgHigh} GPG
           citywide, classified as {site.gpgLabel} by the Water Quality Association. This reading comes from
           {site.waterSource}, and it stays consistent across every neighbourhood {site.city} homes sit in,
-          including {site.neighbourhoods.slice(0, 3).join(", ")}. See the full {site.city} water quality report
-          for the ZIP-by-ZIP breakdown.
+          including {site.neighbourhoods.slice(0, 3).join(", ")}.
         </p>
       </div>
       <div class="gpg-stat-card">
@@ -134,12 +149,11 @@ const faqs = [
       <div class="service-section-grid">
         <div class="service-section-text">
           <p>
-            We size every installation to {site.city}'s {site.gpgLow}-{site.gpgHigh} GPG reading and your
+            Every installation is sized to {site.city}'s {site.gpgLow}-{site.gpgHigh} GPG reading and your
             household's water usage, not a statewide estimate. Most installations complete in a single visit,
-            and a free water test is included with every consultation. Get a free quote to see exact pricing
-            for your household size.
+            and a free water test is included with every consultation.
           </p>
-          <a class="service-learn-more" href="/installation/">Water Softener Installation in {site.city}: Process, Timeline &amp; Cost</a>
+          <a class="service-learn-more" href="/installation/">See Installation Details →</a>
         </div>
         <div class="service-section-media">
           <img src="/installation-hero.webp" alt={`Water softener installation in ${site.city}, ${site.stateAbbr}`} width="600" height="400" loading="lazy" />
@@ -156,11 +170,10 @@ const faqs = [
         <div class="service-section-text">
           <p>
             At {site.gpgLow}-{site.gpgHigh} GPG, hard water leaves calcium and magnesium deposits on fixtures,
-            inside appliances, and inside supply lines within weeks, per {site.waterAuthority}'s own hardness
-            reading. A whole-home softener stops this at the source instead of treating the symptoms one
-            fixture at a time — explore the full list of effects below.
+            inside appliances, and inside supply lines within weeks. A whole-home softener stops this at the
+            source rather than treating the symptoms one fixture at a time.
           </p>
-          <a class="service-learn-more" href="/hard-water/">Hard Water Effects in {site.city}: What It Does to Your Home</a>
+          <a class="service-learn-more" href="/hard-water/">See Hard Water Effects →</a>
         </div>
         <div class="service-section-media">
           <img src="/hard-water-hero.webp" alt={`Hard water effects in ${site.city}, ${site.stateAbbr}`} width="600" height="400" loading="lazy" />
@@ -199,7 +212,6 @@ const faqs = [
   <section class="section" style="background: var(--color-surface);">
     <div class="container why-choose-us">
       <h2>Why {site.city} Homeowners Choose Us</h2>
-      <p>Five reasons {site.city} homeowners pick us over a generic national installer:</p>
       <ul class="why-choose-list">
         <li>Sized specifically for {site.city}'s {site.gpgLow}-{site.gpgHigh} GPG water, not a generic estimate</li>
         <li>Free in-home water hardness test with every consultation</li>
@@ -207,7 +219,6 @@ const faqs = [
         <li>No obligation, no sales pressure, pricing confirmed before any work begins</li>
         <li>Local service across {site.city} and {site.county}</li>
       </ul>
-      <p>Get a free quote today to see exactly what a properly sized system costs for your home.</p>
     </div>
   </section>
 
@@ -229,7 +240,7 @@ const faqs = [
       </div>
 
       <div class="faq-footer-link">
-        <a href="/faq/">Water Softener FAQs for {site.city} Homeowners</a>
+        <a href="/faq/">See all FAQs →</a>
       </div>
     </div>
   </section>
@@ -238,51 +249,27 @@ const faqs = [
   <section class="homepage-cta-bar">
     <div class="homepage-cta-bar-inner">
       <p>
-        As of {site.city}'s most recent water authority reading, {site.city} water tests at {site.gpgLow}-{site.gpgHigh} GPG.
-        Free in-home water test available.
+        {site.city} water tests at {site.gpgLow}-{site.gpgHigh} GPG. Free in-home water test available.
       </p>
       <a href="/contact/" class="cta-bar-btn">Get a Free Quote →</a>
     </div>
   </section>
 
   <style>
-    /* ---------- 1. Hero — full-bleed photo + navy overlay ---------- */
+    /* ---------- 1. Hero — two-column light layout ---------- */
     .hero-section {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      padding: clamp(56px, 9vw, 100px) 24px;
-      color: #ffffff;
-      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, var(--color-primary-light) 100%);
+      padding: clamp(48px, 8vw, 88px) 24px;
     }
-    /* Image layer — public/Gemini_Generated_Image_g0ritfg0ritfg0ri.webp, referenced
-       directly (not astro:assets) per this file's provisioning instructions. */
-    .hero-bg-image {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      background-image: url('/Gemini_Generated_Image_g0ritfg0ritfg0ri.webp');
-      background-size: cover;
-      background-position: center;
-    }
-    /* Navy overlay — solid #002a55 tone at 82% opacity so the image still
-       reads through on desktop; darkens further on mobile for legibility. */
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: rgba(0, 42, 85, 0.82);
-    }
-    .hero-content-wrapper {
-      position: relative;
-      z-index: 2;
-      max-width: 760px;
-      margin: 0 auto;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 56px;
+      align-items: center;
     }
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 8px;
       margin-bottom: 20px;
     }
@@ -290,15 +277,15 @@ const faqs = [
       font-family: var(--font-body);
       font-size: 12px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.85);
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.20);
+      color: var(--color-primary-dark, var(--color-primary));
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-border);
       border-radius: var(--radius-full, 9999px);
       padding: 4px 12px;
     }
     .hero-section h1 {
-      color: #ffffff;
-      font-size: clamp(32px, 5vw, 52px);
+      color: var(--color-text);
+      font-size: clamp(32px, 4.2vw, 48px);
       line-height: 1.1;
       letter-spacing: -0.02em;
       margin-bottom: 20px;
@@ -307,57 +294,54 @@ const faqs = [
       font-family: var(--font-body);
       font-size: 16px;
       line-height: 1.75;
-      color: rgba(255, 255, 255, 0.88);
-      max-width: 62ch;
-      margin: 0 auto 32px;
+      color: var(--color-text-muted);
+      max-width: 56ch;
+      margin: 0 0 32px;
     }
-    .hero-phone-display {
-      font-family: var(--font-body);
-      font-size: 22px;
-      font-weight: 700;
-      color: #ffffff;
-      margin: 0 0 20px;
-    }
-    .hero-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .hero-call-now-btn {
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-phone-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       padding: 14px 28px;
-      background: var(--color-secondary);
+      background: var(--color-primary);
       color: #ffffff;
       border-radius: var(--radius-brand);
       font-family: var(--font-body);
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       text-decoration: none;
       box-shadow: var(--shadow-card);
       transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
     }
-    .hero-call-now-btn:hover { background: var(--color-secondary-hover); transform: translateY(-2px); box-shadow: var(--shadow-floating); }
-    .hero-call-now-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
-    .hero-call-now-btn:active { transform: scale(0.98); }
-    .hero-estimate-btn {
+    .hero-phone-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-floating); background: var(--color-accent); }
+    .hero-phone-btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+    .hero-phone-btn:active { transform: scale(0.98); }
+    .hero-secondary-btn {
       display: inline-flex;
       align-items: center;
       padding: 14px 24px;
-      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      border: 1.5px solid var(--color-border);
       border-radius: var(--radius-brand);
-      color: #ffffff;
+      background: #ffffff;
+      color: var(--color-text);
       font-family: var(--font-body);
       font-weight: 600;
       font-size: 15px;
       text-decoration: none;
       transition: background-color 150ms ease, border-color 150ms ease;
     }
-    .hero-estimate-btn:hover { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.8); }
-    .hero-estimate-btn:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px; }
-    @media (max-width: 640px) {
-      /* Fully overlaid on mobile — image still present underneath but the
-         overlay reads as solid navy so text stays legible on small screens. */
-      .hero-overlay {
-        background: rgba(0, 42, 85, 0.88);
-      }
+    .hero-secondary-btn:hover { background: var(--color-primary-light); border-color: var(--color-primary); }
+    .hero-secondary-btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+    .hero-media { display: flex; justify-content: center; }
+    .hero-media img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-lg);
+    }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-media { order: -1; }
     }
 
     /* ---------- 2. Services grid ---------- */
