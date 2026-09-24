@@ -1,7 +1,11 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const faqs = [
   {
@@ -23,27 +27,24 @@ const faqs = [
   title={`New Construction Water Softener Installation, ${site.city}`}
   description={`Plan water softener rough-in for a new ${site.city} home — loop placement, drain line, and builder coordination before drywall.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Installation", href: "/installation/" }, { label: "New Construction" }]} />
-      <p class="eyebrow">Rough-In Planning</p>
-      <h1>New Construction Water Softener Installation, {site.city}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="https://placehold.co/1600x500?text=New+Construction+Rough-In" alt={`Water softener rough-in plumbing in a new ${site.city}, ${site.stateAbbr} home`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Installation", href: "/installation/" }, { label: "New Construction" }]}
+    heading={`New Construction Water Softener Installation, ${site.city} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers water softener installation for new construction homes across {site.city} and {site.county}.
+      New {site.city} builds receive {site.gpgLow}–{site.gpgHigh} GPG water from {site.waterAuthority} from
+      day one. Installing a softener during construction is the cleanest and most cost-effective point, since
+      plumbing rough-in is already exposed. Free consultation available for builders and homeowners. Same day
+      service across {site.county}.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}plans and installs water softener rough-in for new-construction homes across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>Planning for a softener before drywall means a dedicated water loop, a floor drain or standpipe, and a nearby outlet are already in place when the unit arrives — no exposed pipe runs or retrofit cutting later. At {site.city}'s {site.gpgLow}-{site.gpgHigh} GPG reading, every new build benefits from this step regardless of final system choice.</p>
       </div>

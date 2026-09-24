@@ -1,34 +1,36 @@
 ---
 import Layout from "../components/Layout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
 import { site } from "../lib/site";
+import headerImage from "../assets/images/water-quality-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 ---
 
 <Layout
   title={`${site.city} Water Quality Report`}
   description={`Where ${site.city}, ${site.stateAbbr} tap water comes from, who manages it, and how hard it is by ZIP code.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Water Quality" }]} />
-      <p class="eyebrow">Local Water Data</p>
-      <h1>{site.city} Water Quality & Hardness Report</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/water-quality-header.webp" alt={`Testing tap water hardness in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Water Quality" }]}
+    heading={`${site.city} Water Quality & Hardness Report | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers professional water hardness testing and quality reporting across {site.city} and {site.county}.
+      {" "}{site.waterAuthority} delivers {site.waterSource} at {site.gpgLow}–{site.gpgHigh} GPG to every {site.city} home,
+      classified as {site.gpgLabel} by the Water Quality Association. Free in-home water hardness test included with
+      every consultation. Results confirmed on the spot. No obligation to proceed.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water hardness testing and quality reporting across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>{site.waterAuthority} sources {site.city}'s public water supply from {site.waterSource}. Homes across {site.county} see hardness levels of {site.gpgLow}–{site.gpgHigh} grains per gallon (GPG), classified as {site.gpgLabel} — see the ZIP-by-ZIP breakdown below.</p>
       </div>

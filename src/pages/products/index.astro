@@ -1,34 +1,37 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+import headerImage from "../../assets/images/products-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 ---
 
 <Layout
   title={`Water Softener Products for ${site.city}, ${site.stateAbbr}`}
   description={`Compare water softener, filtration combo, and reverse osmosis systems sized for ${site.city}, ${site.stateAbbr}'s ${site.gpgLow}–${site.gpgHigh} GPG water.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Products" }]} />
-      <p class="eyebrow">Recommended Products</p>
-      <h1>Best Water Softener Products for {site.city}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/products-header.webp" alt={`Water softener and filtration products for ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Products" }]}
+    heading={`Best Water Softener Products for ${site.city} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers recommended water softener systems selected and sized for {site.city}'s {site.gpgLow}
+      –{site.gpgHigh} GPG hard water from {site.waterAuthority}. Every system listed is rated for
+      {site.gpgLabel} water at this GPG level. Salt-free conditioners are not included. They do not remove
+      hardness minerals at {site.gpgLow}–{site.gpgHigh} GPG. Free sizing consultation included with every free
+      water test.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}recommends three product categories for {site.city}'s {site.gpgLow}–{site.gpgHigh} GPG water, for
-        example the salt-based softener below for whole-home hardness removal.
-      </p>
       <div class="grid grid-3">
         <div class="card card-featured">
           <span class="badge">Most Popular</span>

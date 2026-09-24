@@ -1,7 +1,11 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const faqs = [
   {
@@ -27,27 +31,24 @@ const faqs = [
   title={`Salt-Based Water Softener Installation in ${site.city}, ${site.stateAbbr}`}
   description={`How salt-based water softener installation works in ${site.city}, what it costs, and why ion exchange is the standard fix for ${site.gpgLow}-${site.gpgHigh} GPG water.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Installation", href: "/installation/" }, { label: "Salt-Based Installation" }]} />
-      <p class="eyebrow">Ion Exchange Systems</p>
-      <h1>Salt-Based Water Softener Installation in {site.city}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="https://placehold.co/1600x500?text=Salt-Based+Installation" alt={`Salt-based water softener tank installed in a ${site.city}, ${site.stateAbbr} home`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Installation", href: "/installation/" }, { label: "Salt-Based Installation" }]}
+    heading={`Salt-Based Water Softener Installation in ${site.city} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers salt-based water softener installation across {site.city} and {site.county}. Salt-based ion
+      exchange is the only system that fully removes calcium and magnesium at {site.gpgLow}–{site.gpgHigh}
+      GPG. Salt-free conditioners crystallize minerals rather than removing them and are not effective above
+      10 GPG. Every system is sized to your household and your confirmed {site.city} GPG reading. Free water
+      test included.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}installs salt-based ion exchange water softeners across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>A salt-based softener removes calcium and magnesium from {site.city}'s {site.gpgLow}-{site.gpgHigh} GPG supply through ion exchange, swapping hardness minerals for sodium as water passes through a resin tank. This is different from a salt-free conditioner, which alters mineral structure but leaves the minerals in the water — see our <a href="/salt-free-installation/">salt-free installation page</a> if you want a no-sodium option instead.</p>
       </div>

@@ -1,7 +1,11 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const signs = [
   { name: "Constant Regeneration", detail: "The unit regenerates far more often than its programmed schedule, wasting salt and water on every extra cycle." },
@@ -31,27 +35,24 @@ const faqs = [
   title={`Water Softener Control Head Repair, ${site.city}`}
   description={`Signs your water softener's control head is failing, repair vs. replacement, and what a control head repair costs in ${site.city}.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Repair", href: "/repair/" }, { label: "Control Head Repair" }]} />
-      <p class="eyebrow">Regeneration Cycle Diagnostics</p>
-      <h1>Water Softener Control Head Repair, {site.city}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="https://placehold.co/1600x500?text=Control+Head+Repair" alt={`Water softener control head diagnostic in a ${site.city}, ${site.stateAbbr} home`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Repair", href: "/repair/" }, { label: "Control Head Repair" }]}
+    heading={`Water Softener Control Head Repair, ${site.city} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers water softener control head repair and replacement across {site.city} and {site.county}. The
+      control head manages regeneration cycles. A faulty control valve causes the softener to regenerate
+      continuously, not at all, or at wrong intervals, passing hard water at {site.gpgLow}–{site.gpgHigh} GPG
+      through untreated. Free diagnostic included with every repair call. All major control head brands
+      diagnosed and serviced. Same day availability.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}diagnoses and repairs water softener control heads across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>The control head is the electronic brain of a water softener — it tracks water use, triggers regeneration, and manages the internal piston that redirects water flow. At {site.gpgLow}-{site.gpgHigh} GPG, per {site.waterAuthority}, a {site.city} softener's control head cycles more often than in a softer-water market, which shortens its working life compared to city with lower hardness.</p>
       </div>

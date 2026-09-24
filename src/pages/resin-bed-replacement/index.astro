@@ -1,7 +1,12 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+import headerImage from "../../assets/images/resin-bed-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const signs = [
   {
@@ -46,30 +51,27 @@ const faqs = [
   title={`Water Softener Resin Bed Replacement in ${site.city}, ${site.stateAbbr}`}
   description={`Signs your ${site.city} water softener's resin bed has failed, what replacement costs, and how the process works.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Repair", href: "/repair/" }, { label: "Resin Bed Replacement" }]} />
-      <p class="eyebrow">Resin Bed Diagnosis &amp; Replacement</p>
-      <h1>Water Softener Resin Bed Replacement in {site.city}, {site.stateAbbr}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/resin-bed-header.webp" alt={`Water softener resin bed replacement in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Repair", href: "/repair/" }, { label: "Resin Bed Replacement" }]}
+    heading={`Water Softener Resin Bed Replacement in ${site.city}, ${site.stateAbbr} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers water softener resin bed replacement services across {site.city} and {site.county}. Resin
+      beds typically last 10 to 15 years at {site.gpgLow}–{site.gpgHigh} GPG. A softener passing hard water
+      despite regular regeneration is the primary sign of resin exhaustion. Free diagnostic included with
+      every service call. Same day availability. Written quote before work begins.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
       <div class="section-header">
         <p>A resin bed is the part of a water softener that actually removes calcium and magnesium. When it fails, the system keeps running but stops softening water. At {site.gpgLow}-{site.gpgHigh} GPG, for example, {site.city} softeners cycle more often than in a moderate-hardness market, which wears resin down faster than the national average.</p>
       </div>
-
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water softener resin bed replacement across {site.city} and {site.county}.
-      </p>
 
       <h2>Signs Your Water Softener Needs a New Resin Bed</h2>
       <p>Four signs point to resin failure rather than a simpler fix:</p>

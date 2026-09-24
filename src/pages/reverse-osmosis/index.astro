@@ -1,7 +1,12 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+import headerImage from "../../assets/images/reverse-osmosis-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const faqs = [
   {
@@ -27,27 +32,25 @@ const faqs = [
   title={`Reverse Osmosis Systems in ${site.city}, ${site.stateAbbr}`}
   description={`Best reverse osmosis systems for ${site.city}: what RO removes, price, and how installation works.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Reverse Osmosis" }]} />
-      <p class="eyebrow">Drinking Water Purification</p>
-      <h1>Reverse Osmosis Water Systems in {site.city}, {site.stateAbbr}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/reverse-osmosis-header.webp" alt={`Under-sink reverse osmosis system for ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Reverse Osmosis" }]}
+    heading={`Reverse Osmosis Water Systems in ${site.city}, ${site.stateAbbr} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers reverse osmosis system installation and service across {site.city} and {site.county}. An
+      under-sink RO system removes up to 99 percent of dissolved solids from {site.waterAuthority} supply
+      water, including residual minerals, nitrates, chlorine byproducts, and other contaminants. Works best
+      paired with a whole-home softener that protects the RO membrane from scale damage at {site.gpgLow}
+      –{site.gpgHigh} GPG.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides reverse osmosis drinking water systems across {site.city} and {site.county}, for example the under-sink unit below.
-      </p>
-
       <div class="section-header">
         <p>At {site.city}'s {site.gpgLow}-{site.gpgHigh} GPG, per {site.waterAuthority}'s reading, reverse osmosis removes up to roughly 99 percent of dissolved solids from tap water, including residual minerals, nitrates, and chlorine byproducts that pass through standard filtration and softening. Unlike a softener or whole-home filter, RO is a point-of-use system, typically installed under the kitchen sink, producing a dedicated purified drinking-water tap.</p>
       </div>

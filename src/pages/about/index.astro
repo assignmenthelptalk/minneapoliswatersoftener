@@ -1,34 +1,36 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+import headerImage from "../../assets/images/about-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 ---
 
 <Layout
   title={`About ${site.businessName}`}
   description={`Water softener installation, repair, and product guidance for ${site.city}, ${site.stateAbbr} homeowners.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "About" }]} />
-      <p class="eyebrow">Local Water Treatment Guidance</p>
-      <h1>About {site.businessName}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/about-header.webp" alt={`Local water softener technician serving ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "About" }]}
+    heading={`About ${site.businessName} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}provides professional water softener installation, repair, and maintenance service across
+      {site.city} and {site.county}. {site.waterAuthority} delivers {site.gpgLow}–{site.gpgHigh} GPG water to
+      every {site.city} home. We size every system to your confirmed GPG reading, not a regional estimate.
+      Licensed and insured. Free in-home water test available. No obligation.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water softener installation and service guidance across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>
           We connect {site.city} homeowners with the right water softener solution for their home, from free

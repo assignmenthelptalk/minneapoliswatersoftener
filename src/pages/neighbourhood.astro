@@ -1,7 +1,12 @@
 ---
 import Layout from "../components/Layout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
 import { site } from "../lib/site";
+import headerImage from "../assets/images/neighbourhood-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 /** Genuine per-neighbourhood distinguishing detail, not a city-wide restatement
  * with the name swapped (Local-SEO-Toolkit's quality gate Rule 37 requires 3+
@@ -22,27 +27,25 @@ function neighbourhoodNote(name: string) {
   title={`Water Softener Neighbourhoods We Serve in ${site.city}, ${site.stateAbbr}`}
   description={`Water softener installation and service across ${site.city}, ${site.stateAbbr} neighbourhoods, including ${site.neighbourhoods.join(", ")}.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Neighbourhoods" }]} />
-      <p class="eyebrow">{site.county} Service Area</p>
-      <h1>{site.city} Neighbourhoods We Serve</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/neighbourhood-header.webp" alt={`Residential neighbourhood streets in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Neighbourhoods" }]}
+    heading={`${site.city} Neighbourhoods We Serve | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}provides water softener installation and service across every {site.city} neighbourhood and
+      surrounding {site.county} community. {site.waterAuthority} delivers the same {site.gpgLow}
+      –{site.gpgHigh} GPG supply citywide. Every neighbourhood receives the same {site.gpgLabel} water
+      classification. Free in-home water test available across all service areas. Same day service. No
+      obligation.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water softener installation and service across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>We install and service water softeners throughout {site.city}, {site.stateAbbr}, and every neighbourhood shares the same {site.gpgLow}–{site.gpgHigh} GPG ({site.gpgLabel}) water from {site.waterSource}.</p>
       </div>

@@ -1,7 +1,12 @@
 ---
 import Layout from "../components/Layout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
 import { site } from "../lib/site";
+import headerImage from "../assets/images/faq-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const faqs = [
   {
@@ -83,27 +88,24 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "FAQ" }]} />
-      <p class="eyebrow">{site.city} Homeowner Questions</p>
-      <h1>Water Softener FAQ — {site.city}, {site.stateAbbr}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/faq-header.webp" alt={`Water softener control panel — common questions for ${site.city} homeowners`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "FAQ" }]}
+    heading={`Water Softener FAQ — ${site.city}, ${site.stateAbbr} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}provides water softener information and consultation services across {site.city} and {site.county}.
+      The questions below cover the most common topics from {site.city} homeowners: water hardness at
+      {site.gpgLow}–{site.gpgHigh} GPG, installation cost, system sizing, repair, and maintenance. Book a free
+      in-home water test for a personalised recommendation.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water softener information and consultation across {site.city} and {site.county}.
-      </p>
-
       <div class="faq-list">
         {faqs.map((item) => (
           <details class="faq-item">

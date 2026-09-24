@@ -1,7 +1,12 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+import headerImage from "../../assets/images/repair-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const problems = [
   {
@@ -58,30 +63,27 @@ const faqs = [
   title={`Water Softener Repair in ${site.city}, ${site.stateAbbr}`}
   description={`Water softener not working in ${site.city}? Free in-home diagnostic with every repair call.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Repair" }]} />
-      <p class="eyebrow">Fast Local Diagnosis</p>
-      <h1>Water Softener Repair in {site.city}, {site.stateAbbr}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/repair-header.webp" alt={`Water softener repair and diagnostic service in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Repair" }]}
+    heading={`Water Softener Repair in ${site.city}, ${site.stateAbbr} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers water softener repair and maintenance services across {site.city} and {site.county}. We
+      diagnose and repair all major water softener brands, including Kinetico, Culligan, EcoWater, Morton, GE,
+      and Whirlpool. Free diagnostic included with every repair call. Same day service available across
+      {site.city} and {site.county}. Written repair quote before any work begins. No surprise charges.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
       <div class="section-header">
         <p>{site.city}'s {site.gpgLow}-{site.gpgHigh} GPG water, per {site.waterAuthority}, wears softener components faster than in softer-water markets. We provide fast local diagnosis and repair for all major softener brands, for example Kinetico and Culligan, with a free diagnostic on every repair call.</p>
       </div>
-
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water softener repair and maintenance services across {site.city} and {site.county}.
-      </p>
 
       <h2>Common Water Softener Problems</h2>
       <p>Six problems account for most repair calls we get in {site.city}:</p>

@@ -1,29 +1,34 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import QuoteForm from "../../components/QuoteForm.astro";
 import { site } from "../../lib/site";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 ---
 
 <Layout
   title={`Contact ${site.businessName}`}
   description={`Get a free water test and no-obligation quote for ${site.city}, ${site.stateAbbr} homes.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Contact" }]} />
-      <p class="eyebrow">Free Water Test &amp; Quote</p>
-      <h1>Contact {site.businessName}</h1>
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Contact" }]}
+    heading={`Contact ${site.businessName} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}provides free water testing and no-obligation consultation across {site.city} and {site.county}.
+      Free in-home water hardness test available today. Same day availability. Pricing confirmed before any
+      work begins. No surprise charges. Call or fill in the form below to schedule.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides free water testing and no-obligation quotes across {site.city} and {site.county}.
-      </p>
-
       <div class="grid grid-2 contact-grid">
         <div class="contact-details">
           <h2>Get in Touch</h2>

@@ -1,7 +1,12 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+import headerImage from "../../assets/images/whole-home-filtration-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const faqs = [
   {
@@ -27,27 +32,24 @@ const faqs = [
   title={`Whole Home Filtration in ${site.city}, ${site.stateAbbr}`}
   description={`Whole-home water filtration for ${site.city}: what it removes, cost, and how to get one installed.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Whole Home Filtration" }]} />
-      <p class="eyebrow">Combo Systems</p>
-      <h1>Whole Home Water Filtration in {site.city}, {site.stateAbbr}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/whole-home-filtration-header.webp" alt={`Whole home water filtration system in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Whole Home Filtration" }]}
+    heading={`Whole Home Water Filtration in ${site.city}, ${site.stateAbbr} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers whole home filtration installation and service across {site.city} and {site.county}. A
+      softener plus whole-home carbon filter combination addresses both hardness minerals and chlorine,
+      sediment, and other contaminants from {site.waterAuthority} supply water. One system, one installation
+      point, one maintenance schedule. Free consultation included. Same day service available.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides whole home filtration systems across {site.city} and {site.county}, for example the combo unit below.
-      </p>
-
       <div class="section-header">
         <p>A whole-home filtration system adds a carbon-based filtration stage to a standard water softener, treating chlorine, sediment, and other contaminants that hardness removal alone leaves behind. At {site.gpgLow}-{site.gpgHigh} GPG, per {site.waterAuthority}'s reading, a combo unit is the only single-install option that addresses both the hardness and the taste-and-clarity side of a {site.city} home's water supply at once.</p>
       </div>

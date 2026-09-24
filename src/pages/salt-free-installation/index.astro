@@ -1,7 +1,11 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const faqs = [
   {
@@ -27,27 +31,24 @@ const faqs = [
   title={`Salt-Free Water Softener Installation in ${site.city}, ${site.stateAbbr}`}
   description={`How salt-free water conditioner installation works in ${site.city}, who it's a fit for at ${site.gpgLow}-${site.gpgHigh} GPG, and what it costs.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Installation", href: "/installation/" }, { label: "Salt-Free Installation" }]} />
-      <p class="eyebrow">No-Sodium Conditioning</p>
-      <h1>Salt-Free Water Softener Installation in {site.city}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="https://placehold.co/1600x500?text=Salt-Free+Installation" alt={`Salt-free water conditioner installed in a ${site.city}, ${site.stateAbbr} home`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Installation", href: "/installation/" }, { label: "Salt-Free Installation" }]}
+    heading={`Salt-Free Water Softener Installation in ${site.city} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers salt-free water conditioner installation and guidance across {site.city} and {site.county}.
+      Salt-free conditioners do not remove hardness minerals. They alter the mineral structure to reduce scale
+      adhesion. At {site.gpgLow}–{site.gpgHigh} GPG from {site.waterAuthority}, a salt-based system is the
+      recommended solution for full hardness removal. Free consultation available to identify the right
+      system for your household.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}installs salt-free water conditioners across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>A salt-free conditioner uses template-assisted crystallization (TAC) media to convert dissolved calcium and magnesium into microscopic crystals that pass through {site.city}'s {site.gpgLow}-{site.gpgHigh} GPG plumbing without bonding to pipes or fixtures. Unlike a salt-based softener, it needs no drain line, no electricity, and no salt — but it does not remove the minerals, see our full <a href="/comparison/">salt-based vs salt-free comparison</a> for the complete tradeoff.</p>
       </div>

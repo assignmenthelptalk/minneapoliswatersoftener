@@ -1,34 +1,37 @@
 ---
 import Layout from "../components/Layout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
 import { site } from "../lib/site";
+import headerImage from "../assets/images/hard-water-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 ---
 
 <Layout
   title={`Hard Water Damage Explained — ${site.city}`}
   description={`What ${site.gpgLabel} water (${site.gpgLow}-${site.gpgHigh} GPG) does to pipes, appliances, and skin in ${site.city}, ${site.stateAbbr}.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Hard Water Explained" }]} />
-      <p class="eyebrow">{site.gpgLow}–{site.gpgHigh} GPG in {site.city}</p>
-      <h1>Hard Water Effects in {site.city}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/hard-water-header.webp" alt={`Hard water mineral scale damage on plumbing in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Hard Water Explained" }]}
+    heading={`Hard Water Effects in ${site.city} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers hard water treatment and scale prevention services across {site.city} and {site.county}. At
+      {site.gpgLow}–{site.gpgHigh} GPG from {site.waterAuthority}, calcium and magnesium deposits build up on
+      fixtures, inside appliances, and inside supply lines within weeks of installation. A salt-based ion
+      exchange softener removes these minerals completely at the main water entry point. Free in-home water
+      test available. Same day service.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides hard water treatment and scale prevention across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>At {site.gpgLabel} levels, {site.city} tap water carries enough dissolved calcium and magnesium to leave visible and invisible damage throughout your home over time.</p>
       </div>

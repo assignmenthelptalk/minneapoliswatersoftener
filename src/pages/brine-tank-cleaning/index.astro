@@ -1,7 +1,12 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+import headerImage from "../../assets/images/brine-tank-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const signs = [
   {
@@ -46,30 +51,27 @@ const faqs = [
   title={`Water Softener Brine Tank Cleaning in ${site.city}, ${site.stateAbbr}`}
   description={`Signs your ${site.city} water softener's brine tank needs cleaning, what it costs, and how the process works.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Repair", href: "/repair/" }, { label: "Brine Tank Cleaning" }]} />
-      <p class="eyebrow">Brine Tank Diagnosis &amp; Cleaning</p>
-      <h1>Water Softener Brine Tank Cleaning in {site.city}, {site.stateAbbr}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/brine-tank-header.webp" alt={`Water softener brine tank cleaning in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Repair", href: "/repair/" }, { label: "Brine Tank Cleaning" }]}
+    heading={`Water Softener Brine Tank Cleaning in ${site.city}, ${site.stateAbbr} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers water softener brine tank cleaning services across {site.city} and {site.county}. Annual
+      cleaning is recommended at {site.gpgLow}–{site.gpgHigh} GPG hard water levels. Salt bridges, salt
+      mushing, and dirty brine reduce regeneration effectiveness and waste salt. Free diagnostic included with
+      every cleaning call. Same day availability.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
       <div class="section-header">
         <p>The brine tank holds the salt solution a water softener uses to regenerate its resin bed, for example a typical 40-gallon tank. At {site.gpgLow}-{site.gpgHigh} GPG, per {site.waterAuthority}'s reading, {site.city} softeners regenerate more often than in a moderate-hardness market, which means more salt cycling through the tank and a shorter interval before it needs attention.</p>
       </div>
-
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water softener brine tank cleaning across {site.city} and {site.county}.
-      </p>
 
       <h2>Signs Your Brine Tank Needs Cleaning</h2>
       <p>Four signs point to a brine tank problem specifically, not a resin or valve fault:</p>

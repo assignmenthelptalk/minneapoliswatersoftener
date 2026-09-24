@@ -1,7 +1,11 @@
 ---
 import Layout from "../../components/Layout.astro";
-import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import PageHero from "../../components/PageHero.astro";
 import { site } from "../../lib/site";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 
 const gpgMid = Math.round(((site.gpgLow + site.gpgHigh) / 2) * 10) / 10;
 
@@ -32,27 +36,23 @@ const faqs = [
   title={`Water Softener Sizing Guide for ${site.city} Homes`}
   description={`How to size a water softener correctly for ${site.city}'s ${site.gpgLow}-${site.gpgHigh} GPG water, by household size, with the industry-standard grain-capacity formula.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Installation", href: "/installation/" }, { label: "Sizing Guide" }]} />
-      <p class="eyebrow">Grain Capacity Explained</p>
-      <h1>Water Softener Sizing Guide for {site.city} Homes</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="https://placehold.co/1600x500?text=Water+Softener+Sizing" alt={`Sizing a water softener for a ${site.city}, ${site.stateAbbr} household`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Installation", href: "/installation/" }, { label: "Sizing Guide" }]}
+    heading={`Water Softener Sizing Guide for ${site.city} Homes | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers water softener sizing guidance and consultation across {site.city} and {site.county}.
+      Correct sizing at {site.gpgLow}–{site.gpgHigh} GPG prevents premature regeneration cycles that waste
+      salt and water, and prevents undersized systems from passing hard water. Every free water test includes
+      a sizing recommendation based on your confirmed GPG reading and household water usage.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}sizes water softeners correctly for every household across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>Grain capacity is calculated as household size × 75 gallons of daily water use per person × {site.city}'s hardness reading in GPG. At {site.gpgLow}-{site.gpgHigh} GPG, per {site.waterAuthority}, this formula gives a starting point — see the sizing table below for four common household sizes.</p>
       </div>

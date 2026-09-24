@@ -1,34 +1,37 @@
 ---
 import Layout from "../components/Layout.astro";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
+import PageHero from "../components/PageHero.astro";
 import { site } from "../lib/site";
+import headerImage from "../assets/images/installation-header.webp";
+
+const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
+  ? { href: `tel:${site.phoneNumber}`, text: `📞 ${site.phoneNumber}` }
+  : { href: "/contact/", text: "📞 Call for a Free Consultation" };
 ---
 
 <Layout
   title={`Water Softener Installation & Cost — ${site.city}`}
   description={`What water softener installation costs in ${site.city}, ${site.stateAbbr} and why local, professional installation matters.`}
 >
-  <section class="page-header">
-    <div class="container">
-      <Breadcrumbs items={[{ label: "Installation" }]} />
-      <p class="eyebrow">{site.city}, {site.stateAbbr}</p>
-      <h1>Water Softener Installation in {site.city}</h1>
-    </div>
-  </section>
-
-  <section class="page-header-image-section">
-    <div class="container">
-      <img src="/installation-header.webp" alt={`Water softener installation in ${site.city}, ${site.stateAbbr}`} class="page-header-image" width="1600" height="500" loading="eager" />
-    </div>
-  </section>
+  <PageHero
+    breadcrumbs={[{ label: "Installation" }]}
+    heading={`Water Softener Installation in ${site.city} | Trusted Local Specialists`}
+    primaryCta={primaryCta}
+    secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
+    image={headerImage}
+  >
+    <p slot="opening">
+      <a href="/" class="brand-link">Water Softeners of {site.city}</a>
+      {" "}offers professional water softener installation and sizing services across {site.city} and
+      {site.county}. Every installation is sized to {site.city}'s {site.gpgLow}–{site.gpgHigh} GPG reading
+      from {site.waterAuthority} and your household water usage, not a statewide estimate. Licensed and
+      insured. Free in-home water hardness test included with every consultation. Written quote before any
+      work begins. Same day service available.
+    </p>
+  </PageHero>
 
   <section class="section">
     <div class="container">
-      <p class="brand-backlink">
-        <a href="/" class="brand-link">{site.businessName}</a>
-        {" "}provides water softener installation and sizing across {site.city} and {site.county}.
-      </p>
-
       <div class="section-header">
         <p>{site.city}'s {site.gpgLow}-{site.gpgHigh} GPG water, sourced from {site.waterSource}, determines the system size a home needs. Most {site.city} homeowners pay between <strong>$800 and $3,500</strong> for a fully installed water softener, depending on system size, water hardness, and existing plumbing.</p>
       </div>
