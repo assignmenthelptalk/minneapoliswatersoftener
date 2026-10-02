@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import Layout from "../components/Layout.astro";
 import LocalSchema from "../components/LocalSchema.astro";
 import MinneapolisMap from "../components/MinneapolisMap.astro";
-import QuoteForm from "../components/QuoteForm.astro";
 import heroImage from "../assets/images/Gemini_Generated_Image_fscmzffscmzffscm.jpg";
 import installationImage from "../assets/images/installation-header.webp";
 import bestSoftenerImage from "../assets/images/products-header.webp";
@@ -44,30 +43,10 @@ const faqs = [
 >
   <LocalSchema />
 
-  <!-- 1. HERO — full-bleed background image, content left, quote form right.
-       Structure and style ported from watersoftenerhendersonnv.com's homepage,
-       keeping Minneapolis's own navy/blue brand colors (not Henderson's teal/orange). -->
+  <!-- 1. Hero — two-column light layout (boilerplate style), image slot on the right. -->
   <section class="hero-section">
-
-    <!-- Full-bleed background image -->
-    <Image
-      src={heroImage}
-      alt={`Professional water softener installation and service in ${site.city}, ${site.stateAbbr}`}
-      format="webp"
-      quality="mid"
-      inferSize
-      class="hero-bg"
-    />
-
-    <!-- Dark overlay -->
-    <div class="hero-overlay" aria-hidden="true"></div>
-
-    <div class="hero-inner">
-
-      <!-- Left: content -->
-      <div class="hero-content">
-
-        <!-- Trust badges row — top of content -->
+    <div class="container hero-grid">
+      <div class="hero-text">
         <div class="hero-badges">
           <span class="hero-badge">✓ Licensed &amp; Insured</span>
           <span class="hero-badge">✓ Free Water Test</span>
@@ -75,53 +54,40 @@ const faqs = [
           <span class="hero-badge">✓ No Obligation</span>
         </div>
 
-        <!-- H1 — brand entity -->
-        <h1 class="hero-h1">
-          {site.businessName} - Premier Water Softener Installation in {site.city}, {site.stateAbbr}
-        </h1>
-
-        <!-- H3 italic subheading -->
-        <h3 class="hero-sub">
-          Professional Water Softener Installation and Repair in {site.city}
-        </h3>
-
-        <!-- Two body paragraphs -->
-        <p class="hero-p">
-          In {site.city}, water typically tests at {site.gpgLow} to {site.gpgHigh} GPG, classified as
-          {site.gpgLabel} by {site.waterAuthority}. Water delivered via {site.waterSource} leaves
-          calcium and magnesium deposits on fixtures, water heaters, and dishwashers within weeks.
-          Free in-home water testing is available.
-        </p>
+        <h1>{site.businessName} - Premier Water Softener Installation in {site.city}, {site.stateAbbr}</h1>
 
         <p class="hero-p">
-          {site.businessName} specializes in water softener installation, repair, and maintenance
-          for homes and businesses dealing with hard water.
+          Homes across {site.city}, {site.stateAbbr} receive {site.gpgLow}-{site.gpgHigh} GPG water from
+          {site.waterAuthority}, classified as {site.gpgLabel} — hard enough to leave calcium and magnesium
+          buildup on fixtures, appliances, and plumbing within weeks. A correctly sized salt-based softener
+          stops that buildup for good. Schedule a free in-home water test to see your exact reading.
         </p>
 
-        <!-- Phone CTA button — bottom of content -->
-        {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" ? (
-          <a href={`tel:${site.phoneNumber}`} class="hero-phone-btn">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3.5 1.5h2.2l1 3-1.6 1.2a9 9 0 0 0 4.2 4.2l1.2-1.6 3 1v2.2c0 .8-.7 1.4-1.4 1.3C7 12.4 3.6 9 3.2 3.9c-.1-.7.5-1.4 1.3-1.4Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" />
-            </svg>
-            {site.phoneNumber}
-          </a>
-        ) : (
-          <a href="/contact/" class="hero-phone-btn">
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3.5 1.5h2.2l1 3-1.6 1.2a9 9 0 0 0 4.2 4.2l1.2-1.6 3 1v2.2c0 .8-.7 1.4-1.4 1.3C7 12.4 3.6 9 3.2 3.9c-.1-.7.5-1.4 1.3-1.4Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" />
-            </svg>
-            Call for a Free Consultation
-          </a>
-        )}
-
+        <div class="hero-actions">
+          {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" ? (
+            <a href={`tel:${site.phoneNumber}`} class="hero-phone-btn">
+              📞 {site.phoneNumber}
+            </a>
+          ) : (
+            <a href="/contact/" class="hero-phone-btn">
+              📞 Call for a Free Consultation
+            </a>
+          )}
+          <a href="/water-quality/" class="hero-secondary-btn">Check Your Water Hardness →</a>
+        </div>
       </div>
 
-      <!-- Right: quote form card -->
-      <div class="hero-form-card">
-        <QuoteForm heading="Get Free Estimates" />
+      <div class="hero-media">
+        <Image
+          src={heroImage}
+          alt={`Water softener system installed in a ${site.city}, ${site.stateAbbr} home`}
+          format="webp"
+          quality="mid"
+          width={700}
+          height={600}
+          loading="eager"
+        />
       </div>
-
     </div>
   </section>
 
@@ -380,54 +346,17 @@ const faqs = [
   </section>
 
   <style>
-    /* ---------- Hero: full-bleed background image, split layout ---------- */
+    /* ---------- 1. Hero — two-column light layout ---------- */
     .hero-section {
-      position: relative;
-      min-height: 640px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, var(--color-primary-light) 100%);
+      padding: clamp(48px, 8vw, 88px) 24px;
     }
-
-    /* Background image — real photo via astro:assets, absolutely
-       positioned to fill the section exactly like a CSS background. */
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    /* Dark overlay over the photo — Minneapolis navy, not Henderson's teal. */
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(0, 42, 85, 0.82) 0%,
-        rgba(0, 42, 85, 0.75) 50%,
-        rgba(0, 42, 85, 0.45) 100%
-      );
-      z-index: 1;
-    }
-
-    /* Inner layout — two columns */
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 24px;
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 48px;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 56px;
       align-items: center;
-      width: 100%;
     }
-
-    /* Trust badges */
     .hero-badges {
       display: flex;
       flex-wrap: wrap;
@@ -438,92 +367,71 @@ const faqs = [
       font-family: var(--font-body);
       font-size: 12px;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.85);
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      border-radius: var(--radius-sm);
-      padding: 4px 10px;
-      letter-spacing: 0.02em;
+      color: var(--color-primary-dark, var(--color-primary));
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full, 9999px);
+      padding: 4px 12px;
     }
-
-    /* H1 */
-    .hero-h1 {
-      font-family: var(--font-heading);
-      font-size: clamp(32px, 5vw, 54px);
-      color: #ffffff;
+    .hero-section h1 {
+      color: var(--color-text);
+      font-size: clamp(32px, 4.2vw, 48px);
       line-height: 1.1;
       letter-spacing: -0.02em;
-      margin-bottom: 12px;
+      margin-bottom: 20px;
     }
-
-    /* H3 italic subheading */
-    .hero-sub {
-      font-family: var(--font-body);
-      font-size: clamp(15px, 2vw, 18px);
-      font-style: italic;
-      font-weight: 600;
-      color: var(--color-accent);
-      margin-bottom: 24px;
-      line-height: 1.4;
-    }
-
-    /* Body paragraphs */
     .hero-p {
       font-family: var(--font-body);
-      font-size: 15px;
-      color: rgba(255, 255, 255, 0.85);
+      font-size: 16px;
       line-height: 1.75;
-      margin-bottom: 16px;
-      max-width: 540px;
+      color: var(--color-text-muted);
+      max-width: 56ch;
+      margin: 0 0 32px;
     }
-
-    /* Phone CTA button */
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
     .hero-phone-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-top: 12px;
+      gap: 8px;
       padding: 14px 28px;
-      background: var(--color-accent);
+      background: var(--color-primary);
       color: #ffffff;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius-brand);
       font-family: var(--font-body);
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 2px 12px rgba(33, 150, 243, 0.35);
-      transition: background-color 150ms ease,
-                  transform 150ms ease,
-                  box-shadow 150ms ease;
+      box-shadow: var(--shadow-card);
+      transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
     }
-    .hero-phone-btn:hover {
-      background: var(--color-accent-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(33, 150, 243, 0.45);
-    }
-    .hero-phone-btn:focus-visible {
-      outline: 3px solid var(--color-accent);
-      outline-offset: 2px;
-    }
+    .hero-phone-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-floating); background: var(--color-accent); }
+    .hero-phone-btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
     .hero-phone-btn:active { transform: scale(0.98); }
-
-    /* Quote form card — right side. The card chrome (background, shadow,
-       padding) lives on QuoteForm's own .card styles, so this wrapper
-       only needs to size the grid column, not add a second card shell. */
-    .hero-form-card {
-      align-self: start;
+    .hero-secondary-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 24px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-brand);
+      background: #ffffff;
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: background-color 150ms ease, border-color 150ms ease;
     }
-
-    /* Mobile — stack vertically */
+    .hero-secondary-btn:hover { background: var(--color-primary-light); border-color: var(--color-primary); }
+    .hero-secondary-btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; }
+    .hero-media { display: flex; justify-content: center; }
+    .hero-media img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-lg);
+    }
     @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 48px 20px;
-        gap: 32px;
-      }
-      .hero-overlay {
-        background: rgba(0, 42, 85, 0.80);
-      }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-media { order: -1; }
     }
 
     /* ---------- Ten H2 service sections ---------- */
