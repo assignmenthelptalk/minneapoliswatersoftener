@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import { SEO } from "astro-seo";
 import { site } from "../lib/site";
+import logoImage from "../assets/images/logo-horizontal.png";
 import "../styles/global.css";
 import "../styles/tailwind.css";
 
@@ -116,23 +118,13 @@ const footerNavLinks = [
     <header class="site-header">
       <div class="container site-header-inner">
         <a class="logo" href="/">
-          <!-- Icon-only mark matches public/favicon.svg exactly (same two
-               colors, same droplet path) so the nav logo and the browser
-               tab icon read as the same brand mark. Per BRAND-GUIDE.md's
-               "Logo Placeholder Instructions": a simple geometric glyph
-               (water drop) in the primary color, inline SVG — not a real
-               commissioned logo yet. -->
-          <svg class="logo-icon" width="26" height="26" viewBox="0 0 32 32" role="img" aria-hidden="true">
-            <path
-              d="M16 2.4c-.9 1.4-2.9 4.6-4.6 8C9.6 14.2 8 17.8 8 20.4c0 4.7 3.6 8.2 8 8.2s8-3.5 8-8.2c0-2.6-1.6-6.2-3.4-10C18.9 7 16.9 3.8 16 2.4Z"
-              fill="#1A3A5C"
-            />
-            <path
-              d="M12.6 19.4c-.35 2.7 1.5 5 4.1 5.35a.75.75 0 0 1-.2 1.49c-3.4-.46-5.85-3.5-5.4-6.94a.75.75 0 0 1 1.5.1Z"
-              fill="#2196F3"
-            />
-          </svg>
-          <span class="logo-text">{site.businessName}</span>
+          <!-- Real commissioned logo (horizontal lockup: circular MS
+               badge + two-line wordmark), supplied by the user 2026-10-07.
+               Flat white background baked into the PNG (no alpha) — fine
+               here since the nav itself is white, but it would show as a
+               visible box on the dark footer, so the footer keeps its own
+               separate white-on-navy icon+text treatment instead. -->
+          <Image src={logoImage} alt={site.businessName} class="logo-image" height={40} width={184} />
         </a>
 
         <button
@@ -318,17 +310,15 @@ const footerNavLinks = [
       .logo {
         display: inline-flex;
         align-items: center;
-        gap: 9px;
-        font-family: var(--font-heading);
-        font-weight: 400;
-        font-size: 1.25rem;
-        color: var(--color-primary);
         text-decoration: none;
       }
-      .logo-icon { flex-shrink: 0; transition: transform 200ms var(--ease-spring, ease); }
-      .logo:hover .logo-icon { transform: translateY(-1px) scale(1.06); }
-      .logo-text { line-height: 1.1; }
-      .logo:hover { color: var(--color-accent); }
+      .logo-image {
+        display: block;
+        height: 40px;
+        width: auto;
+        transition: transform 200ms var(--ease-spring, ease);
+      }
+      .logo:hover .logo-image { transform: translateY(-1px) scale(1.03); }
       .logo:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; border-radius: 2px; }
 
       .site-nav > ul {
