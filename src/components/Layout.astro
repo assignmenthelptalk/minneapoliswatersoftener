@@ -116,7 +116,23 @@ const footerNavLinks = [
     <header class="site-header">
       <div class="container site-header-inner">
         <a class="logo" href="/">
-          {site.businessName}
+          <!-- Icon-only mark matches public/favicon.svg exactly (same two
+               colors, same droplet path) so the nav logo and the browser
+               tab icon read as the same brand mark. Per BRAND-GUIDE.md's
+               "Logo Placeholder Instructions": a simple geometric glyph
+               (water drop) in the primary color, inline SVG — not a real
+               commissioned logo yet. -->
+          <svg class="logo-icon" width="26" height="26" viewBox="0 0 32 32" role="img" aria-hidden="true">
+            <path
+              d="M16 2.4c-.9 1.4-2.9 4.6-4.6 8C9.6 14.2 8 17.8 8 20.4c0 4.7 3.6 8.2 8 8.2s8-3.5 8-8.2c0-2.6-1.6-6.2-3.4-10C18.9 7 16.9 3.8 16 2.4Z"
+              fill="#1A3A5C"
+            />
+            <path
+              d="M12.6 19.4c-.35 2.7 1.5 5 4.1 5.35a.75.75 0 0 1-.2 1.49c-3.4-.46-5.85-3.5-5.4-6.94a.75.75 0 0 1 1.5.1Z"
+              fill="#2196F3"
+            />
+          </svg>
+          <span class="logo-text">{site.businessName}</span>
         </a>
 
         <button
@@ -184,7 +200,24 @@ const footerNavLinks = [
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <span class="footer-brand">{site.businessName}</span>
+        <span class="footer-brand">
+          <!-- Dark-background variant of the nav logo mark: same droplet
+               shape, white body instead of navy (which would vanish
+               against the footer's own navy background) — see
+               BRAND-GUIDE.md's "light-background and dark-background
+               variant" instruction. -->
+          <svg class="footer-brand-icon" width="22" height="22" viewBox="0 0 32 32" role="img" aria-hidden="true">
+            <path
+              d="M16 2.4c-.9 1.4-2.9 4.6-4.6 8C9.6 14.2 8 17.8 8 20.4c0 4.7 3.6 8.2 8 8.2s8-3.5 8-8.2c0-2.6-1.6-6.2-3.4-10C18.9 7 16.9 3.8 16 2.4Z"
+              fill="#ffffff"
+            />
+            <path
+              d="M12.6 19.4c-.35 2.7 1.5 5 4.1 5.35a.75.75 0 0 1-.2 1.49c-3.4-.46-5.85-3.5-5.4-6.94a.75.75 0 0 1 1.5.1Z"
+              fill="#2196F3"
+            />
+          </svg>
+          {site.businessName}
+        </span>
         {site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER" && (
           <a class="footer-phone" href={`tel:${site.phoneNumber}`}>{site.phoneNumber}</a>
         )}
@@ -283,12 +316,18 @@ const footerNavLinks = [
         position: relative;
       }
       .logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
         font-family: var(--font-heading);
         font-weight: 400;
         font-size: 1.25rem;
         color: var(--color-primary);
         text-decoration: none;
       }
+      .logo-icon { flex-shrink: 0; transition: transform 200ms var(--ease-spring, ease); }
+      .logo:hover .logo-icon { transform: translateY(-1px) scale(1.06); }
+      .logo-text { line-height: 1.1; }
       .logo:hover { color: var(--color-accent); }
       .logo:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 3px; border-radius: 2px; }
 
@@ -483,8 +522,11 @@ const footerNavLinks = [
         font-size: 20px;
         color: #ffffff;
         margin-bottom: 8px;
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
+      .footer-brand-icon { flex-shrink: 0; }
       .footer-phone {
         font-family: var(--font-body);
         font-size: 14px;
