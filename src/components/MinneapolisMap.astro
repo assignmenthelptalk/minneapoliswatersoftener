@@ -2,13 +2,22 @@
 /**
  * MinneapolisMap.astro — Minneapolis neighbourhood hardness map
  *
- * Provisioned from CityMap.astro per PROVISION.md Step 5b. City centre,
- * service-area bounds, and all four neighbourhood coordinates were verified
- * against OpenStreetMap's own Nominatim data (administrative boundary
- * relations for Minneapolis, Linden Hills, Longfellow, Powderhorn Park, and
- * North Loop) — not estimated or invented. See the MAP CONFIG / NEIGHBOURHOOD
- * DATA comments in the client script below for the exact source query used
- * for each coordinate.
+ * Provisioned from CityMap.astro per PROVISION.md Step 5b. All four
+ * neighbourhood coordinates were verified against OpenStreetMap's own
+ * Nominatim data (administrative boundary relations for Minneapolis,
+ * Linden Hills, Longfellow, Powderhorn Park, and North Loop) — not
+ * estimated or invented. See the NEIGHBOURHOOD DATA comment in the
+ * client script below for the exact source query used for each coordinate.
+ *
+ * Synced 2026-10-07 from CityMap.astro's "static, auto-framed" update
+ * (boilerplate commit 784f616): the map no longer takes a manual city
+ * centre/zoom/bounds config — it auto-frames itself around the
+ * neighbourhood pins and locks there (no pan/zoom/drag), and the first
+ * neighbourhood auto-selects on load so the report panel is never
+ * empty. The old manual MAP_CONFIG and the "Reset View" button (no
+ * longer meaningful once the map can't move) were removed. Kept this
+ * site's own already-correct navy/blue colors and the per-neighbourhood
+ * CTA text rather than reverting to the boilerplate's generic values.
  *
  * TILE LAYER NOTE — do not change: OpenStreetMap tiles with a CSS inversion
  * filter (no API key required). CARTO and Stadia Maps both require
@@ -36,13 +45,6 @@ import { site } from "../lib/site";
       <!-- Left: map -->
       <div class="city-map-left">
         <div id="city-map"></div>
-        <button
-          class="map-reset-btn"
-          id="map-reset-btn"
-          aria-label={`Reset map to ${site.city} view`}
-        >
-          ⌖ Reset View
-        </button>
         <div class="map-legend" aria-hidden="true">
           <span class="legend-selected">● Selected Area</span>
           <span class="legend-available">○ Available Data</span>
@@ -158,34 +160,6 @@ import { site } from "../lib/site";
     box-shadow: 0 4px 24px rgba(26, 58, 92, 0.15);
     background: var(--surface-footer);
   }
-
-  /* ── RESET BUTTON — top right, never overlaps the bottom-left legend ── */
-  .map-reset-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    z-index: 1000;
-    padding: 8px 14px;
-    background: white;
-    border: 1.5px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-family: var(--font-body);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--color-primary);
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-    transition: border-color 150ms ease,
-                box-shadow 150ms ease,
-                transform 150ms ease;
-  }
-  .map-reset-btn:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 4px 12px rgba(26, 58, 92, 0.20);
-    transform: translateY(-1px);
-  }
-  .map-reset-btn:active { transform: scale(0.97); }
-  .map-reset-btn:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
 
   /* ── LEGEND ── */
   .map-legend {
@@ -478,30 +452,6 @@ import { site } from "../lib/site";
 
   document.addEventListener("DOMContentLoaded", async () => {
     // ─────────────────────────────────────────────────────────────────
-    // MAP CONFIG — verified via OpenStreetMap Nominatim
-    // (https://nominatim.openstreetmap.org/search?q=Minneapolis,+Minnesota)
-    // Centre + bounds are Minneapolis's own official administrative
-    // boundary (osm relation 136712), not an estimate.
-    // ─────────────────────────────────────────────────────────────────
-    const CITY_LAT = 44.9773;
-    const CITY_LNG = -93.2655;
-    const BOUNDS_SOUTH = 44.8906;
-    const BOUNDS_WEST = -93.3291;
-    const BOUNDS_NORTH = 45.0512;
-    const BOUNDS_EAST = -93.1939;
-
-    const MAP_CONFIG = {
-      centre: [CITY_LAT, CITY_LNG] as [number, number],
-      zoom: 12,
-      minZoom: 11, // prevents zooming out to show the wider metro area
-      maxZoom: 14,
-      bounds: {
-        sw: [BOUNDS_SOUTH, BOUNDS_WEST] as [number, number],
-        ne: [BOUNDS_NORTH, BOUNDS_EAST] as [number, number],
-      },
-    };
-
-    // ─────────────────────────────────────────────────────────────────
     // NEIGHBOURHOOD DATA — matches site.config.ts's neighbourhoods array
     // exactly. Each coordinate verified via Nominatim against Minneapolis's
     // own official neighbourhood boundary relations:
@@ -569,21 +519,41 @@ import { site } from "../lib/site";
     ];
 
     // ─────────────────────────────────────────────────────────────────
-    // MAP INITIALISATION — unchanged from CityMap.astro
+    // MAP INITIALISATION — static map, auto-framed on the pins (no
+    // centre/zoom/bounds config needed), synced from CityMap.astro
     // ─────────────────────────────────────────────────────────────────
     const mapEl = document.getElementById("city-map");
     if (!mapEl) return;
 
     const L = (await import("leaflet")).default;
 
+    // Static map: no zoom controls, wheel/touch/double-click zoom, or panning.
+    // The view is framed once around the neighbourhood pins and then locked,
+    // so no city centre, zoom, or bounds config is needed per city.
     const map = L.map(mapEl, {
-      center: MAP_CONFIG.centre,
-      zoom: MAP_CONFIG.zoom,
-      minZoom: MAP_CONFIG.minZoom,
-      maxZoom: MAP_CONFIG.maxZoom,
-      zoomControl: true,
+      zoomControl: false,
+      dragging: false,
+      scrollWheelZoom: false,
+      doubleClickZoom: false,
+      touchZoom: false,
+      boxZoom: false,
+      keyboard: false,
+      zoomSnap: 0.25,
       attributionControl: true,
     });
+
+    const pinBounds = L.latLngBounds(neighbourhoods.map((hood) => hood.coords));
+    function frameMap() {
+      map.invalidateSize();
+      map.setMinZoom(1);
+      map.setMaxZoom(18);
+      map.fitBounds(pinBounds, { padding: [48, 48], animate: false });
+      const lockedZoom = map.getZoom();
+      map.setMinZoom(lockedZoom);
+      map.setMaxZoom(lockedZoom);
+    }
+    frameMap();
+    window.addEventListener("resize", frameMap);
 
     // ── TILE LAYER ──
     // OSM with CSS inversion — dark navy aesthetic, no API key required.
@@ -595,13 +565,6 @@ import { site } from "../lib/site";
       subdomains: "abc",
       maxZoom: 19,
     }).addTo(map);
-
-    // ── BOUNDS LOCK ──
-    const cityBounds = L.latLngBounds(MAP_CONFIG.bounds.sw, MAP_CONFIG.bounds.ne);
-    map.setMaxBounds(cityBounds);
-    map.on("drag", () => {
-      map.panInsideBounds(cityBounds, { animate: false });
-    });
 
     // ── PIN ICONS ──
     function defaultIcon() {
@@ -639,21 +602,14 @@ import { site } from "../lib/site";
     const reportIssues = document.getElementById("report-issues");
     const reportCta = document.getElementById("report-cta");
 
-    // ── RESET VIEW BUTTON ──
-    const resetBtn = document.getElementById("map-reset-btn");
-    if (resetBtn) {
-      resetBtn.addEventListener("click", () => {
-        map.setView(MAP_CONFIG.centre, MAP_CONFIG.zoom, { animate: true });
-        if (activePopup) map.closePopup(activePopup);
-      });
-    }
-
     // ── MARKERS ──
     let activeMarker: ReturnType<typeof L.marker> | null = null;
     let activePopup: ReturnType<typeof L.popup> | null = null;
+    const markers: ReturnType<typeof L.marker>[] = [];
 
     neighbourhoods.forEach((hood) => {
       const marker = L.marker(hood.coords, { icon: defaultIcon() }).addTo(map);
+      markers.push(marker);
 
       // Hover tooltip — name and GPG reading on mouseover
       marker.bindTooltip(
@@ -682,14 +638,12 @@ import { site } from "../lib/site";
         marker.setIcon(activeIcon());
         activeMarker = marker;
 
-        // Centre map on clicked neighbourhood
-        map.setView(hood.coords, MAP_CONFIG.zoom, { animate: true });
-
         // White label popup on map
         activePopup = L.popup({
           closeButton: false,
           className: "map-label-popup",
           offset: [0, -12],
+          autoPan: false, // keep the static map view fixed
         })
           .setLatLng(hood.coords)
           .setContent(`<strong>${hood.name}</strong>`)
@@ -716,5 +670,8 @@ import { site } from "../lib/site";
         if (reportCta) reportCta.textContent = `Get a Free Water Softener Quote in ${hood.name}`;
       });
     });
+
+    // Open with the first neighbourhood selected so the report is never empty.
+    markers[0]?.fire("click");
   });
 </script>
