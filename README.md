@@ -1,8 +1,14 @@
-# minneapoliswatersoftener
+# minneapoliselitewatersoftener
 
 Rank-and-rent local lead-generation site for water softener services in
-Minneapolis, MN (`minneapoliswatersoftener.com`). Built with Astro (static
-output). Deployed via Vercel on push to `main`.
+Minneapolis, MN, under the brand "Minneapolis Elite Water Softener"
+(`minneapoliselitewatersoftener.com`). Built with Astro (static output).
+Deployed via Vercel on push to `main`.
+
+Renamed 2026-10-07 from minneapoliswatersoftener — folder, domain, and
+business name all changed together (same "Elite" brand pattern as
+roundrockelitewatersoftener.com). The GitHub repo itself is still named
+`minneapoliswatersoftener` pending a manual rename — see WORKSPACE-README.md.
 
 Cloned from [assignmenthelptalk/water-softener-boilerplate](https://github.com/assignmenthelptalk/water-softener-boilerplate) —
 see that repo's `PROVISION.md` for how sites like this one get created.

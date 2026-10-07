@@ -44,16 +44,19 @@ no manual editing needed beyond filling in the config. See PROVISION.md
 Step 5b for where to add each one.
 
 ## Site identity
-- Domain:           minneapoliswatersoftener.com
+- Business name:    Minneapolis Elite Water Softener (rebranded 2026-10-07, was "Minneapolis Water Softener")
+- Domain:           minneapoliselitewatersoftener.com (rebranded 2026-10-07, was minneapoliswatersoftener.com — NOT yet registered/pointed, see Notes)
+- Region:           the Twin Cities
 - City:             Minneapolis, MN
 - GPG:              5-7 (Moderately Hard)
 - Water source:     Mississippi River, treated at the Fridley and Columbia Heights plants
 - Water authority:  City of Minneapolis Water Treatment & Distribution Services
 - Primary keyword:  water softener minneapolis mn (searchVol: 0 — no keyword-tool access this session, still an open gap, see Notes)
-- GitHub repo:      assignmenthelptalk/minneapoliswatersoftener (confirmed via `git remote -v`)
+- Local folder:     minneapoliselitewatersoftener (renamed 2026-10-07, was minneapoliswatersoftener — see Notes for the old folder's status)
+- GitHub repo:      assignmenthelptalk/minneapoliswatersoftener — STILL THE OLD NAME, needs a manual rename to match (no gh CLI available this session), see Notes
 - Vercel project:   NOT CONFIRMED this session — no Vercel dashboard access; fill in once verified
 - Vercel URL:       NOT CONFIRMED this session
-- Live domain:      https://minneapoliswatersoftener.com
+- Live domain:      NOT YET LIVE under the new domain — minneapoliswatersoftener.com was never confirmed live either (see Provisioning checklist)
 
 ## Folder structure
 - Local-SEO-Toolkit/
@@ -321,3 +324,66 @@ _Add any city-specific notes, open data gaps, or decisions made here._
   Henderson's `Testimonials.astro` component was not ported (no H2,
   needs invented placeholder content) — flagged to the user as a
   possible follow-up, not actioned.
+- **2026-10-07 — rebrand to "Minneapolis Elite Water Softener" + full
+  rename, matching the roundrockelitewatersoftener.com precedent.**
+  Commits `7f10f66` (rebrand + inner-page component swap) and `e0b25bf`
+  (homepage rebuild), both build-verified clean before committing.
+  - **businessName** → "Minneapolis Elite Water Softener",
+    **domain** → minneapoliselitewatersoftener.com. Added the new
+    required `site.config.ts` fields the boilerplate gained since this
+    site was last synced: `region` ("the Twin Cities") and the About
+    page's Key Facts placeholders (`founderNames`, `foundedYear`,
+    `customersServed`, `projectsDelivered`) — all SCREAMING_SNAKE_CASE,
+    never invented, pending a real tenant.
+  - **Design**: ported the boilerplate's current `PageHero.astro`
+    (full-bleed photo + dark overlay + embedded compact `QuoteForm`,
+    replacing the lighter two-column hero) and `QuoteForm.astro` (adds
+    a `compact` variant) onto all 21 inner pages, plus the new
+    `HomeLink.astro` component (varies each page's homepage backlink
+    anchor style — exact/naked/partial/plain — instead of 21 identical
+    anchors). `quote.astro`/`contact.astro` pass `showForm={false}` to
+    avoid duplicating the full form they already embed.
+  - **Homepage rebuilt** to match the boilerplate's current structure:
+    hero with embedded form, "Why We're the Best" (placeholder claims —
+    28+ years, $3.7M in projects, certifications, warranties — same
+    ethic as [[pflugerville-unverified-claims]] and
+    [[round-rock-elite-site]], needs real tenant facts before launch),
+    a sizing-focused "Best Water Softener" section, 8 alternating
+    service sections, placeholder Reviews/Testimonials, FAQ. Dropped
+    the old services-grid/GPG-stat-card/why-choose-us sections and the
+    slim CTA bar (neither exists in the new pattern). **Fixed a real
+    bug while porting**: the boilerplate's own homepage hardcodes
+    literal "NV" in 9 of its 10 H2 headings (leftover from when it was
+    Henderson-specific) instead of `site.stateAbbr` — would have
+    rendered "Minneapolis NV" on every section if copied verbatim.
+    Kept the real `MinneapolisMap` component and the service-areas
+    section (Minnetonka/Plymouth/Bloomington) since neither exists in
+    the new boilerplate pattern but dropping them would orphan real
+    pages/regress working functionality.
+  - **NOT done**: the boilerplate's About page also gained a much
+    larger structure (What We Do / What Makes Us Different / Who Uses
+    Our Services / Team / How It Works / Key Facts table / FAQ,
+    ported from Albuquerque) — Minneapolis's About page was NOT
+    rewritten to match; it's still the simpler pre-rebrand version.
+    Flagged to the user as a separate, large follow-up, not started.
+  - **Local folder renamed**: `minneapoliswatersoftener` →
+    `minneapoliselitewatersoftener`. Done via `robocopy` (excluding
+    `node_modules`/`dist`) + fresh `npm install`, not `mv`/`git mv` —
+    the old folder was locked ("Device or resource busy"), almost
+    certainly because it was open as a VS Code workspace at the time.
+    Git history carried over intact (`.git` copied as-is). **The old
+    `minneapoliswatersoftener` folder still exists on disk and was
+    never deleted** — safe to remove once that VS Code window is
+    closed, but left alone this session rather than forcing it.
+  - **GitHub repo NOT renamed** — no `gh` CLI available in this
+    environment (checked both Bash and PowerShell). The repo is still
+    `assignmenthelptalk/minneapoliswatersoftener`; `git remote -v` in
+    the new folder still points there, and pushes from this session
+    went to that same (old-named) repo. Rename it manually via GitHub
+    repo Settings → "Rename repository", then update the remote here
+    (`git remote set-url origin <new-url>`) — GitHub's redirect usually
+    keeps the old URL working for a while even unrenamed, so this isn't
+    urgent, but should happen before the domain goes live.
+  - Domain minneapoliselitewatersoftener.com is NOT registered/pointed
+    yet — purely a `site.config.ts` value change this session, no DNS
+    or registrar action taken.
