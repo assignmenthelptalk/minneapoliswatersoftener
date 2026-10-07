@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
 import PageHero from "../components/PageHero.astro";
+import HomeLink from "../components/HomeLink.astro";
 import { site } from "../lib/site";
 import headerImage from "../assets/images/faq-header.webp";
 
@@ -96,7 +97,7 @@ const faqSchema = {
     image={headerImage}
   >
     <p slot="opening">
-      <a href="/" class="brand-link">{site.businessName}</a>
+      <HomeLink variant="partial" />
       {" "}provides water softener information and consultation services across {site.city} and {site.county}.
       The questions below cover the most common topics from {site.city} homeowners: water hardness at
       {site.gpgLow}–{site.gpgHigh} GPG, installation cost, system sizing, repair, and maintenance. Book a free

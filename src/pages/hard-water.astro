@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
 import PageHero from "../components/PageHero.astro";
+import HomeLink from "../components/HomeLink.astro";
 import { site } from "../lib/site";
 import headerImage from "../assets/images/hard-water-header.webp";
 
@@ -21,7 +22,7 @@ const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
     image={headerImage}
   >
     <p slot="opening">
-      <a href="/" class="brand-link">{site.businessName}</a>
+      <HomeLink variant="plain" />
       {" "}offers hard water treatment and scale prevention services across {site.city} and {site.county}. At
       {site.gpgLow}–{site.gpgHigh} GPG from {site.waterAuthority}, calcium and magnesium deposits build up on
       fixtures, inside appliances, and inside supply lines within weeks of installation. A salt-based ion

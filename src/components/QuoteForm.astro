@@ -14,9 +14,16 @@ import { site } from "../lib/site";
 interface Props {
   /** Optional heading override for embedding on pages other than /quote/ */
   heading?: string;
+  /** Minimal variant — Name, Email, Phone, and a message textarea, all
+   * placeholder-labelled (no visible <label> text), no address field, no
+   * consent checkbox, no trust-signal list. Modelled on
+   * huntingtonbeacheliteroofing.com's hero quote form. For high-visibility,
+   * low-friction placements like the homepage hero. The full form (/quote/
+   * and other embeds) is unaffected unless this is explicitly passed. */
+  compact?: boolean;
 }
 
-const { heading = "Get Your Free Water Test & Quote" } = Astro.props;
+const { heading = "Get Your Free Water Test & Quote", compact = false } = Astro.props;
 
 // Repeated across the trust-signal row — kept as one source so the three
 // items can't drift out of sync if the wording ever changes.
@@ -24,7 +31,7 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
 ---
 
 <form
-  class="quote-form card"
+  class={compact ? "quote-form card compact" : "quote-form card"}
   action={`https://formsubmit.co/${site.businessEmail}`}
   method="POST"
 >
@@ -35,57 +42,104 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
   <input type="hidden" name="_captcha" value="false" />
   <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-  <div class="form-field">
-    <label for="qf-name">Full Name <span class="req">*</span></label>
-    <input id="qf-name" name="name" type="text" required autocomplete="name" />
-  </div>
+  {compact ? (
+    <>
+      <div class="form-field form-field-compact">
+        <input id="qf-name" name="name" type="text" required autocomplete="name" placeholder="Name" aria-label="Name" />
+      </div>
+      <div class="form-field form-field-compact">
+        <input id="qf-email" name="email" type="email" required autocomplete="email" placeholder="Email" aria-label="Email" />
+      </div>
+      <div class="form-field form-field-compact">
+        <input id="qf-phone" name="phone" type="tel" required autocomplete="tel" placeholder="Phone" aria-label="Phone" />
+      </div>
+      <div class="form-field form-field-compact">
+        <textarea
+          id="qf-message"
+          name="message"
+          rows="3"
+          placeholder={`Describe the ${site.city} water softener service you need..`}
+          aria-label="Describe the service you need"
+        ></textarea>
+      </div>
+    </>
+  ) : (
+    <>
+      <div class="form-field">
+        <label for="qf-name">Full Name <span class="req">*</span></label>
+        <input id="qf-name" name="name" type="text" required autocomplete="name" />
+      </div>
 
-  <div class="form-field">
-    <label for="qf-phone">Phone <span class="req">*</span></label>
-    <input id="qf-phone" name="phone" type="tel" required autocomplete="tel" />
-  </div>
+      <div class="form-field">
+        <label for="qf-phone">Phone <span class="req">*</span></label>
+        <input id="qf-phone" name="phone" type="tel" required autocomplete="tel" />
+      </div>
 
-  <div class="form-field">
-    <label for="qf-email">Email <span class="req">*</span></label>
-    <input id="qf-email" name="email" type="email" required autocomplete="email" />
-  </div>
+      <div class="form-field">
+        <label for="qf-email">Email <span class="req">*</span></label>
+        <input id="qf-email" name="email" type="email" required autocomplete="email" />
+      </div>
 
-  <div class="form-field">
-    <label for="qf-address">Service Address <span class="req">*</span></label>
-    <input id="qf-address" name="address" type="text" required autocomplete="street-address" placeholder={`Street, ${site.city}, ${site.stateAbbr}`} />
-  </div>
+      <div class="form-field">
+        <label for="qf-address">Service Address <span class="req">*</span></label>
+        <input id="qf-address" name="address" type="text" required autocomplete="street-address" placeholder={`Street, ${site.city}, ${site.stateAbbr}`} />
+      </div>
 
-  <div class="form-field">
-    <label for="qf-message">Anything else we should know?</label>
-    <textarea id="qf-message" name="message" rows="3"></textarea>
-  </div>
+      <div class="form-field">
+        <label for="qf-message">Anything else we'd like to know?</label>
+        <textarea id="qf-message" name="message" rows="3"></textarea>
+      </div>
 
-  <div class="form-checkbox-row">
-    <input type="checkbox" id="qf-consent" name="consent" required />
-    <label for="qf-consent">
-      I agree to be contacted about my quote and consent to my information being processed for this purpose. <span class="req">*</span>
-    </label>
-  </div>
+      <div class="form-checkbox-row">
+        <input type="checkbox" id="qf-consent" name="consent" required />
+        <label for="qf-consent">
+          I agree to be contacted about my quote and consent to my information being processed for this purpose. <span class="req">*</span>
+        </label>
+      </div>
+    </>
+  )}
 
-  {site.businessEmail === "BUSINESS_EMAIL" ? (
+  <!-- Always render the button, even when businessEmail is still the
+       SCREAMING_SNAKE_CASE placeholder, so the button is visible for design
+       review on the boilerplate itself (which never has a real business
+       email). Disable it in that state instead of hiding it — a disabled,
+       clearly-not-yet-wired button is still obvious, but no longer erases
+       the button from the layout entirely. -->
+  <button
+    type="submit"
+    class={compact ? "btn btn-primary form-submit form-submit-compact" : "btn btn-primary form-submit"}
+    disabled={site.businessEmail === "BUSINESS_EMAIL"}
+  >
+    {compact ? (
+      <>
+        SUBMIT
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </>
+    ) : "Request My Free Consultation"}
+  </button>
+  {site.businessEmail === "BUSINESS_EMAIL" && (
     <p class="form-not-configured">
       Form not yet configured. Update businessEmail in site.config.ts.
     </p>
-  ) : (
-    <button type="submit" class="btn btn-primary form-submit">Request My Free Consultation</button>
   )}
 
-  <p class="trust-signals-intro">Every request includes:</p>
-  <ul class="trust-signals">
-    {trustSignals.map((signal) => (
-      <li>
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-          <path d="M2.5 7.2 5.4 10 11.5 3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        {signal}
-      </li>
-    ))}
-  </ul>
+  {!compact && (
+    <>
+      <p class="trust-signals-intro">Every request includes:</p>
+      <ul class="trust-signals">
+        {trustSignals.map((signal) => (
+          <li>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2.5 7.2 5.4 10 11.5 3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {signal}
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
 </form>
 
 <style>
@@ -100,6 +154,11 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
   .quote-form h3 {
     font-size: 1.25rem;
     margin-bottom: 20px;
+  }
+  .quote-form.compact h3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: #dc2626;
   }
 
   .form-field { margin-bottom: 16px; }
@@ -166,6 +225,41 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
   .form-submit:hover { transform: scale(1.02); box-shadow: var(--shadow-button-hover); }
   .form-submit:active { transform: scale(0.98); background: var(--color-accent-dark); }
   .form-submit:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+  .form-submit:disabled {
+    /* Stays orange (not gray) even when unconfigured, so the button still
+       reads as "the real button" on the boilerplate — just not clickable. */
+    background: var(--color-accent);
+    opacity: 0.55;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  .form-submit:disabled:hover { transform: none; box-shadow: none; }
+
+  /* ---- Compact variant — placeholder-only fields, red borders, arrow-icon
+     button. Modelled on huntingtonbeacheliteroofing.com's hero form. ---- */
+  .form-field-compact { margin-bottom: 14px; }
+  .form-field-compact input,
+  .form-field-compact textarea {
+    border-color: #dc2626;
+  }
+  .form-field-compact input:hover,
+  .form-field-compact textarea:hover { border-color: #dc2626; }
+  .form-field-compact input:focus-visible,
+  .form-field-compact textarea:focus-visible,
+  .form-field-compact input:focus,
+  .form-field-compact textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+  }
+  .form-field-compact textarea { resize: vertical; }
+  .form-submit-compact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
 
   .form-not-configured {
     font-family: var(--font-body);

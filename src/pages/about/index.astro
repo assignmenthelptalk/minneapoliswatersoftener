@@ -1,6 +1,7 @@
 ---
 import Layout from "../../components/Layout.astro";
 import PageHero from "../../components/PageHero.astro";
+import HomeLink from "../../components/HomeLink.astro";
 import { site } from "../../lib/site";
 import headerImage from "../../assets/images/about-header.webp";
 
@@ -21,7 +22,7 @@ const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
     image={headerImage}
   >
     <p slot="opening">
-      <a href="/" class="brand-link">{site.businessName}</a>
+      <HomeLink variant="naked" />
       {" "}provides professional water softener installation, repair, and maintenance service across
       {site.city} and {site.county}. {site.waterAuthority} delivers {site.gpgLow}–{site.gpgHigh} GPG water to
       every {site.city} home. We size every system to your confirmed GPG reading, not a regional estimate.

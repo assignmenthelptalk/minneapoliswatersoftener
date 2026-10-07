@@ -1,6 +1,7 @@
 ---
 import Layout from "../../components/Layout.astro";
 import PageHero from "../../components/PageHero.astro";
+import HomeLink from "../../components/HomeLink.astro";
 import { site } from "../../lib/site";
 import headerImage from "../../assets/images/repair-header.webp";
 
@@ -71,7 +72,7 @@ const faqs = [
     image={headerImage}
   >
     <p slot="opening">
-      <a href="/" class="brand-link">{site.businessName}</a>
+      <HomeLink variant="exact" />
       {" "}offers water softener repair and maintenance services across {site.city} and {site.county}. We
       diagnose and repair all major water softener brands, including Kinetico, Culligan, EcoWater, Morton, GE,
       and Whirlpool. Free diagnostic included with every repair call. Same day service available across

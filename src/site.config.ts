@@ -150,6 +150,9 @@ export interface SiteConfig {
   state: string;
   /** Two-letter state abbreviation, e.g. "NV" */
   stateAbbr: string;
+  /** Wider region the business serves, used in the homepage "Why We're the
+   * Best" heading, e.g. "Greater Austin" */
+  region: string;
   /** Live domain, no protocol, no trailing slash, e.g. "lasvegaswatersoftener.com" */
   domain: string;
 
@@ -212,6 +215,20 @@ export interface SiteConfig {
   googleBusinessUrl: string;
   /** Fully-qualified site URL derived from `domain`, e.g. "https://example.com" */
   siteUrl: string;
+  /** Founder/team name(s) shown on the About page — SCREAMING_SNAKE_CASE
+   * placeholder until a tenant provides real names. Never invent a name. */
+  founderNames: string;
+  /** Year the tenant business was founded — SCREAMING_SNAKE_CASE placeholder
+   * until a tenant confirms. Never invent a date. */
+  foundedYear: string;
+  /** Approximate customers served, shown in the About page Key Facts table —
+   * SCREAMING_SNAKE_CASE placeholder until a tenant provides a real figure.
+   * If used illustratively before a tenant signs, label it "(illustrative)"
+   * or similar rather than presenting it as a real, unverified statistic. */
+  customersServed: string;
+  /** Approximate projects delivered, shown in the About page Key Facts
+   * table — same placeholder rule as customersServed. */
+  projectsDelivered: string;
 
   // ── Design tokens (deep teal + warm orange defaults; other cities override) ─────
   design: {
@@ -239,13 +256,14 @@ export interface SiteConfig {
 
 // Declared separately so siteUrl below can derive from it without
 // duplicating the literal.
-const domain = "minneapoliswatersoftener.com";
+const domain = "minneapoliselitewatersoftener.com";
 
 export const siteConfig: SiteConfig = {
   // Identity
   city: "Minneapolis",
   state: "Minnesota",
   stateAbbr: "MN",
+  region: "the Twin Cities",
   domain,
 
   // Water hardness data
@@ -282,12 +300,19 @@ export const siteConfig: SiteConfig = {
   affiliateRO: "https://springwellwater.com/follow/ro/",
 
   // Business identity — edit directly, no CMS
-  businessName: "Minneapolis Water Softener",
+  businessName: "Minneapolis Elite Water Softener",
   phoneNumber: "PHONE_NUMBER",
   businessEmail: "BUSINESS_EMAIL",
   address: "",
   googleBusinessUrl: "",
   siteUrl: `https://${domain}`,
+
+  // About page facts — edit directly, no CMS. Never invent these; they stay
+  // SCREAMING_SNAKE_CASE placeholders until a real tenant confirms them.
+  founderNames: "FOUNDER_NAMES",
+  foundedYear: "FOUNDED_YEAR",
+  customersServed: "CUSTOMERS_SERVED",
+  projectsDelivered: "PROJECTS_DELIVERED",
 
   // Design tokens (deep teal + warm orange defaults — other cities override these)
   design: {

@@ -1,6 +1,7 @@
 ---
 import Layout from "../../components/Layout.astro";
 import PageHero from "../../components/PageHero.astro";
+import HomeLink from "../../components/HomeLink.astro";
 import { site } from "../../lib/site";
 import headerImage from "../../assets/images/whole-home-filtration-header.webp";
 
@@ -40,7 +41,7 @@ const faqs = [
     image={headerImage}
   >
     <p slot="opening">
-      <a href="/" class="brand-link">{site.businessName}</a>
+      <HomeLink variant="exact" />
       {" "}offers whole home filtration installation and service across {site.city} and {site.county}. A
       softener plus whole-home carbon filter combination addresses both hardness minerals and chlorine,
       sediment, and other contaminants from {site.waterAuthority} supply water. One system, one installation

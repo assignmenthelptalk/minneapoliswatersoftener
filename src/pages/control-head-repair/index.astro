@@ -1,6 +1,7 @@
 ---
 import Layout from "../../components/Layout.astro";
 import PageHero from "../../components/PageHero.astro";
+import HomeLink from "../../components/HomeLink.astro";
 import { site } from "../../lib/site";
 
 const primaryCta = site.phoneNumber && site.phoneNumber !== "PHONE_NUMBER"
@@ -42,7 +43,7 @@ const faqs = [
     secondaryCta={{ href: "/quote/", text: "Get a Free Quote" }}
   >
     <p slot="opening">
-      <a href="/" class="brand-link">{site.businessName}</a>
+      <HomeLink variant="partial" />
       {" "}offers water softener control head repair and replacement across {site.city} and {site.county}. The
       control head manages regeneration cycles. A faulty control valve causes the softener to regenerate
       continuously, not at all, or at wrong intervals, passing hard water at {site.gpgLow}–{site.gpgHigh} GPG

@@ -1,6 +1,7 @@
 ---
 import Layout from "../components/Layout.astro";
 import PageHero from "../components/PageHero.astro";
+import HomeLink from "../components/HomeLink.astro";
 import { site } from "../lib/site";
 import headerImage from "../assets/images/neighbourhood-header.webp";
 
@@ -35,7 +36,7 @@ function neighbourhoodNote(name: string) {
     image={headerImage}
   >
     <p slot="opening">
-      <a href="/" class="brand-link">{site.businessName}</a>
+      <HomeLink variant="exact" />
       {" "}provides water softener installation and service across every {site.city} neighbourhood and
       surrounding {site.county} community. {site.waterAuthority} delivers the same {site.gpgLow}
       –{site.gpgHigh} GPG supply citywide. Every neighbourhood receives the same {site.gpgLabel} water
