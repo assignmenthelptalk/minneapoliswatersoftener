@@ -1,35 +1,28 @@
 # minneapoliselitewatersoftener
 
-Rank-and-rent local lead-generation site for water softener services in
-Minneapolis, MN, under the brand "Minneapolis Elite Water Softener"
-(`minneapoliselitewatersoftener.com`). Built with Astro (static output).
-Deployed via Vercel on push to `main`.
+Rank-and-rent lead-generation site for **Minneapolis Elite Water Softener** (minneapoliselitewatersoftener.com, target keyword "water softener minneapolis mn").
+Astro 7 static site created from `water-softener-boilerplate` with `Local-SEO-Toolkit/scripts/create-site-project.mjs`.
 
-Renamed 2026-10-07 from minneapoliswatersoftener — folder, domain, and
-business name all changed together (same "Elite" brand pattern as
-roundrockelitewatersoftener.com). The GitHub repo itself is still named
-`minneapoliswatersoftener` pending a manual rename — see WORKSPACE-README.md.
+**Status: scaffold only.** The site builds with starter pages (home, About, Contact, thank-you, 404). The topical map, briefs and
+research live in `Local-SEO-Toolkit/data/minneapoliselitewatersoftener/`. No copy has been written or imported yet, no images or logo have been added,
+and nothing is pushed or deployed.
 
-Cloned from [assignmenthelptalk/water-softener-boilerplate](https://github.com/assignmenthelptalk/water-softener-boilerplate) —
-see that repo's `PROVISION.md` for how sites like this one get created.
+## Commands
 
-## Content
-
-All city data (water hardness, source, service area, SEO targeting) and
-business identity fields (phone, email, address) live in
-`src/site.config.ts` — no CMS layer. To update any detail after a tenant
-signs, edit the fields directly and `git push`; Vercel rebuilds and
-redeploys automatically.
-
-22 pages read from that single config, plus a QDP-gated `[serviceArea]`
-dynamic route for nearby cities that have passed the QDP test (see
-`PROVISION.md` Step 5c) — Minneapolis already has three service area
-entries provisioned (Minnetonka, Plymouth, Bloomington).
-
-## Development
-
-```
+```bash
 npm install
-npm run dev      # local dev server
-npm run build    # astro check && astro build — must complete with 0 errors, 0 warnings
+npm run import-content   # strategy folder -> src/data/pages, nav.json, map-points.json, LAUNCH-CHECKLIST.md (needs written-content/)
+npm run dev
+npm run build            # astro check + build, 0 errors and 0 warnings
+npm run verify           # structural checks on dist/
 ```
+
+## Next steps
+
+1. Run the research in `Local-SEO-Toolkit/data/minneapoliselitewatersoftener/reports/cowork-research-prompt.md` and confirm the utility's hardness.
+2. Write the copy from the briefs, then `npm run import-content`.
+3. Logo, footer logo, favicon and the two diagrams: `node scripts/make-logo.mjs && node scripts/build-diagrams.mjs` (done for you with `--install`). Add the generated photos (`node scripts/prepare-images.mjs`) and `map-points.json`.
+4. Replace the placeholders in `src/site.config.ts` (phone, email, `socialLinks`, founder, population, ZIP codes) and set `hardnessVerified` once confirmed.
+5. Work through `LAUNCH-CHECKLIST.md`. Do not deploy while any marker remains.
+
+Full recipe: `Local-SEO-Toolkit/workflows/new-site-playbook.md`.

@@ -1,7 +1,9 @@
 ---
 /**
- * QuoteForm — plain formsubmit.co POST. No JavaScript required for the
- * submission itself; formsubmit.co handles delivery and the redirect.
+ * QuoteForm — formsubmit.co delivery. With JavaScript the form is sent in the background
+ * (formsubmit.co /ajax/ endpoint) and the visitor is moved to the site's own /thank-you/ page
+ * without ever leaving the domain. Without JavaScript, or if the background send fails, the form
+ * falls back to a normal POST and formsubmit.co redirects to /thank-you/ (the _next field).
  * A secondary contact option — phone is the primary conversion path in
  * this phone-call-based rank-and-rent model.
  *
@@ -34,6 +36,8 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
   class={compact ? "quote-form card compact" : "quote-form card"}
   action={`https://formsubmit.co/${site.businessEmail}`}
   method="POST"
+  data-ajax-action={`https://formsubmit.co/ajax/${site.businessEmail}`}
+  data-thank-you="/thank-you/"
 >
   <h3>{heading}</h3>
 
@@ -57,7 +61,7 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
         <textarea
           id="qf-message"
           name="message"
-          rows="3"
+          rows="2"
           placeholder={`Describe the ${site.city} water softener service you need..`}
           aria-label="Describe the service you need"
         ></textarea>
@@ -142,6 +146,29 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
   )}
 </form>
 
+<script>
+  // Background send, then stay on the site: /thank-you/ is a page of this site. Any failure falls back to a normal POST.
+  document.querySelectorAll<HTMLFormElement>("form.quote-form[data-ajax-action]").forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      if (!form.checkValidity()) return;
+      event.preventDefault();
+      const button = form.querySelector<HTMLButtonElement>("button[type=submit]");
+      if (button) button.disabled = true;
+      try {
+        const res = await fetch(form.dataset.ajaxAction!, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+        const data = await res.json();
+        if (res.ok && String(data.success) === "true") {
+          window.location.assign(form.dataset.thankYou || "/thank-you/");
+          return;
+        }
+      } catch {
+        /* network or parse error: use the normal POST below */
+      }
+      form.submit();
+    });
+  });
+</script>
+
 <style>
   /* Elevated surface + layered primary-tinted shadow, not a flat card border */
   .quote-form {
@@ -158,7 +185,7 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
   .quote-form.compact h3 {
     font-family: var(--font-heading);
     font-weight: 800;
-    color: #dc2626;
+    color: var(--color-primary);
   }
 
   .form-field { margin-bottom: 16px; }
@@ -240,10 +267,10 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
   .form-field-compact { margin-bottom: 14px; }
   .form-field-compact input,
   .form-field-compact textarea {
-    border-color: #dc2626;
+    border-color: var(--color-primary);
   }
   .form-field-compact input:hover,
-  .form-field-compact textarea:hover { border-color: #dc2626; }
+  .form-field-compact textarea:hover { border-color: var(--color-accent); }
   .form-field-compact input:focus-visible,
   .form-field-compact textarea:focus-visible,
   .form-field-compact input:focus,
@@ -259,6 +286,25 @@ const trustSignals = ["Free Consultation", "No obligation", `Local ${site.city} 
     gap: 8px;
     text-transform: uppercase;
     letter-spacing: 0.04em;
+  }
+
+  /* ---- Compact variant, shortened so the whole card fits above the fold ---- */
+  .quote-form.compact { padding: 18px 20px 16px; }
+  .quote-form.compact h3 { font-size: 1.1rem; margin-bottom: 12px; }
+  .quote-form.compact .form-field-compact { margin-bottom: 9px; }
+  .quote-form.compact .form-field-compact input,
+  .quote-form.compact .form-field-compact textarea {
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+  .quote-form.compact .form-field-compact textarea { min-height: 62px; }
+  .quote-form.compact .form-submit-compact { padding: 11px 0; font-size: 1rem; }
+  .quote-form.compact .form-not-configured {
+    padding: 6px 10px;
+    margin: 8px 0 0;
+    font-size: 0.7rem;
+    line-height: 1.35;
   }
 
   .form-not-configured {

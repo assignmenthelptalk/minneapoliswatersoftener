@@ -18,10 +18,15 @@ interface CtaLink {
 }
 
 interface Props {
-  breadcrumbs: Array<{ label: string; href?: string }>;
+  /** Omit (or pass []) for a page with no breadcrumb trail. */
+  breadcrumbs?: Array<{ label: string; href?: string }>;
   heading: string;
   primaryCta: CtaLink;
-  secondaryCta: CtaLink;
+  /** Omit to show a single call-to-action button. */
+  secondaryCta?: CtaLink;
+  /** Trust chips under the breadcrumbs. Defaults to claims every site can back (free estimate, no
+   * obligation, service area). Add licence or same-day chips only once the business confirms them. */
+  badges?: string[];
   /** Real photo used as the full-bleed hero background. Omit for the
    * brand-gradient fallback. */
   image?: ImageMetadata;
@@ -29,7 +34,15 @@ interface Props {
   showForm?: boolean;
 }
 
-const { breadcrumbs, heading, primaryCta, secondaryCta, image, showForm = true } = Astro.props;
+const {
+  breadcrumbs = [],
+  heading,
+  primaryCta,
+  secondaryCta,
+  image,
+  showForm = true,
+  badges = ["✓ Free Estimate", "✓ No Obligation", `✓ Serving ${site.city}, ${site.stateAbbr}`],
+} = Astro.props;
 ---
 
 <section class="page-hero">
@@ -48,13 +61,10 @@ const { breadcrumbs, heading, primaryCta, secondaryCta, image, showForm = true }
 
   <div class={showForm ? "page-hero-inner" : "page-hero-inner page-hero-inner-single"}>
     <div class="page-hero-content">
-      <Breadcrumbs items={breadcrumbs} />
+      {breadcrumbs.length > 0 && <Breadcrumbs items={breadcrumbs} />}
 
       <div class="page-hero-badges">
-        <span class="page-hero-badge">✓ Licensed and Insured</span>
-        <span class="page-hero-badge">✓ Free Water Test</span>
-        <span class="page-hero-badge">✓ Same Day Service</span>
-        <span class="page-hero-badge">✓ No Obligation</span>
+        {badges.map((badge) => <span class="page-hero-badge">{badge}</span>)}
       </div>
 
       <h1 class="page-hero-h1">{heading}</h1>
@@ -65,12 +75,12 @@ const { breadcrumbs, heading, primaryCta, secondaryCta, image, showForm = true }
 
       <div class="page-hero-ctas">
         <a href={primaryCta.href} class="page-hero-btn-primary">{primaryCta.text}</a>
-        <a href={secondaryCta.href} class="page-hero-btn-secondary">{secondaryCta.text}</a>
+        {secondaryCta && <a href={secondaryCta.href} class="page-hero-btn-secondary">{secondaryCta.text}</a>}
       </div>
     </div>
 
     {showForm && (
-      <div class="page-hero-form">
+      <div class="page-hero-form" id="estimate">
         <QuoteForm heading="Get a FREE Quote" compact />
       </div>
     )}
@@ -179,6 +189,15 @@ const { breadcrumbs, heading, primaryCta, secondaryCta, image, showForm = true }
     margin-bottom: 28px;
     max-width: 540px;
   }
+  /* Any link in the opening paragraph (imported content uses plain anchors) */
+  .page-hero-opening :global(a) {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .page-hero-opening :global(a:hover) { color: var(--color-accent-light); }
+  .page-hero-opening :global(a:focus-visible) { outline: 3px solid #ffffff; outline-offset: 2px; border-radius: 2px; }
   .page-hero-opening :global(.brand-link) {
     color: #ffffff;
     text-decoration: underline;
