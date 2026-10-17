@@ -11,7 +11,7 @@ openingHtml: "Water softener cost in Minneapolis, MN depends on system type, gra
 formHeading: ""
 formIntro: ""
 leadImage: null
-images: [{"file":"water-softener-cost-minneapolis-mn.webp","alt":"Water softener cost Minneapolis MN installer writing an itemized estimate","exists":false}]
+images: [{"file":"water-softener-cost-minneapolis-mn.webp","alt":"Water softener cost Minneapolis MN clipboard with an itemized estimate form on a water softener brine tank lid","exists":false}]
 faq: [{"q":"How much does a water softener cost in Minneapolis?","a":"The factors above decide where your home falls, and a free estimate gives the exact figure."},{"q":"Is installation included in the price?","a":"Ask whether the quote includes installation, the bypass valve and the drain connection. The itemized estimate lists each."},{"q":"What are the running costs?","a":"Salt, water for regeneration and a yearly service visit."},{"q":"Can I pay less by sizing down?","a":"An undersized unit regenerates too often and lets hard water through at peak use, so it costs more over time. The sizing guide shows the formula. Minneapolis Elite Water Softener MN provides water softener installation for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 4
 ---
