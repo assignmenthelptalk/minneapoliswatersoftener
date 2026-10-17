@@ -1,5 +1,79 @@
 {
-  "hardness": null,
-  "issues": [],
-  "neighbourhoods": []
+  "hardness": {
+    "value": "5.5",
+    "unit": "GPG",
+    "label": "Moderately Hard",
+    "short": "5.5 GPG avg (2025)",
+    "intro": "The City of Minneapolis measured an average of 94 mg/L total hardness (about 5.5 GPG) in 2025 after softening its river water at the plant. Click a community to see what that means for your home.",
+    "reportNote": "The City of Minneapolis 2025 record lists total hardness at an average of 94 mg/L within a range of 80 to 113 mg/L (4.7 to 6.6 GPG). The USGS rates 61 to 120 mg/L as moderately hard. These are readings at the plant, so a tap can differ.",
+    "footnote": "Hardness is the City of Minneapolis plant average for 2025, not a reading at your tap. Suburbs that receive Minneapolis water may blend other sources, so check your water bill for the provider; a free water test shows your own number. [VERIFY: confirm each suburb's supplier]"
+  },
+  "issues": [
+    "White scale on faucets and showerheads",
+    "Spotting and film on glassware and dishes",
+    "Scale buildup in water heaters and appliances",
+    "Soap scum, dry skin and stiff laundry"
+  ],
+  "neighbourhoods": [
+    {
+      "name": "Minneapolis",
+      "lat": 44.9772995,
+      "lng": -93.2654692
+    },
+    {
+      "name": "Linden Hills",
+      "lat": 44.9268804,
+      "lng": -93.3188456
+    },
+    {
+      "name": "Longfellow",
+      "lat": 44.9412132,
+      "lng": -93.2192997
+    },
+    {
+      "name": "Powderhorn Park",
+      "lat": 44.9399395,
+      "lng": -93.2553694
+    },
+    {
+      "name": "North Loop",
+      "lat": 44.9865278,
+      "lng": -93.2761516
+    },
+    {
+      "name": "Columbia Heights",
+      "lat": 45.0460458,
+      "lng": -93.2517802
+    },
+    {
+      "name": "Hilltop",
+      "lat": 45.0533306,
+      "lng": -93.2498116
+    },
+    {
+      "name": "Bloomington",
+      "lat": 44.8322405,
+      "lng": -93.3204872
+    },
+    {
+      "name": "Edina",
+      "lat": 44.8897027,
+      "lng": -93.3501222
+    },
+    {
+      "name": "Crystal",
+      "lat": 45.031823,
+      "lng": -93.3606072
+    },
+    {
+      "name": "Golden Valley",
+      "lat": 44.9861176,
+      "lng": -93.3784618
+    },
+    {
+      "name": "New Hope",
+      "lat": 45.0347176,
+      "lng": -93.3861037
+    }
+  ]
 }
