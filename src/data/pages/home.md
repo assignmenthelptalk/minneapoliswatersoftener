@@ -10,8 +10,8 @@ crumb: "Minneapolis Elite Water Softener - Water Softener Installation"
 openingHtml: "Water softener installation in Minneapolis, MN starts with the hardness of the water at your tap, which the City of Minneapolis measured at an average of 94 mg/L (about 5.5 grains per gallon) in 2025 after softening the river water at its plants. Minneapolis Elite Water Softener sizes each system to that reading, then installs, repairs and replaces softeners across the city. Request a free estimate below and a local technician will confirm the number for your home."
 formHeading: "Get Your Free Water Softener Estimate in Minneapolis, MN"
 formIntro: "Minneapolis homeowners can request a free estimate by phone or with the form in the page header. A technician confirms your hardness reading, your household size and the best spot for the unit, then gives a written price before any work starts. The same form also books a free hard water test."
-leadImage: null
-images: [{"file":"hero-water-softener-minneapolis-mn.webp","alt":"Water softener installed in a Minneapolis MN home utility room","exists":false},{"file":"installed-softener-minneapolis-mn.webp","alt":"Installed water softener system Minneapolis MN basement","exists":false},{"file":"card-water-softener-installation-minneapolis-mn.webp","alt":"Water Softener Installation Minneapolis MN","exists":false},{"file":"card-water-softener-replacement-minneapolis-mn.webp","alt":"Water Softener Replacement Minneapolis MN","exists":false},{"file":"card-salt-free-water-softener-systems-minneapolis-mn.webp","alt":"Salt-Free Water Softener Systems Minneapolis MN","exists":false},{"file":"card-water-softener-repair-and-service-minneapolis-mn.webp","alt":"Water Softener Repair & Service Minneapolis MN","exists":false},{"file":"card-whole-house-water-filtration-minneapolis-mn.webp","alt":"Whole House Water Filtration Minneapolis MN","exists":false},{"file":"card-water-quality-testing-minneapolis-mn.webp","alt":"Water Quality Testing Minneapolis MN","exists":false},{"file":"hard-water-buildup-minneapolis-mn.webp","alt":"Hard water scale buildup on a faucet water softener Minneapolis MN","exists":false},{"file":"water-softener-installation-steps-minneapolis-mn.webp","alt":"Water softener installed with bypass valve and drain line in a Minneapolis MN home","exists":false}]
+leadImage: {"file":"hero-water-softener-minneapolis-mn.webp","alt":"Water softener installed in a Minneapolis MN home utility room"}
+images: [{"file":"hero-water-softener-minneapolis-mn.webp","alt":"Water softener installed in a Minneapolis MN home utility room","exists":true},{"file":"installed-softener-minneapolis-mn.webp","alt":"Installed water softener system Minneapolis MN basement","exists":true},{"file":"card-water-softener-installation-minneapolis-mn.webp","alt":"Water Softener Installation Minneapolis MN","exists":true},{"file":"card-water-softener-replacement-minneapolis-mn.webp","alt":"Water Softener Replacement Minneapolis MN","exists":true},{"file":"card-salt-free-water-softener-systems-minneapolis-mn.webp","alt":"Salt-Free Water Softener Systems Minneapolis MN","exists":true},{"file":"card-water-softener-repair-and-service-minneapolis-mn.webp","alt":"Water Softener Repair & Service Minneapolis MN","exists":true},{"file":"card-whole-house-water-filtration-minneapolis-mn.webp","alt":"Whole House Water Filtration Minneapolis MN","exists":true},{"file":"card-water-quality-testing-minneapolis-mn.webp","alt":"Water Quality Testing Minneapolis MN","exists":true},{"file":"hard-water-buildup-minneapolis-mn.webp","alt":"Hard water scale buildup on a faucet water softener Minneapolis MN","exists":true},{"file":"water-softener-installation-steps-minneapolis-mn.webp","alt":"Water softener installed with bypass valve and drain line in a Minneapolis MN home","exists":true}]
 faq: [{"q":"How hard is Minneapolis water?","a":"The City of Minneapolis 2025 record lists average total hardness of 94 mg/L (about 5.5 gpg), within a range of 80 to 113 mg/L. That is moderately hard, so a softener reduces scale and spotting without having to fight extreme hardness, and a free test shows your exact number."},{"q":"How much does water softener installation cost in Minneapolis, MN?","a":"Cost depends on system size, type and the plumbing in your home. Your free estimate itemizes equipment, installation and any extra plumbing before you approve it."},{"q":"What is the best water softener for Minneapolis water?","a":"A salt-based softener sized to your hardness reading gives the strongest result, and a smaller unit can be enough at 5 to 7 gpg. Minneapolis water averages 94 mg/L, so the best unit depends on your measured reading and your household size. Disclosure: if you buy through a SpringWell link on this site, the site may earn a commission at no extra cost to you."},{"q":"Salt vs. salt-free water softener: what is the difference?","a":"A salt-based softener removes calcium and magnesium by ion exchange and leaves soft water. A salt-free conditioner changes how scale forms but leaves the minerals in the water. Choose salt-based for the strongest result, and salt-free if you want no salt or brine drain and accept a milder effect."},{"q":"How long does water softener installation take?","a":"A standard installation typically takes about 2 to 4 hours. Plumbing access, drain location and system type can lengthen the visit, and the technician confirms the schedule at your estimate."},{"q":"Do I need a water softener with Minneapolis city water?","a":"If your tap water tests above about 60 mg/L, a softener reduces scale and spotting, and Minneapolis water averages 94 mg/L. Households with a new water heater, hard-water spotting or dry skin see the benefit most. Private wells in the suburbs need a water test first for iron and sulfur, which affect the softener."},{"q":"Does a water softener installation need a permit in Minneapolis?","a":"Minnesota plumbing code requires a plumbing permit for many softener installations according to city guidance in the Twin Cities area. Your installer should state who pulls the permit before work starts."},{"q":"How often does a water softener need maintenance?","a":"Check the salt level monthly and refill it when the tank is below one third full. A technician should inspect the system once a year, clean the brine tank when salt bridges form and check the control head and resin."},{"q":"What areas do you serve?","a":"We serve Minneapolis and nearby communities in Hennepin County. The City of Minneapolis also supplies treated water to Columbia Heights, Hilltop, Bloomington, Edina, Crystal, Golden Valley and New Hope, so water in those communities can share Minneapolis's source. Call to confirm your address."}]
 markerCount: 8
 ---
@@ -21,7 +21,10 @@ markerCount: 8
 <div class="why-photo">
 
 
-![Installed water softener system Minneapolis MN basement](/placeholders/tall.svg)
+
+![Installed water softener system Minneapolis MN basement](../../assets/images/installed-softener-minneapolis-mn.webp)
+
+
 
 </div>
 
@@ -54,7 +57,10 @@ Six services cover most Minneapolis homes, from a first installation to a water 
 <div class="svc-card">
 
 
-![Water Softener Installation Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Installation Minneapolis MN](../../assets/images/card-water-softener-installation-minneapolis-mn.webp)
+
+
 
 ### Water Softener Installation
 
@@ -65,7 +71,10 @@ A technician sizes a softener to your household and hardness, then connects it t
 <div class="svc-card">
 
 
-![Water Softener Replacement Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Replacement Minneapolis MN](../../assets/images/card-water-softener-replacement-minneapolis-mn.webp)
+
+
 
 ### Water Softener Replacement
 
@@ -76,7 +85,10 @@ An old unit that no longer softens, leaks or uses too much salt can be replaced 
 <div class="svc-card">
 
 
-![Salt-Free Water Softener Systems Minneapolis MN](/placeholders/card.svg)
+
+![Salt-Free Water Softener Systems Minneapolis MN](../../assets/images/card-salt-free-water-softener-systems-minneapolis-mn.webp)
+
+
 
 ### Salt-Free Water Softener Systems
 
@@ -87,7 +99,10 @@ A salt-free conditioner changes how scale forms and leaves the hardness minerals
 <div class="svc-card">
 
 
-![Water Softener Repair & Service Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Repair & Service Minneapolis MN](../../assets/images/card-water-softener-repair-and-service-minneapolis-mn.webp)
+
+
 
 ### Water Softener Repair & Service
 
@@ -98,7 +113,10 @@ Repair covers units that stop regenerating, leak, throw error codes or let hard 
 <div class="svc-card">
 
 
-![Whole House Water Filtration Minneapolis MN](/placeholders/card.svg)
+
+![Whole House Water Filtration Minneapolis MN](../../assets/images/card-whole-house-water-filtration-minneapolis-mn.webp)
+
+
 
 ### Whole House Water Filtration
 
@@ -109,7 +127,10 @@ A whole-house filter removes sediment, chlorine taste and odor at the main line.
 <div class="svc-card">
 
 
-![Water Quality Testing Minneapolis MN](/placeholders/card.svg)
+
+![Water Quality Testing Minneapolis MN](../../assets/images/card-water-quality-testing-minneapolis-mn.webp)
+
+
 
 ### Water Quality Testing
 
@@ -129,7 +150,10 @@ Minneapolis water is moderately hard even after the City softens it at the plant
 <div class="issues-photo">
 
 
-![Hard water scale buildup on a faucet water softener Minneapolis MN](/placeholders/tall.svg)
+
+![Hard water scale buildup on a faucet water softener Minneapolis MN](../../assets/images/hard-water-buildup-minneapolis-mn.webp)
+
+
 
 </div>
 

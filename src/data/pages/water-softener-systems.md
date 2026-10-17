@@ -11,7 +11,7 @@ openingHtml: "Water softener systems in Minneapolis, MN range from a single-tank
 formHeading: ""
 formIntro: ""
 leadImage: null
-images: [{"file":"water-softener-systems-minneapolis-mn.webp","alt":"Water softener systems Minneapolis MN installed salt-based softener","exists":false},{"file":"card-why-minneapolis-water-needs-a-water-softener-system-minneapolis-mn.webp","alt":"Why Minneapolis Water Needs a Water Softener System Minneapolis MN","exists":false},{"file":"card-water-softener-installation-minneapolis-mn.webp","alt":"Water Softener Installation Minneapolis MN","exists":false},{"file":"card-water-softener-replacement-minneapolis-mn.webp","alt":"Water Softener Replacement Minneapolis MN","exists":false},{"file":"card-salt-free-water-softener-systems-minneapolis-mn.webp","alt":"Salt-Free Water Softener Systems Minneapolis MN","exists":false},{"file":"card-dual-tank-water-softener-installation-minneapolis-mn.webp","alt":"Dual Tank Water Softener Installation Minneapolis MN","exists":false},{"file":"card-commercial-water-softener-installation-minneapolis-mn.webp","alt":"Commercial Water Softener Installation Minneapolis MN","exists":false},{"file":"card-water-softener-maintenance-minneapolis-mn.webp","alt":"Water Softener Maintenance Minneapolis MN","exists":false},{"file":"card-water-softener-repair-minneapolis-mn.webp","alt":"Water Softener Repair Minneapolis MN","exists":false},{"file":"card-water-conditioner-installation-minneapolis-mn.webp","alt":"Water Conditioner Installation Minneapolis MN","exists":false}]
+images: [{"file":"water-softener-systems-minneapolis-mn.webp","alt":"Water softener systems Minneapolis MN installed salt-based softener","exists":false},{"file":"card-why-minneapolis-water-needs-a-water-softener-system-minneapolis-mn.webp","alt":"Why Minneapolis Water Needs a Water Softener System Minneapolis MN","exists":false},{"file":"card-water-softener-installation-minneapolis-mn.webp","alt":"Water Softener Installation Minneapolis MN","exists":true},{"file":"card-water-softener-replacement-minneapolis-mn.webp","alt":"Water Softener Replacement Minneapolis MN","exists":true},{"file":"card-salt-free-water-softener-systems-minneapolis-mn.webp","alt":"Salt-Free Water Softener Systems Minneapolis MN","exists":true},{"file":"card-dual-tank-water-softener-installation-minneapolis-mn.webp","alt":"Dual Tank Water Softener Installation Minneapolis MN","exists":false},{"file":"card-commercial-water-softener-installation-minneapolis-mn.webp","alt":"Commercial Water Softener Installation Minneapolis MN","exists":false},{"file":"card-water-softener-maintenance-minneapolis-mn.webp","alt":"Water Softener Maintenance Minneapolis MN","exists":false},{"file":"card-water-softener-repair-minneapolis-mn.webp","alt":"Water Softener Repair Minneapolis MN","exists":false},{"file":"card-water-conditioner-installation-minneapolis-mn.webp","alt":"Water Conditioner Installation Minneapolis MN","exists":false}]
 faq: [{"q":"What is the difference between a water softener and a water conditioner?","a":"A water softener removes calcium and magnesium by ion exchange, so the water is soft. A water conditioner changes how scale forms and leaves the minerals in the water."},{"q":"Do I need a softener if my Minneapolis water tests hard?","a":"If your water tests above 120 mg/L, scale builds in the plumbing and appliances, and a softener removes the cause. A free test shows your reading."},{"q":"How do I choose between salt-based and salt-free?","a":"Choose salt-based for the strongest result. Choose salt-free if you want no salt or brine drain and accept a milder effect."},{"q":"What size softener does a Minneapolis home need?","a":"Size depends on household size, daily water use and hardness in grains per gallon. The City's plant readings run from 4.7 to 6.6 gpg. Minneapolis Elite Water Softener MN provides water softener systems for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 0
 ---
@@ -36,7 +36,10 @@ Minneapolis water is moderately hard, so scale builds slowly in water heaters, p
 <div class="svc-card">
 
 
-![Water Softener Installation Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Installation Minneapolis MN](../../assets/images/card-water-softener-installation-minneapolis-mn.webp)
+
+
 
 ### Water Softener Installation
 
@@ -47,7 +50,10 @@ Installation sizes and connects a softener to your main line with a bypass valve
 <div class="svc-card">
 
 
-![Water Softener Replacement Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Replacement Minneapolis MN](../../assets/images/card-water-softener-replacement-minneapolis-mn.webp)
+
+
 
 ### Water Softener Replacement
 
@@ -58,7 +64,10 @@ Replacement removes a failing unit and installs a correctly sized new one. It fi
 <div class="svc-card">
 
 
-![Salt-Free Water Softener Systems Minneapolis MN](/placeholders/card.svg)
+
+![Salt-Free Water Softener Systems Minneapolis MN](../../assets/images/card-salt-free-water-softener-systems-minneapolis-mn.webp)
+
+
 
 ### Salt-Free Water Softener Systems
 
