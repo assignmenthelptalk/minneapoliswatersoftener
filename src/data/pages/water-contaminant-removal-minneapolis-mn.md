@@ -11,7 +11,7 @@ openingHtml: "Water contaminant removal in Minneapolis, MN uses certified filter
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"water-contaminant-removal-minneapolis-mn.webp","alt":"Water contaminant removal Minneapolis MN under-sink filter installation"}
-images: [{"file":"water-contaminant-removal-minneapolis-mn.webp","alt":"Water contaminant removal Minneapolis MN under-sink filter installation","exists":true},{"file":"card-lead-and-arsenic-removal-minneapolis-mn.webp","alt":"Lead and Arsenic Removal Minneapolis MN","exists":false},{"file":"card-chloramine-and-chlorine-removal-minneapolis-mn.webp","alt":"Chloramine and Chlorine Removal Minneapolis MN","exists":false},{"file":"card-fluoride-filter-installation-minneapolis-mn.webp","alt":"Fluoride Filter Installation Minneapolis MN","exists":false},{"file":"card-pfas-water-filter-minneapolis-mn.webp","alt":"PFAS Water Filter Minneapolis MN","exists":false},{"file":"card-nitrate-filter-installation-minneapolis-mn.webp","alt":"Nitrate Filter Installation Minneapolis MN","exists":false}]
+images: [{"file":"water-contaminant-removal-minneapolis-mn.webp","alt":"Water contaminant removal Minneapolis MN under-sink filter installation","exists":true},{"file":"card-lead-and-arsenic-removal-minneapolis-mn.webp","alt":"Lead and Arsenic Removal Minneapolis MN","exists":true},{"file":"card-chloramine-and-chlorine-removal-minneapolis-mn.webp","alt":"Chloramine and Chlorine Removal Minneapolis MN","exists":true},{"file":"card-fluoride-filter-installation-minneapolis-mn.webp","alt":"Fluoride Filter Installation Minneapolis MN","exists":true},{"file":"card-pfas-water-filter-minneapolis-mn.webp","alt":"PFAS Water Filter Minneapolis MN","exists":true},{"file":"card-nitrate-filter-installation-minneapolis-mn.webp","alt":"Nitrate Filter Installation Minneapolis MN","exists":true}]
 faq: [{"q":"Is Minneapolis tap water safe to drink?","a":"The City of Minneapolis publishes an annual water quality report. A home test shows what reaches your tap after your own plumbing."},{"q":"How do I know if I have lead in my water?","a":"Check your service line material and test the tap."},{"q":"Does a water softener remove contaminants?","a":"No. A softener removes hardness minerals. Contaminants need a certified filter or reverse osmosis."},{"q":"What filter certification should I look for?","a":"Look for an independent certification for the specific contaminant. Minneapolis Elite Water Softener MN provides water contaminant removal for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 9
 ---
@@ -21,7 +21,10 @@ markerCount: 9
 <div class="svc-card">
 
 
-![Lead and Arsenic Removal Minneapolis MN](/placeholders/card.svg)
+
+![Lead and Arsenic Removal Minneapolis MN](../../assets/images/card-lead-and-arsenic-removal-minneapolis-mn.webp)
+
+
 
 ### Lead and Arsenic Removal
 
@@ -32,7 +35,10 @@ Lead usually enters water from service lines and home plumbing, not from the uti
 <div class="svc-card">
 
 
-![Chloramine and Chlorine Removal Minneapolis MN](/placeholders/card.svg)
+
+![Chloramine and Chlorine Removal Minneapolis MN](../../assets/images/card-chloramine-and-chlorine-removal-minneapolis-mn.webp)
+
+
 
 ### Chloramine and Chlorine Removal
 
@@ -43,7 +49,10 @@ Chlorine and chloramine are disinfectants, and the City treats its supply at the
 <div class="svc-card">
 
 
-![Fluoride Filter Installation Minneapolis MN](/placeholders/card.svg)
+
+![Fluoride Filter Installation Minneapolis MN](../../assets/images/card-fluoride-filter-installation-minneapolis-mn.webp)
+
+
 
 ### Fluoride Filter Installation
 
@@ -54,7 +63,10 @@ Minnesota requires public water systems to add fluoride to the water <mark class
 <div class="svc-card">
 
 
-![PFAS Water Filter Minneapolis MN](/placeholders/card.svg)
+
+![PFAS Water Filter Minneapolis MN](../../assets/images/card-pfas-water-filter-minneapolis-mn.webp)
+
+
 
 ### PFAS Water Filter
 
@@ -65,7 +77,10 @@ PFAS are a group of persistent chemicals, and a carbon block or reverse osmosis 
 <div class="svc-card">
 
 
-![Nitrate Filter Installation Minneapolis MN](/placeholders/card.svg)
+
+![Nitrate Filter Installation Minneapolis MN](../../assets/images/card-nitrate-filter-installation-minneapolis-mn.webp)
+
+
 
 ### Nitrate Filter Installation
 

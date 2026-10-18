@@ -11,7 +11,7 @@ openingHtml: "Water quality testing in Minneapolis, MN measures what is in the w
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"water-quality-testing-minneapolis-mn.webp","alt":"Water quality testing Minneapolis MN tap water test vial and meter"}
-images: [{"file":"water-quality-testing-minneapolis-mn.webp","alt":"Water quality testing Minneapolis MN tap water test vial and meter","exists":true},{"file":"card-free-hard-water-test-minneapolis-mn.webp","alt":"Free Hard Water Test Minneapolis MN","exists":false},{"file":"card-tds-testing-minneapolis-mn.webp","alt":"TDS Testing Minneapolis MN","exists":false},{"file":"card-iron-content-testing-minneapolis-mn.webp","alt":"Iron Content Testing Minneapolis MN","exists":false},{"file":"card-ph-level-testing-minneapolis-mn.webp","alt":"pH Level Testing Minneapolis MN","exists":false},{"file":"card-chlorine-testing-minneapolis-mn.webp","alt":"Chlorine Testing Minneapolis MN","exists":false},{"file":"card-sulfur-testing-minneapolis-mn.webp","alt":"Sulfur Testing Minneapolis MN","exists":false},{"file":"card-heavy-metals-testing-minneapolis-mn.webp","alt":"Heavy Metals Testing Minneapolis MN","exists":false}]
+images: [{"file":"water-quality-testing-minneapolis-mn.webp","alt":"Water quality testing Minneapolis MN tap water test vial and meter","exists":true},{"file":"card-free-hard-water-test-minneapolis-mn.webp","alt":"Free Hard Water Test Minneapolis MN","exists":true},{"file":"card-tds-testing-minneapolis-mn.webp","alt":"TDS Testing Minneapolis MN","exists":true},{"file":"card-iron-content-testing-minneapolis-mn.webp","alt":"Iron Content Testing Minneapolis MN","exists":true},{"file":"card-ph-level-testing-minneapolis-mn.webp","alt":"pH Level Testing Minneapolis MN","exists":true},{"file":"card-chlorine-testing-minneapolis-mn.webp","alt":"Chlorine Testing Minneapolis MN","exists":true},{"file":"card-sulfur-testing-minneapolis-mn.webp","alt":"Sulfur Testing Minneapolis MN","exists":true},{"file":"card-heavy-metals-testing-minneapolis-mn.webp","alt":"Heavy Metals Testing Minneapolis MN","exists":false}]
 faq: [{"q":"Is the water test really free?","a":"The hard water test is free with an estimate."},{"q":"How long does a test take?","a":"A hardness test takes a few minutes at your tap. A fuller panel can take longer, and the technician tells you when results are ready."},{"q":"What hardness is high for Minneapolis?","a":"Above 180 mg/L (10.5 gpg) is very hard by the USGS scale. The City of Minneapolis lists 80 to 113 mg/L, which is moderately hard."},{"q":"Do I need to test if the city already tests the water?","a":"City reports describe the supply, not your plumbing. A home test shows what reaches your tap and sets the softener size. Minneapolis Elite Water Softener MN provides water quality testing for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 3
 ---
@@ -25,7 +25,10 @@ Seven tests cover hardness, total dissolved solids, iron, pH, chlorine, sulfur a
 <div class="svc-card">
 
 
-![Free Hard Water Test Minneapolis MN](/placeholders/card.svg)
+
+![Free Hard Water Test Minneapolis MN](../../assets/images/card-free-hard-water-test-minneapolis-mn.webp)
+
+
 
 ### Free Hard Water Test
 
@@ -36,7 +39,10 @@ A [hard water](/water-softener-guides/hard-water-minneapolis-mn/) test reads cal
 <div class="svc-card">
 
 
-![TDS Testing Minneapolis MN](/placeholders/card.svg)
+
+![TDS Testing Minneapolis MN](../../assets/images/card-tds-testing-minneapolis-mn.webp)
+
+
 
 ### TDS Testing
 
@@ -47,7 +53,10 @@ Total dissolved solids measures all dissolved minerals in milligrams per liter. 
 <div class="svc-card">
 
 
-![Iron Content Testing Minneapolis MN](/placeholders/card.svg)
+
+![Iron Content Testing Minneapolis MN](../../assets/images/card-iron-content-testing-minneapolis-mn.webp)
+
+
 
 ### Iron Content Testing
 
@@ -58,7 +67,10 @@ Iron stains fixtures and laundry and fouls softener resin. A reading above the s
 <div class="svc-card">
 
 
-![pH Level Testing Minneapolis MN](/placeholders/card.svg)
+
+![pH Level Testing Minneapolis MN](../../assets/images/card-ph-level-testing-minneapolis-mn.webp)
+
+
 
 ### pH Level Testing
 
@@ -69,7 +81,10 @@ pH shows whether water is acidic or alkaline. Low pH corrodes pipes, and the rea
 <div class="svc-card">
 
 
-![Chlorine Testing Minneapolis MN](/placeholders/card.svg)
+
+![Chlorine Testing Minneapolis MN](../../assets/images/card-chlorine-testing-minneapolis-mn.webp)
+
+
 
 ### Chlorine Testing
 
@@ -80,7 +95,10 @@ Chlorine is the disinfectant in city water, and the City of Minneapolis treats i
 <div class="svc-card">
 
 
-![Sulfur Testing Minneapolis MN](/placeholders/card.svg)
+
+![Sulfur Testing Minneapolis MN](../../assets/images/card-sulfur-testing-minneapolis-mn.webp)
+
+
 
 ### Sulfur Testing
 

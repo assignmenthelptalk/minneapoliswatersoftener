@@ -10,8 +10,8 @@ crumb: "Water Softener Maintenance"
 openingHtml: "Water softener maintenance in Minneapolis, MN keeps a softener removing hardness at full capacity, which matters on water that the City of Minneapolis measured at 80 to 113 mg/L total hardness in 2025. <a href=\"/\">Minneapolis Elite Water Softener</a> cleans resin and brine tanks, refills salt and checks every control setting. Request a free estimate and the technician will recommend a service schedule."
 formHeading: ""
 formIntro: ""
-leadImage: null
-images: [{"file":"water-softener-maintenance-minneapolis-mn.webp","alt":"Water softener maintenance Minneapolis MN brine tank with salt pellets","exists":false},{"file":"card-water-softener-resin-cleaning-service-minneapolis-mn.webp","alt":"Water Softener Resin Cleaning Service Minneapolis MN","exists":false},{"file":"card-water-softener-salt-refill-service-minneapolis-mn.webp","alt":"Water Softener Salt Refill Service Minneapolis MN","exists":false},{"file":"card-water-softener-brine-tank-cleaning-minneapolis-mn.webp","alt":"Water Softener Brine Tank Cleaning Minneapolis MN","exists":false},{"file":"card-annual-maintenance-plans-minneapolis-mn.webp","alt":"Annual Maintenance Plans Minneapolis MN","exists":false}]
+leadImage: {"file":"water-softener-maintenance-minneapolis-mn.webp","alt":"Water softener maintenance Minneapolis MN brine tank with salt pellets"}
+images: [{"file":"water-softener-maintenance-minneapolis-mn.webp","alt":"Water softener maintenance Minneapolis MN brine tank with salt pellets","exists":true},{"file":"card-water-softener-resin-cleaning-service-minneapolis-mn.webp","alt":"Water Softener Resin Cleaning Service Minneapolis MN","exists":true},{"file":"card-water-softener-salt-refill-service-minneapolis-mn.webp","alt":"Water Softener Salt Refill Service Minneapolis MN","exists":false},{"file":"card-water-softener-brine-tank-cleaning-minneapolis-mn.webp","alt":"Water Softener Brine Tank Cleaning Minneapolis MN","exists":false},{"file":"card-annual-maintenance-plans-minneapolis-mn.webp","alt":"Annual Maintenance Plans Minneapolis MN","exists":false}]
 faq: [{"q":"How often should I add salt to my water softener?","a":"Check the salt level monthly and refill it when the tank is below one third full. Larger households use salt faster."},{"q":"What kind of salt should I use?","a":"Use the salt type the manufacturer lists for your unit, usually clean pellets or crystals. Rock salt can leave more residue in the tank."},{"q":"Why does my softener use so much salt?","a":"A salt bridge, a stuck valve or settings that do not match your hardness waste salt. The technician checks all three."},{"q":"Do I need a service plan?","a":"A plan suits homeowners who prefer a scheduled yearly check over remembering it. Your free estimate lists what each plan covers."},{"q":"How do I know my softener is working?","a":"Soap lathers easily, fixtures stay free of white crust and a hardness test of softened water reads near zero. A reading above 1 gpg means the system needs service . Minneapolis Elite Water Softener MN provides water softener maintenance for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 6
 ---
@@ -25,7 +25,10 @@ Four services keep a softener at full capacity: resin cleaning, salt refills, br
 <div class="svc-card">
 
 
-![Water Softener Resin Cleaning Service Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Resin Cleaning Service Minneapolis MN](../../assets/images/card-water-softener-resin-cleaning-service-minneapolis-mn.webp)
+
+
 
 ### Water Softener Resin Cleaning Service
 

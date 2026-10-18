@@ -11,7 +11,7 @@ openingHtml: "UV water purification system installation in Minneapolis, MN adds 
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"uv-water-purification-minneapolis-mn.webp","alt":"UV water purification Minneapolis MN ultraviolet chamber on a wall"}
-images: [{"file":"uv-water-purification-minneapolis-mn.webp","alt":"UV water purification Minneapolis MN ultraviolet chamber on a wall","exists":true},{"file":"card-how-uv-water-purification-works-minneapolis-mn.webp","alt":"How UV Water Purification Works Minneapolis MN","exists":false},{"file":"card-uv-system-installation-minneapolis-mn.webp","alt":"UV System Installation Minneapolis MN","exists":false},{"file":"card-uv-and-water-softener-combination-minneapolis-mn.webp","alt":"UV and Water Softener Combination Minneapolis MN","exists":false}]
+images: [{"file":"uv-water-purification-minneapolis-mn.webp","alt":"UV water purification Minneapolis MN ultraviolet chamber on a wall","exists":true},{"file":"card-how-uv-water-purification-works-minneapolis-mn.webp","alt":"How UV Water Purification Works Minneapolis MN","exists":true},{"file":"card-uv-system-installation-minneapolis-mn.webp","alt":"UV System Installation Minneapolis MN","exists":true},{"file":"card-uv-and-water-softener-combination-minneapolis-mn.webp","alt":"UV and Water Softener Combination Minneapolis MN","exists":true}]
 faq: [{"q":"Does UV remove chemicals or hardness?","a":"No. UV only inactivates organisms. Hardness needs a softener, and chemicals need a filter."},{"q":"Does UV change the taste of water?","a":"No. It adds no chemicals and leaves taste unchanged."},{"q":"Do I need UV on city water?","a":"The City of Minneapolis disinfects its water, so most city customers do not need UV. A well needs a test first."},{"q":"How often is the UV lamp replaced?","a":"On the maker's schedule, commonly once a year . Minneapolis Elite Water Softener MN provides UV water purification system installation for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 4
 ---
@@ -25,7 +25,10 @@ UV purification covers three topics: how UV works, UV system installation and co
 <div class="svc-card">
 
 
-![How UV Water Purification Works Minneapolis MN](/placeholders/card.svg)
+
+![How UV Water Purification Works Minneapolis MN](../../assets/images/card-how-uv-water-purification-works-minneapolis-mn.webp)
+
+
 
 ### How UV Water Purification Works
 
@@ -36,7 +39,10 @@ A UV system passes water through a chamber with an ultraviolet lamp that damages
 <div class="svc-card">
 
 
-![UV System Installation Minneapolis MN](/placeholders/card.svg)
+
+![UV System Installation Minneapolis MN](../../assets/images/card-uv-system-installation-minneapolis-mn.webp)
+
+
 
 ### UV System Installation
 
@@ -47,7 +53,10 @@ The technician mounts the chamber on the main line after the filters, connects p
 <div class="svc-card">
 
 
-![UV and Water Softener Combination Minneapolis MN](/placeholders/card.svg)
+
+![UV and Water Softener Combination Minneapolis MN](../../assets/images/card-uv-and-water-softener-combination-minneapolis-mn.webp)
+
+
 
 ### UV and Water Softener Combination
 
