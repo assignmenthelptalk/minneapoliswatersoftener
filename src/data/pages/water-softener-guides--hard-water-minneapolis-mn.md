@@ -11,7 +11,7 @@ openingHtml: "Hard water in Minneapolis, MN measures an average of 94 mg/L (abou
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"hard-water-minneapolis-mn.webp","alt":"Hard water Minneapolis MN scale buildup on a showerhead"}
-images: [{"file":"hard-water-minneapolis-mn.webp","alt":"Hard water Minneapolis MN scale buildup on a showerhead","exists":true},{"file":"card-what-is-hard-water-minneapolis-mn.webp","alt":"What Is Hard Water? Minneapolis MN","exists":false},{"file":"card-why-is-minneapolis-water-hard-minneapolis-mn.webp","alt":"Why Is Minneapolis Water Hard? Minneapolis MN","exists":false},{"file":"card-how-hard-is-minneapolis-water-minneapolis-mn.webp","alt":"How Hard Is Minneapolis Water? Minneapolis MN","exists":false}]
+images: [{"file":"hard-water-minneapolis-mn.webp","alt":"Hard water Minneapolis MN scale buildup on a showerhead","exists":true},{"file":"card-what-is-hard-water-minneapolis-mn.webp","alt":"What Is Hard Water? Minneapolis MN","exists":true},{"file":"card-why-is-minneapolis-water-hard-minneapolis-mn.webp","alt":"Why Is Minneapolis Water Hard? Minneapolis MN","exists":true},{"file":"card-how-hard-is-minneapolis-water-minneapolis-mn.webp","alt":"How Hard Is Minneapolis Water? Minneapolis MN","exists":true}]
 faq: [{"q":"Is Minneapolis water hard?","a":"Yes, moderately. The City of Minneapolis 2025 record lists average total hardness of 94 mg/L, which is moderately hard on the USGS scale, and scale still builds slowly in water heaters and on fixtures."},{"q":"Is hard water bad for your health?","a":"Hard water is not a health risk in the amounts found in Minneapolis. It affects plumbing, appliances, skin and laundry rather than drinking safety."},{"q":"Why is my neighbor's water harder than mine?","a":"Plant readings move by month, from 88 mg/L in March to 104 mg/L in January 2025, and the pipes in your home change what reaches the tap. Neighboring homes on the same City supply usually read close, and a test shows yours."},{"q":"Does boiling remove water hardness?","a":"Boiling precipitates some of the temporary hardness as scale, and it does not make hard water soft. A softener removes the minerals before they reach the pipes. Minneapolis Elite Water Softener MN provides water softener installation for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 0
 ---
@@ -25,7 +25,10 @@ Three questions cover the basics: what hard water is, why Minneapolis water is h
 <div class="svc-card">
 
 
-![What Is Hard Water? Minneapolis MN](/placeholders/card.svg)
+
+![What Is Hard Water? Minneapolis MN](../../assets/images/card-what-is-hard-water-minneapolis-mn.webp)
+
+
 
 ### What Is Hard Water?
 
@@ -36,7 +39,10 @@ Hard water contains dissolved calcium and magnesium. It is measured in milligram
 <div class="svc-card">
 
 
-![Why Is Minneapolis Water Hard? Minneapolis MN](/placeholders/card.svg)
+
+![Why Is Minneapolis Water Hard? Minneapolis MN](../../assets/images/card-why-is-minneapolis-water-hard-minneapolis-mn.webp)
+
+
 
 ### Why Is Minneapolis Water Hard?
 
@@ -47,7 +53,10 @@ Minneapolis water is moderately hard because the Mississippi River carries calci
 <div class="svc-card">
 
 
-![How Hard Is Minneapolis Water? Minneapolis MN](/placeholders/card.svg)
+
+![How Hard Is Minneapolis Water? Minneapolis MN](../../assets/images/card-how-hard-is-minneapolis-water-minneapolis-mn.webp)
+
+
 
 ### How Hard Is Minneapolis Water?
 

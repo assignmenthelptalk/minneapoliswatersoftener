@@ -10,8 +10,8 @@ crumb: "Water Softener Guides for Minneapolis Homeowners"
 openingHtml: "Water softener guides for Minneapolis, MN answer the questions homeowners ask before they buy: how hard the water is, what size to choose and which type fits. The figures come from the City of Minneapolis 2025 record, which lists total hardness of 80 to 113 mg/L (average 94). <a href=\"/\">Minneapolis Elite Water Softener</a> keeps each guide to sourced numbers and plain language. Request a free estimate when you are ready."
 formHeading: ""
 formIntro: ""
-leadImage: null
-images: [{"file":"water-softener-guides-minneapolis-mn.webp","alt":"Water softener guides Minneapolis MN desk with a hardness report and a glass of water","exists":false}]
+leadImage: {"file":"water-softener-guides-minneapolis-mn.webp","alt":"Water softener guides Minneapolis MN desk with a hardness report and a glass of water"}
+images: [{"file":"water-softener-guides-minneapolis-mn.webp","alt":"Water softener guides Minneapolis MN desk with a hardness report and a glass of water","exists":true}]
 faq: [{"q":"Where do the hardness figures in these guides come from?","a":"They come from the City of Minneapolis 2025 Record of Data, which lists total hardness by month and for the year. The guides cite it directly."},{"q":"Do the guides give prices?","a":"Prices appear only once they are confirmed. Until then, each guide lists the factors that move the cost. Minneapolis Elite Water Softener MN provides water softener installation, replacement, repair and water testing for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 0
 ---
