@@ -11,7 +11,7 @@ openingHtml: "Water quality testing in Minneapolis, MN measures what is in the w
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"water-quality-testing-minneapolis-mn.webp","alt":"Water quality testing Minneapolis MN tap water test vial and meter"}
-images: [{"file":"water-quality-testing-minneapolis-mn.webp","alt":"Water quality testing Minneapolis MN tap water test vial and meter","exists":true},{"file":"card-free-hard-water-test-minneapolis-mn.webp","alt":"Free Hard Water Test Minneapolis MN","exists":true},{"file":"card-tds-testing-minneapolis-mn.webp","alt":"TDS Testing Minneapolis MN","exists":true},{"file":"card-iron-content-testing-minneapolis-mn.webp","alt":"Iron Content Testing Minneapolis MN","exists":true},{"file":"card-ph-level-testing-minneapolis-mn.webp","alt":"pH Level Testing Minneapolis MN","exists":true},{"file":"card-chlorine-testing-minneapolis-mn.webp","alt":"Chlorine Testing Minneapolis MN","exists":true},{"file":"card-sulfur-testing-minneapolis-mn.webp","alt":"Sulfur Testing Minneapolis MN","exists":true},{"file":"card-heavy-metals-testing-minneapolis-mn.webp","alt":"Heavy Metals Testing Minneapolis MN","exists":false}]
+images: [{"file":"water-quality-testing-minneapolis-mn.webp","alt":"Water quality testing Minneapolis MN tap water test vial and meter","exists":true},{"file":"card-free-hard-water-test-minneapolis-mn.webp","alt":"Free Hard Water Test Minneapolis MN","exists":true},{"file":"card-tds-testing-minneapolis-mn.webp","alt":"TDS Testing Minneapolis MN","exists":true},{"file":"card-iron-content-testing-minneapolis-mn.webp","alt":"Iron Content Testing Minneapolis MN","exists":true},{"file":"card-ph-level-testing-minneapolis-mn.webp","alt":"pH Level Testing Minneapolis MN","exists":true},{"file":"card-chlorine-testing-minneapolis-mn.webp","alt":"Chlorine Testing Minneapolis MN","exists":true},{"file":"card-sulfur-testing-minneapolis-mn.webp","alt":"Sulfur Testing Minneapolis MN","exists":true},{"file":"card-heavy-metals-testing-minneapolis-mn.webp","alt":"Heavy Metals Testing Minneapolis MN","exists":true}]
 faq: [{"q":"Is the water test really free?","a":"The hard water test is free with an estimate."},{"q":"How long does a test take?","a":"A hardness test takes a few minutes at your tap. A fuller panel can take longer, and the technician tells you when results are ready."},{"q":"What hardness is high for Minneapolis?","a":"Above 180 mg/L (10.5 gpg) is very hard by the USGS scale. The City of Minneapolis lists 80 to 113 mg/L, which is moderately hard."},{"q":"Do I need to test if the city already tests the water?","a":"City reports describe the supply, not your plumbing. A home test shows what reaches your tap and sets the softener size. Minneapolis Elite Water Softener MN provides water quality testing for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 3
 ---
@@ -109,7 +109,10 @@ Sulfur gives a rotten-egg smell, and it is mainly a [private well](/well-water-s
 <div class="svc-card">
 
 
-![Heavy Metals Testing Minneapolis MN](/placeholders/card.svg)
+
+![Heavy Metals Testing Minneapolis MN](../../assets/images/card-heavy-metals-testing-minneapolis-mn.webp)
+
+
 
 ### Heavy Metals Testing
 

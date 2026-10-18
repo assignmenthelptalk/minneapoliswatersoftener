@@ -11,7 +11,7 @@ openingHtml: "A well water softener near Minneapolis, MN treats private well wat
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"well-water-softener-minneapolis-mn.webp","alt":"Well water softener Minneapolis MN softener and iron filter beside a pressure tank"}
-images: [{"file":"well-water-softener-minneapolis-mn.webp","alt":"Well water softener Minneapolis MN softener and iron filter beside a pressure tank","exists":true},{"file":"card-well-water-softener-installation-minneapolis-mn.webp","alt":"Well Water Softener Installation Minneapolis MN","exists":true},{"file":"card-iron-filter-installation-minneapolis-mn.webp","alt":"Iron Filter Installation Minneapolis MN","exists":true},{"file":"card-hydrogen-sulfide-filter-minneapolis-mn.webp","alt":"Hydrogen Sulfide Filter Minneapolis MN","exists":false},{"file":"card-well-water-sediment-filter-minneapolis-mn.webp","alt":"Well Water Sediment Filter Minneapolis MN","exists":true},{"file":"card-why-well-water-in-the-minneapolis-area-needs-special-treatment-minneapolis-mn.webp","alt":"Why Well Water in the Minneapolis Area Needs Special Treatment Minneapolis MN","exists":true}]
+images: [{"file":"well-water-softener-minneapolis-mn.webp","alt":"Well water softener Minneapolis MN softener and iron filter beside a pressure tank","exists":true},{"file":"card-well-water-softener-installation-minneapolis-mn.webp","alt":"Well Water Softener Installation Minneapolis MN","exists":true},{"file":"card-iron-filter-installation-minneapolis-mn.webp","alt":"Iron Filter Installation Minneapolis MN","exists":true},{"file":"card-hydrogen-sulfide-filter-minneapolis-mn.webp","alt":"Hydrogen Sulfide Filter Minneapolis MN","exists":true},{"file":"card-well-water-sediment-filter-minneapolis-mn.webp","alt":"Well Water Sediment Filter Minneapolis MN","exists":true},{"file":"card-why-well-water-in-the-minneapolis-area-needs-special-treatment-minneapolis-mn.webp","alt":"Why Well Water in the Minneapolis Area Needs Special Treatment Minneapolis MN","exists":true}]
 faq: [{"q":"Do I need a water softener on a private well?","a":"If the well tests hard, yes. Well water near Minneapolis can run harder than city water, and a test shows by how much."},{"q":"What goes first, the filter or the softener?","a":"Filters for iron, sulfur and sediment go before the softener, because they protect the resin."},{"q":"Why does my well water smell like rotten eggs?","a":"A sulfur smell usually means hydrogen sulfide. A hydrogen sulfide filter removes it."},{"q":"Does a well water system cost more?","a":"It can, because wells often need filters as well as a softener. Minneapolis Elite Water Softener MN provides well water softener and treatment for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 5
 ---
@@ -49,7 +49,10 @@ An iron filter removes dissolved and particulate iron before the softener. Iron 
 <div class="svc-card">
 
 
-![Hydrogen Sulfide Filter Minneapolis MN](/placeholders/card.svg)
+
+![Hydrogen Sulfide Filter Minneapolis MN](../../assets/images/card-hydrogen-sulfide-filter-minneapolis-mn.webp)
+
+
 
 ### Hydrogen Sulfide Filter
 

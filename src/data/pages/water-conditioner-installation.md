@@ -11,7 +11,7 @@ openingHtml: "Water conditioner installation in Minneapolis, MN adds a system th
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"water-conditioner-installation-minneapolis-mn.webp","alt":"Water conditioner installation Minneapolis MN conditioner on a water line"}
-images: [{"file":"water-conditioner-installation-minneapolis-mn.webp","alt":"Water conditioner installation Minneapolis MN conditioner on a water line","exists":true},{"file":"card-salt-free-water-conditioners-minneapolis-mn.webp","alt":"Salt-Free Water Conditioners Minneapolis MN","exists":true},{"file":"card-potassium-chloride-water-softener-systems-minneapolis-mn.webp","alt":"Potassium Chloride Water Softener Systems Minneapolis MN","exists":false},{"file":"card-hard-water-treatment-service-minneapolis-mn.webp","alt":"Hard Water Treatment Service Minneapolis MN","exists":true},{"file":"card-limescale-treatment-service-minneapolis-mn.webp","alt":"Limescale Treatment Service Minneapolis MN","exists":true},{"file":"card-scale-inhibitor-system-installation-minneapolis-mn.webp","alt":"Scale Inhibitor System Installation Minneapolis MN","exists":true}]
+images: [{"file":"water-conditioner-installation-minneapolis-mn.webp","alt":"Water conditioner installation Minneapolis MN conditioner on a water line","exists":true},{"file":"card-salt-free-water-conditioners-minneapolis-mn.webp","alt":"Salt-Free Water Conditioners Minneapolis MN","exists":true},{"file":"card-potassium-chloride-water-softener-systems-minneapolis-mn.webp","alt":"Potassium Chloride Water Softener Systems Minneapolis MN","exists":true},{"file":"card-hard-water-treatment-service-minneapolis-mn.webp","alt":"Hard Water Treatment Service Minneapolis MN","exists":true},{"file":"card-limescale-treatment-service-minneapolis-mn.webp","alt":"Limescale Treatment Service Minneapolis MN","exists":true},{"file":"card-scale-inhibitor-system-installation-minneapolis-mn.webp","alt":"Scale Inhibitor System Installation Minneapolis MN","exists":true}]
 faq: [{"q":"What is the difference between a water conditioner and a water softener?","a":"A softener removes calcium and magnesium. A conditioner leaves them in the water but changes how they form scale."},{"q":"Is a potassium chloride softener better than a salt softener?","a":"It softens the same way but adds potassium instead of sodium. It costs more to run, so it fits households avoiding sodium."},{"q":"Will a conditioner remove existing limescale?","a":"Not fully. Existing buildup needs a descaling service, and the conditioner slows new buildup."},{"q":"Do scale inhibitors work for a whole house?","a":"They protect pipes and heaters, but they do not make water feel soft. They suit equipment protection more than comfort."},{"q":"What does water conditioner installation cost in Minneapolis?","a":"The estimate is free and itemized. Minneapolis Elite Water Softener MN provides water conditioner installation for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 1
 ---
@@ -39,7 +39,10 @@ A salt-free water conditioner changes how hardness minerals behave so they form 
 <div class="svc-card">
 
 
-![Potassium Chloride Water Softener Systems Minneapolis MN](/placeholders/card.svg)
+
+![Potassium Chloride Water Softener Systems Minneapolis MN](../../assets/images/card-potassium-chloride-water-softener-systems-minneapolis-mn.webp)
+
+
 
 ### Potassium Chloride Water Softener Systems
 
