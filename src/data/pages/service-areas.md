@@ -22,15 +22,15 @@ Minneapolis is the core service area, with nearby communities that receive the s
 
 ### Minneapolis
 
-Minneapolis homes receive City of Minneapolis water, which the City's 2025 record lists at an average of 94 mg/L total hardness (80 to 113 mg/L), about 5.5 gpg. The same supply reaches Linden Hills, Longfellow, Powderhorn Park and the North Loop. A free test shows the reading at your tap.
+Minneapolis homes receive City of Minneapolis water, which the City's 2025 record lists at an average of 94 mg/L total hardness (80 to 113 mg/L), about 5.5 gpg. The same supply reaches [Linden Hills](/water-softener-linden-hills-mn/), [Longfellow](/water-softener-longfellow-mn/), [Powderhorn Park](/water-softener-powderhorn-park-mn/) and the [North Loop](/water-softener-north-loop-mn/). A free test shows the reading at your tap.
 
 ### Suburbs That Receive Minneapolis Water
 
-The City of Minneapolis lists Columbia Heights, Hilltop, Bloomington, Edina, Crystal, Golden Valley and New Hope among the places its treated water reaches, and a 2019 water supply plan lists wholesale contracts with Golden Valley, Crystal, New Hope, Edina and Bloomington. Some of these communities may blend other sources, so check your water bill for the provider name. <mark class="data-gap">[NEEDS DATA: confirm each suburb's supplier and hardness before a page is published for it.]</mark>
+The City of Minneapolis lists Columbia Heights, Hilltop, Bloomington, Edina, Crystal, Golden Valley and New Hope among the places its treated water reaches, and a 2019 water supply plan lists wholesale contracts with Golden Valley, Crystal, New Hope, Edina and Bloomington. Bloomington's own reports describe six deep wells and a lime softening plant, so its supply mix is not settled: see [Bloomington](/water-softener-bloomington-mn/). Other suburbs may blend sources too, so check your water bill for the provider name. <mark class="data-gap">[NEEDS DATA: confirm each suburb's supplier and hardness before a page is published for it.]</mark>
 
 ### Other Communities in Hennepin County
 
-Minnetonka and other suburbs are not on the City's list, so their water provider and hardness are not confirmed. <mark class="data-gap">[NEEDS DATA: provider and hardness for Minnetonka, St. Louis Park and other suburbs, from their own reports, before any page is published for them.]</mark>
+[Minnetonka](/water-softener-minnetonka-mn/) is not on the City's list: its own reports describe groundwater from 18 wells. Hardness for Minnetonka and other suburbs is not confirmed. <mark class="data-gap">[NEEDS DATA: provider and hardness for Minnetonka, St. Louis Park and other suburbs, from their own reports.]</mark>
 
 
 ## Is your address inside the service area?

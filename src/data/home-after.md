@@ -107,7 +107,7 @@ Check the salt level monthly and refill it when the tank is below one third full
 <details class="faq-item">
 <summary>What areas do you serve?</summary>
 
-We serve Minneapolis and nearby communities in Hennepin County. <mark class="data-gap">[NEEDS DATA: confirm the tenant's service area list.]</mark> The City of Minneapolis also supplies treated water to Columbia Heights, Hilltop, Bloomington, Edina, Crystal, Golden Valley and New Hope, so water in those communities can share Minneapolis's source. Call to confirm your address.
+We serve Minneapolis and nearby communities in Hennepin County. <mark class="data-gap">[NEEDS DATA: confirm the tenant's service area list.]</mark> The City of Minneapolis lists Columbia Heights, Hilltop, Bloomington, Edina, Crystal, Golden Valley and New Hope among the places its treated water reaches <mark class="data-gap">[VERIFY: Bloomington's own reports describe its own wells, so confirm each suburb's supplier]</mark>. Call to confirm your address.
 
 </details>
 

@@ -19,14 +19,14 @@ Do not publish while any item below is open. Markers show on the site as highlig
 - [ ] Write or decide the remaining location pages (see the strategy folder's reports/)
 
 ## Totals
-- Pages built: 26
-- Open markers: 85
+- Pages built: 32
+- Open markers: 94
 - Draft meta descriptions: 0
 
 ## Per page
 ### /
 - Meta description: final
-- Open markers: 8
+- Open markers: 9
   - [NEEDS DATA: years in business and installs completed, from the tenant]
   - [NEEDS DATA: Minnesota licence rule and the installer's licence number.]
   - [NEEDS DATA: tenant confirmation]
@@ -34,6 +34,7 @@ Do not publish while any item below is open. Markers show on the site as highlig
   - [NEEDS DATA: SpringWell affiliate link, salt-based softener recommendation.]
   - [NEEDS DATA: confirm the Minneapolis permit rule with the City and the Minnesota Department of Labor and Industry.]
   - [NEEDS DATA: confirm the tenant's service area list.]
+  - [VERIFY: Bloomington's own reports describe its own wells, so confirm each suburb's supplier]
   - [NEEDS DATA: confirm the tenant's service area list before naming more towns.]
 
 ### /commercial-water-softener/
@@ -75,7 +76,7 @@ Do not publish while any item below is open. Markers show on the site as highlig
 - Open markers: 4
   - [NEEDS DATA: confirm the tenant's service area list before naming more places.]
   - [NEEDS DATA: confirm each suburb's supplier and hardness before a page is published for it.]
-  - [NEEDS DATA: provider and hardness for Minnetonka, St. Louis Park and other suburbs, from their own reports, before any page is published for them.]
+  - [NEEDS DATA: provider and hardness for Minnetonka, St. Louis Park and other suburbs, from their own reports.]
   - [NEEDS DATA: tenant's service area boundary.]
 
 ### /uv-water-purification/
@@ -115,6 +116,13 @@ Do not publish while any item below is open. Markers show on the site as highlig
   - [NEEDS DATA: Minneapolis lead service line program.]
   - [VERIFY: cite recommended frequency]
   - [NEEDS DATA: tenant confirmation of what the free test includes and what a fuller panel costs.]
+
+### /water-softener-bloomington-mn/
+- Meta description: final
+- Open markers: 3
+  - [NEEDS DATA: which supply serves your address, and the hardness figure from the current Bloomington report.]
+  - [VERIFY: confirm each statement against the current report.]
+  - [NEEDS DATA: hardness from the current Bloomington water quality report.]
 
 ### /water-softener-guides/
 - Meta description: final
@@ -172,6 +180,16 @@ Do not publish while any item below is open. Markers show on the site as highlig
   - [NEEDS DATA: installed price range for Minneapolis, from the tenant or a sourced Minnesota report.]
   - [NEEDS DATA: permit rule.]
 
+### /water-softener-linden-hills-mn/
+- Meta description: final
+- Open markers: 0
+  - (none)
+
+### /water-softener-longfellow-mn/
+- Meta description: final
+- Open markers: 0
+  - (none)
+
 ### /water-softener-maintenance/
 - Meta description: final
 - Open markers: 6
@@ -181,6 +199,24 @@ Do not publish while any item below is open. Markers show on the site as highlig
   - [VERIFY: cite source]
   - [NEEDS DATA: plan terms.]
   - [VERIFY: typical softened-water target]
+
+### /water-softener-minnetonka-mn/
+- Meta description: final
+- Open markers: 4
+  - [NEEDS DATA: hardness from the current Minnetonka drinking water report.]
+  - [NEEDS DATA: compliance statement from the current report.]
+  - [NEEDS DATA: hardness from the current Minnetonka drinking water report.]
+  - [VERIFY: cite recommended test frequency]
+
+### /water-softener-north-loop-mn/
+- Meta description: final
+- Open markers: 1
+  - [NEEDS DATA: Minneapolis permit rule and any association requirement.]
+
+### /water-softener-powderhorn-park-mn/
+- Meta description: final
+- Open markers: 0
+  - (none)
 
 ### /water-softener-repair/
 - Meta description: final
