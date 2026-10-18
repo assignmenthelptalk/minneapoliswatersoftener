@@ -326,13 +326,13 @@ export const siteConfig: SiteConfig = {
 
   // Design tokens (deep teal + warm orange defaults — other cities override these)
   design: {
-    primaryColor: "#1F5A3C",
-    primaryLight: "#E5F0E9",
-    accentColor: "#A8690F",
+    primaryColor: "#14532D",
+    primaryLight: "#E4F1E8",
+    accentColor: "#B45309",
     headingFont: "DM Serif Display",
     bodyFont: "Inter",
     borderRadius: "8px",
-    gpgStatColor: "#1F5A3C",
+    gpgStatColor: "#14532D",
   },
 
   serviceAreas: [],
