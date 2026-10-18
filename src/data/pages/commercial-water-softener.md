@@ -10,8 +10,8 @@ crumb: "Commercial Water Softener Installation"
 openingHtml: "A commercial water softener in Minneapolis, MN protects a business's boilers, dishwashers, ice machines and plumbing from the scale that hard water leaves behind. <a href=\"/\">Minneapolis Elite Water Softener</a> sizes, installs and services commercial systems from peak flow rate, not household size, on water that the City of Minneapolis measured at an average of 94 mg/L total hardness in 2025. Request a free commercial estimate and a technician will review your equipment and water use."
 formHeading: ""
 formIntro: ""
-leadImage: null
-images: [{"file":"commercial-water-softener-minneapolis-mn.webp","alt":"Commercial water softener Minneapolis MN large softener in a plant room","exists":false}]
+leadImage: {"file":"commercial-water-softener-minneapolis-mn.webp","alt":"Commercial water softener Minneapolis MN large softener in a plant room"}
+images: [{"file":"commercial-water-softener-minneapolis-mn.webp","alt":"Commercial water softener Minneapolis MN large softener in a plant room","exists":true}]
 faq: [{"q":"How do you size a commercial water softener?","a":"The technician sizes it from peak flow rate and daily water use, plus the hardness of your water. Household size does not apply."},{"q":"Can installation happen without shutting down my business?","a":"Most installs need a short water shutoff. The technician schedules around your busiest hours to limit downtime."},{"q":"What equipment does a commercial softener protect?","a":"It protects boilers, water heaters, dishwashers, ice machines, steamers and plumbing from scale buildup."},{"q":"Do you offer service contracts?","a":"The proposal states what is included."},{"q":"Does a commercial system need filtration too?","a":"Often yes. Sediment and chlorine can harm resin and equipment, and a test shows what your water carries. Minneapolis Elite Water Softener MN provides commercial water softener installation for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 3
 ---

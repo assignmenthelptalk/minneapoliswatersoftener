@@ -10,8 +10,8 @@ crumb: "Water Softener Service Areas Near Minneapolis, MN"
 openingHtml: "Water softener service areas near Minneapolis, MN follow the water, because hardness depends on which utility serves your street. The City of Minneapolis supplies treated Mississippi River water to Minneapolis and, according to its own pages, to Columbia Heights, Hilltop, Bloomington, Edina, Crystal, Golden Valley and New Hope. <a href=\"/\">Minneapolis Elite Water Softener</a> installs, repairs and replaces softeners in Minneapolis and Hennepin County. Request a free estimate and confirm your address."
 formHeading: ""
 formIntro: ""
-leadImage: null
-images: [{"file":"water-softener-service-areas-minneapolis-mn.webp","alt":"Water softener service areas Minneapolis MN map of the city","exists":false}]
+leadImage: {"file":"water-softener-service-areas-minneapolis-mn.webp","alt":"Water softener service areas Minneapolis MN map of the city"}
+images: [{"file":"water-softener-service-areas-minneapolis-mn.webp","alt":"Water softener service areas Minneapolis MN map of the city","exists":true}]
 faq: [{"q":"Does water hardness differ between Minneapolis and nearby cities?","a":"It can. Hardness depends on the utility and its source blend, and the City of Minneapolis lists 80 to 113 mg/L for its own supply. A suburb on a different source can read higher or lower, and a test at your tap gives the real figure."},{"q":"How do I find out who provides my water?","a":"Your water bill names the provider. Minneapolis homes receive City of Minneapolis water, and the City's pages list several suburbs it also supplies."},{"q":"Do you serve my neighborhood?","a":"Call or use the form with your address. Minneapolis Elite Water Softener MN provides water softener installation, replacement, repair and water testing for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 4
 ---
