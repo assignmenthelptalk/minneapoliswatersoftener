@@ -11,7 +11,7 @@ openingHtml: "Water softener repair in Minneapolis, MN finds and fixes the faile
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"water-softener-repair-minneapolis-mn.webp","alt":"Water softener repair Minneapolis MN control head opened for service"}
-images: [{"file":"water-softener-repair-minneapolis-mn.webp","alt":"Water softener repair Minneapolis MN control head opened for service","exists":true},{"file":"card-water-softener-control-valve-repair-minneapolis-mn.webp","alt":"Water Softener Control Valve Repair Minneapolis MN","exists":false},{"file":"card-water-softener-motor-replacement-minneapolis-mn.webp","alt":"Water Softener Motor Replacement Minneapolis MN","exists":false},{"file":"card-float-valve-repair-minneapolis-mn.webp","alt":"Float Valve Repair Minneapolis MN","exists":false},{"file":"card-injector-cleaning-minneapolis-mn.webp","alt":"Injector Cleaning Minneapolis MN","exists":false},{"file":"card-head-replacement-minneapolis-mn.webp","alt":"Head Replacement Minneapolis MN","exists":false},{"file":"card-brine-line-repair-minneapolis-mn.webp","alt":"Brine Line Repair Minneapolis MN","exists":false},{"file":"card-water-softener-leak-repair-minneapolis-mn.webp","alt":"Water Softener Leak Repair Minneapolis MN","exists":false}]
+images: [{"file":"water-softener-repair-minneapolis-mn.webp","alt":"Water softener repair Minneapolis MN control head opened for service","exists":true},{"file":"card-water-softener-control-valve-repair-minneapolis-mn.webp","alt":"Water Softener Control Valve Repair Minneapolis MN","exists":true},{"file":"card-water-softener-motor-replacement-minneapolis-mn.webp","alt":"Water Softener Motor Replacement Minneapolis MN","exists":true},{"file":"card-float-valve-repair-minneapolis-mn.webp","alt":"Float Valve Repair Minneapolis MN","exists":true},{"file":"card-injector-cleaning-minneapolis-mn.webp","alt":"Injector Cleaning Minneapolis MN","exists":true},{"file":"card-head-replacement-minneapolis-mn.webp","alt":"Head Replacement Minneapolis MN","exists":true},{"file":"card-brine-line-repair-minneapolis-mn.webp","alt":"Brine Line Repair Minneapolis MN","exists":true},{"file":"card-water-softener-leak-repair-minneapolis-mn.webp","alt":"Water Softener Leak Repair Minneapolis MN","exists":true}]
 faq: [{"q":"Why is my water still hard even though the softener has salt?","a":"Salt alone does not soften water. A clogged injector, fouled resin, a failed valve or a missed regeneration cycle can all leave hard water. Minneapolis water is moderately hard (80 to 113 mg/L at the City's plants), so scale and spotting return within weeks."},{"q":"How do I fix a water softener that is not regenerating?","a":"Check power and the control head settings first. If the unit still does not cycle, the motor, valve or head needs repair, and a technician diagnoses which."},{"q":"What causes a salt bridge?","a":"Humidity and salt type cause a crust to form above the water in the brine tank. Breaking the crust and cleaning the tank restores brine."},{"q":"Why is my water softener leaking?","a":"Leaks come from loose fittings, worn seals, a cracked drain line or a failing tank. A technician finds the source and replaces the part."},{"q":"How much does water softener repair cost?","a":"The cost depends on the part. We give a price before work begins."},{"q":"Do you offer same-day repair in Minneapolis?","a":"Same-day service depends on technician availability . Call and we will schedule you as soon as a technician is free. Minneapolis Elite Water Softener MN provides water softener repair for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 3
 ---
@@ -25,7 +25,10 @@ Seven repairs cover the common failures: control valve repair, motor [replacemen
 <div class="svc-card">
 
 
-![Water Softener Control Valve Repair Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Control Valve Repair Minneapolis MN](../../assets/images/card-water-softener-control-valve-repair-minneapolis-mn.webp)
+
+
 
 ### Water Softener Control Valve Repair
 
@@ -36,7 +39,10 @@ The control valve directs water through the service, backwash, brine and rinse s
 <div class="svc-card">
 
 
-![Water Softener Motor Replacement Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Motor Replacement Minneapolis MN](../../assets/images/card-water-softener-motor-replacement-minneapolis-mn.webp)
+
+
 
 ### Water Softener Motor Replacement
 
@@ -47,7 +53,10 @@ The motor turns the valve through its regeneration cycle. A failed motor leaves 
 <div class="svc-card">
 
 
-![Float Valve Repair Minneapolis MN](/placeholders/card.svg)
+
+![Float Valve Repair Minneapolis MN](../../assets/images/card-float-valve-repair-minneapolis-mn.webp)
+
+
 
 ### Float Valve Repair
 
@@ -58,7 +67,10 @@ The float valve controls the water level in the brine tank. A stuck float lets t
 <div class="svc-card">
 
 
-![Injector Cleaning Minneapolis MN](/placeholders/card.svg)
+
+![Injector Cleaning Minneapolis MN](../../assets/images/card-injector-cleaning-minneapolis-mn.webp)
+
+
 
 ### Injector Cleaning
 
@@ -69,7 +81,10 @@ The injector draws brine into the resin tank. Grit blocks it, and the unit then 
 <div class="svc-card">
 
 
-![Head Replacement Minneapolis MN](/placeholders/card.svg)
+
+![Head Replacement Minneapolis MN](../../assets/images/card-head-replacement-minneapolis-mn.webp)
+
+
 
 ### Head Replacement
 
@@ -80,7 +95,10 @@ The control head holds the timer and valve. When it fails, repair costs more tha
 <div class="svc-card">
 
 
-![Brine Line Repair Minneapolis MN](/placeholders/card.svg)
+
+![Brine Line Repair Minneapolis MN](../../assets/images/card-brine-line-repair-minneapolis-mn.webp)
+
+
 
 ### Brine Line Repair
 
@@ -91,7 +109,10 @@ The brine line carries salty water from the brine tank to the resin tank. A crac
 <div class="svc-card">
 
 
-![Water Softener Leak Repair Minneapolis MN](/placeholders/card.svg)
+
+![Water Softener Leak Repair Minneapolis MN](../../assets/images/card-water-softener-leak-repair-minneapolis-mn.webp)
+
+
 
 ### Water Softener Leak Repair
 

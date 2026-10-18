@@ -11,7 +11,7 @@ openingHtml: "Water treatment services in Minneapolis, MN begin with a water tes
 formHeading: ""
 formIntro: ""
 leadImage: {"file":"water-treatment-minneapolis-mn.webp","alt":"Water treatment Minneapolis MN filtration and testing equipment"}
-images: [{"file":"water-treatment-minneapolis-mn.webp","alt":"Water treatment Minneapolis MN filtration and testing equipment","exists":true},{"file":"card-why-test-before-you-treat-minneapolis-mn.webp","alt":"Why Test Before You Treat? Minneapolis MN","exists":false},{"file":"card-water-quality-testing-minneapolis-mn.webp","alt":"Water Quality Testing Minneapolis MN","exists":true},{"file":"card-water-filtration-system-installation-minneapolis-mn.webp","alt":"Water Filtration System Installation Minneapolis MN","exists":false},{"file":"card-well-water-softener-and-treatment-minneapolis-mn.webp","alt":"Well Water Softener and Treatment Minneapolis MN","exists":false},{"file":"card-water-contaminant-removal-minneapolis-mn.webp","alt":"Water Contaminant Removal Minneapolis MN","exists":false},{"file":"card-reverse-osmosis-system-installation-minneapolis-mn.webp","alt":"Reverse Osmosis System Installation Minneapolis MN","exists":false},{"file":"card-uv-water-purification-system-installation-minneapolis-mn.webp","alt":"UV Water Purification System Installation Minneapolis MN","exists":false},{"file":"card-drinking-water-system-installation-minneapolis-mn.webp","alt":"Drinking Water System Installation Minneapolis MN","exists":false}]
+images: [{"file":"water-treatment-minneapolis-mn.webp","alt":"Water treatment Minneapolis MN filtration and testing equipment","exists":true},{"file":"card-why-test-before-you-treat-minneapolis-mn.webp","alt":"Why Test Before You Treat? Minneapolis MN","exists":true},{"file":"card-water-quality-testing-minneapolis-mn.webp","alt":"Water Quality Testing Minneapolis MN","exists":true},{"file":"card-water-filtration-system-installation-minneapolis-mn.webp","alt":"Water Filtration System Installation Minneapolis MN","exists":true},{"file":"card-well-water-softener-and-treatment-minneapolis-mn.webp","alt":"Well Water Softener and Treatment Minneapolis MN","exists":true},{"file":"card-water-contaminant-removal-minneapolis-mn.webp","alt":"Water Contaminant Removal Minneapolis MN","exists":true},{"file":"card-reverse-osmosis-system-installation-minneapolis-mn.webp","alt":"Reverse Osmosis System Installation Minneapolis MN","exists":true},{"file":"card-uv-water-purification-system-installation-minneapolis-mn.webp","alt":"UV Water Purification System Installation Minneapolis MN","exists":true},{"file":"card-drinking-water-system-installation-minneapolis-mn.webp","alt":"Drinking Water System Installation Minneapolis MN","exists":true}]
 faq: [{"q":"Do I need a water test before installing a softener?","a":"Yes. A test gives your hardness in grains per gallon and flags iron or sulfur, so the technician sizes the softener correctly and adds filters where needed."},{"q":"Does a water softener make water safe to drink?","a":"A softener removes hardness minerals and does not treat bacteria or most contaminants. A filter, reverse osmosis or UV system handles those, based on your test."},{"q":"Is Minneapolis tap water safe to drink?","a":"The City of Minneapolis publishes its results in an annual water quality report and monthly plant analyses. A home test shows what reaches your tap after your own plumbing."},{"q":"What is the difference between filtration and softening?","a":"A filter removes particles and chemicals. A softener removes calcium and magnesium. Many homes need both. Minneapolis Elite Water Softener MN provides water treatment services for homes and businesses across Minneapolis and Hennepin County."}]
 markerCount: 1
 ---
@@ -25,7 +25,10 @@ Water treatment starts with testing and covers filtration, well water treatment,
 <div class="svc-card">
 
 
-![Why Test Before You Treat? Minneapolis MN](/placeholders/card.svg)
+
+![Why Test Before You Treat? Minneapolis MN](../../assets/images/card-why-test-before-you-treat-minneapolis-mn.webp)
+
+
 
 ### Why Test Before You Treat?
 
@@ -50,7 +53,10 @@ A free water test reads hardness, and a fuller test adds total dissolved solids,
 <div class="svc-card">
 
 
-![Water Filtration System Installation Minneapolis MN](/placeholders/card.svg)
+
+![Water Filtration System Installation Minneapolis MN](../../assets/images/card-water-filtration-system-installation-minneapolis-mn.webp)
+
+
 
 ### Water Filtration System Installation
 
@@ -61,7 +67,10 @@ A whole-house or point-of-use filter removes sediment, chlorine taste and odor. 
 <div class="svc-card">
 
 
-![Well Water Softener and Treatment Minneapolis MN](/placeholders/card.svg)
+
+![Well Water Softener and Treatment Minneapolis MN](../../assets/images/card-well-water-softener-and-treatment-minneapolis-mn.webp)
+
+
 
 ### Well Water Softener and Treatment
 
@@ -72,7 +81,10 @@ Private wells need a test for iron, sulfur and bacteria before a softener goes i
 <div class="svc-card">
 
 
-![Water Contaminant Removal Minneapolis MN](/placeholders/card.svg)
+
+![Water Contaminant Removal Minneapolis MN](../../assets/images/card-water-contaminant-removal-minneapolis-mn.webp)
+
+
 
 ### Water Contaminant Removal
 
@@ -83,7 +95,10 @@ Targeted filters reduce specific contaminants such as lead, chloramine, fluoride
 <div class="svc-card">
 
 
-![Reverse Osmosis System Installation Minneapolis MN](/placeholders/card.svg)
+
+![Reverse Osmosis System Installation Minneapolis MN](../../assets/images/card-reverse-osmosis-system-installation-minneapolis-mn.webp)
+
+
 
 ### Reverse Osmosis System Installation
 
@@ -94,7 +109,10 @@ A reverse osmosis system filters drinking and cooking water through a fine membr
 <div class="svc-card">
 
 
-![UV Water Purification System Installation Minneapolis MN](/placeholders/card.svg)
+
+![UV Water Purification System Installation Minneapolis MN](../../assets/images/card-uv-water-purification-system-installation-minneapolis-mn.webp)
+
+
 
 ### UV Water Purification System Installation
 
@@ -105,7 +123,10 @@ A UV unit disinfects water with ultraviolet light, which suits private wells and
 <div class="svc-card">
 
 
-![Drinking Water System Installation Minneapolis MN](/placeholders/card.svg)
+
+![Drinking Water System Installation Minneapolis MN](../../assets/images/card-drinking-water-system-installation-minneapolis-mn.webp)
+
+
 
 ### Drinking Water System Installation
 
