@@ -35,7 +35,7 @@ The City of Minnetonka publishes an annual drinking water report, and its report
 
 ## Service Areas Near Minnetonka
 
-We serve Minneapolis and nearby Hennepin County communities, including [Bloomington](/water-softener-bloomington-mn/) and the Minneapolis neighborhoods of [Linden Hills](/water-softener-linden-hills-mn/) and [Powderhorn Park](/water-softener-powderhorn-park-mn/). See the full [Water Softener Service Areas in Minneapolis, MN](/service-areas/) page for the list.
+We serve Minneapolis and nearby Hennepin County communities, including [Bloomington](/water-softener-bloomington-mn/) and the Minneapolis neighborhoods of Linden Hills and Powderhorn Park. See the full [Water Softener Service Areas in Minneapolis, MN](/service-areas/) page for the list.
 
 > **Not a good fit if...** your water already tests soft. Water under 60 mg/L needs no softener, and a free test shows where you stand.
 

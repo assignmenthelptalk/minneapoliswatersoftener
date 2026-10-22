@@ -35,7 +35,7 @@ The City of Bloomington publishes an annual water quality report, and the 2025 r
 
 ## Service Areas Near Bloomington
 
-We serve Minneapolis and nearby Hennepin County communities, including [Minnetonka](/water-softener-minnetonka-mn/) and the Minneapolis neighborhoods of [Linden Hills](/water-softener-linden-hills-mn/) and [Longfellow](/water-softener-longfellow-mn/). See the full [Water Softener Service Areas in Minneapolis, MN](/service-areas/) page for the list.
+We serve Minneapolis and nearby Hennepin County communities, including [Minnetonka](/water-softener-minnetonka-mn/) and the Minneapolis neighborhoods of Linden Hills and Longfellow. See the full [Water Softener Service Areas in Minneapolis, MN](/service-areas/) page for the list.
 
 > **Not a good fit if...** your water already tests soft. Water under 60 mg/L needs no softener, and a free test shows where you stand.
 

@@ -22,7 +22,16 @@ Minneapolis is the core service area, with nearby communities that receive the s
 
 ### Minneapolis
 
-Minneapolis homes receive City of Minneapolis water, which the City's 2025 record lists at an average of 94 mg/L total hardness (80 to 113 mg/L), about 5.5 gpg. The same supply reaches [Linden Hills](/water-softener-linden-hills-mn/), [Longfellow](/water-softener-longfellow-mn/), [Powderhorn Park](/water-softener-powderhorn-park-mn/) and the [North Loop](/water-softener-north-loop-mn/). A free test shows the reading at your tap.
+Minneapolis homes receive City of Minneapolis water, which the City's 2025 record lists at an average of 94 mg/L total hardness (80 to 113 mg/L), about 5.5 gpg. The same supply reaches Linden Hills, Longfellow, Powderhorn Park and the North Loop. A free test shows the reading at your tap.
+
+### Minneapolis Neighborhoods
+
+These neighborhoods share the city's water system, so they are covered here instead of on separate pages.
+
+- **Linden Hills:** Developed from the 1880s, with the Como-Harriet streetcar line running through it by 1891. HUD's neighborhood profile lists ramblers, colonials, Tudors and bungalows, so many homes carry decades of plumbing.
+- **Longfellow:** Annexed from Richfield in 1887 and known for bungalows. A MinnPost profile describes 1920s cottages and bungalows on narrow lots, which often have a small utility corner, so the technician measures the space before recommending a unit.
+- **Powderhorn Park:** Annexed in 1887, with most housing built by about 1920, including duplexes and three-story brick apartment buildings. A building with several units can share one water line, so the technician confirms which line a softener serves.
+- **North Loop:** The Minneapolis Warehouse Historic District (period of significance 1865 to 1930, National Register 1989) is now largely residential lofts. Loft and condo owners often share risers, so an under-sink or point-of-use system suits many units.
 
 ### Suburbs That Receive Minneapolis Water
 

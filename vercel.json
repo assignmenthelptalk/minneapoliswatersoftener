@@ -1,3 +1,45 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/water-softener-linden-hills-mn",
+      "destination": "/service-areas/",
+      "permanent": true
+    },
+    {
+      "source": "/water-softener-linden-hills-mn/",
+      "destination": "/service-areas/",
+      "permanent": true
+    },
+    {
+      "source": "/water-softener-longfellow-mn",
+      "destination": "/service-areas/",
+      "permanent": true
+    },
+    {
+      "source": "/water-softener-longfellow-mn/",
+      "destination": "/service-areas/",
+      "permanent": true
+    },
+    {
+      "source": "/water-softener-powderhorn-park-mn",
+      "destination": "/service-areas/",
+      "permanent": true
+    },
+    {
+      "source": "/water-softener-powderhorn-park-mn/",
+      "destination": "/service-areas/",
+      "permanent": true
+    },
+    {
+      "source": "/water-softener-north-loop-mn",
+      "destination": "/service-areas/",
+      "permanent": true
+    },
+    {
+      "source": "/water-softener-north-loop-mn/",
+      "destination": "/service-areas/",
+      "permanent": true
+    }
+  ]
 }
